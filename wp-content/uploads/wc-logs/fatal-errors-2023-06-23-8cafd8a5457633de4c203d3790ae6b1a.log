@@ -16,3 +16,11 @@ Stack trace:
 #13 {main}
   thrown dans C:\MAMP\htdocs\chic_dressing\wp-content\plugins\wysija-newsletters\helpers\file.php à la ligne 161
 
+2023-06-23T13:35:30+00:00 CRITICAL Cannot redeclare wp_deregister_script() (previously declared in C:\MAMP\htdocs\chic_dressing\wp-includes\functions.wp-scripts.php:265) dans C:\MAMP\htdocs\chic_dressing\wp-content\themes\chicdressing\functions.php à la ligne 64
+
+2023-06-23T13:37:23+00:00 CRITICAL Cannot redeclare wp_deregister_script() (previously declared in C:\MAMP\htdocs\chic_dressing\wp-includes\functions.wp-scripts.php:265) dans C:\MAMP\htdocs\chic_dressing\wp-content\themes\chicdressing\functions.php à la ligne 64
+
+2023-06-23T13:41:26+00:00 CRITICAL Cannot redeclare wp_deregister_script() (previously declared in C:\MAMP\htdocs\chic_dressing\wp-includes\functions.wp-scripts.php:265) dans C:\MAMP\htdocs\chic_dressing\wp-content\themes\chicdressing\functions.php à la ligne 64
+
+2023-06-23T13:41:26+00:00 CRITICAL Cannot redeclare wp_deregister_script() (previously declared in C:\MAMP\htdocs\chic_dressing\wp-includes\functions.wp-scripts.php:265) dans C:\MAMP\htdocs\chic_dressing\wp-content\themes\chicdressing\functions.php à la ligne 64
+
