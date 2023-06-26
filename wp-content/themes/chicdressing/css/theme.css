@@ -1,6 +1,7 @@
 /* open-sans-regular - latin */
 @font-face {
     font-family: 'Open Sans';
+    src: url('../css/fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf') format('truetype');
     src: url('../css/fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
 }
 
@@ -8,6 +9,8 @@
 @font-face {
     font-family: 'Kalam';
     src: url('../css/fonts/Kalam-Bold.ttf') format('truetype');
+    src: url('../css/fonts/Kalam-Light.ttf') format('truetype');
+    src: url('../css/fonts/Kalam-Regular.ttf') format('truetype');
 }
 
 /* Playfair */
@@ -19,5 +22,6 @@
 /* Rokkitt */
 @font-face {
     font-family: 'Rokkitt';
+    src: url('../css/fonts/Rokkitt-Italic-VariableFont_wght.ttf') format('truetype');
     src: url('../css/fonts/Rokkitt-VariableFont_wght.ttf') format('truetype');
 }

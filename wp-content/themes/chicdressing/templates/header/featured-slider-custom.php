@@ -64,7 +64,7 @@ $slider_data .= '}';
 	foreach( $slider_repeater as $repeater_item ) : ?>
 
 	<div class="slider-item">
-
+	<!-- ici changement de 'full' en 'large' -->
 		<div class="slider-item-bg" style="background-image:url( <?php echo wp_get_attachment_image_src( $repeater_item->image_url, 'large' )[0]; ?>);"></div>
 
 		<div class="cv-container image-overlay">
