@@ -1,27 +1,23 @@
 /* open-sans-regular - latin */
 @font-face {
     font-family: 'Open Sans';
-    src: url('wp-content\themes\chicdressing\css\fonts\OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
-   }
+    src: url('../css/fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+}
 
 /* kalam */
 @font-face {
     font-family: 'Kalam';
-    src: url('wp-content\themes\chicdressing\css\fonts\Kalam-Bold.ttf') format('truetype'),
-   }
+    src: url('../css/fonts/Kalam-Bold.ttf') format('truetype');
+}
 
 /* Playfair */
 @font-face {
     font-family: 'Playfair';
-    src: url('wp-content\themes\chicdressing\css\fonts\Playfair-VariableFont_opsz,wdth,wght.ttf') format('truetype'),
-   }
+    src: url('../css/fonts/Playfair-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+}
 
 /* Rokkitt */
 @font-face {
     font-family: 'Rokkitt';
-    src: url('wp-content\themes\chicdressing\css\fonts\Rokkitt-VariableFont_wght.ttf') format('truetype'),
-   }
-
-body {
-    font-family: 'Open Sans', sans-serif;
-  }
+    src: url('../css/fonts/Rokkitt-VariableFont_wght.ttf') format('truetype');
+}
