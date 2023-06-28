@@ -3,6 +3,7 @@
     font-family: 'Open Sans';
     src: url('../css/fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf') format('truetype');
     src: url('../css/fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* kalam */
@@ -11,12 +12,14 @@
     src: url('../css/fonts/Kalam-Bold.ttf') format('truetype');
     src: url('../css/fonts/Kalam-Light.ttf') format('truetype');
     src: url('../css/fonts/Kalam-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* Playfair */
 @font-face {
     font-family: 'Playfair';
     src: url('../css/fonts/Playfair-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* Rokkitt */
@@ -24,4 +27,34 @@
     font-family: 'Rokkitt';
     src: url('../css/fonts/Rokkitt-Italic-VariableFont_wght.ttf') format('truetype');
     src: url('../css/fonts/Rokkitt-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* ACCESSIBILITE - augmentation du contraste */
+
+a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart,
+.post-categories a,
+.post-categories,
+.read-more a,
+#main-nav a:hover,
+#main-nav i:hover,
+#main-nav li.current-menu-item>a,
+#main-nav li.current-menu-ancestor>a,
+#main-nav .sub-menu li.current-menu-item>a,
+#main-nav .sub-menu li.current-menu-ancestor>a
+ {
+    color: #9d4c64 !important;
+}
+
+a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart:hover,
+.post-categories a:hover,
+.read-more a:hover {
+    color: #debcc6 !important;
+}
+
+.post-date,
+.page-content,
+.post-content,
+.rpwwt-post-categories {
+        color: #5c5c5c !important;
 }

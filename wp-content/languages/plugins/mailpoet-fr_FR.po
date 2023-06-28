@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-06-19 16:08:46+0000\n"
+"PO-Revision-Date: 2023-06-26 15:51:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -8,6 +8,67 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: MailPoet - MailPoet\n"
+
+#: lib/Config/Menu.php:515 lib/Config/Menu.php:516
+msgid "Automation Analytics"
+msgstr ""
+
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:219
+msgid "Categories"
+msgstr "Catégories"
+
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:210
+msgid "Is first order"
+msgstr ""
+
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:199
+msgid "Used coupons"
+msgstr ""
+
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:191
+msgid "Total"
+msgstr "Total"
+
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:169
+msgid "Payment method"
+msgstr "Moyen de paiement"
+
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:161
+msgid "Customer provided note"
+msgstr "Note fournie par le client"
+
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:153
+msgid "Paid date"
+msgstr ""
+
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:145
+msgid "Created date"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:222
+msgid "Encourage your potential customers to finalize their purchase when they have added items to their cart but haven't finished the order yet. Offer a coupon code as a last resort to convert them to customers."
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:221
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:228
+msgid "Abandoned cart campaign"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:194
+msgid "Nudge your shoppers to complete the purchase after they have added a product to the cart but haven't completed the order."
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:157
+msgid "Thank You for Choosing Us!"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:156
+msgid "Thank you"
+msgstr "Merci"
+
+#: lib/Automation/Integrations/MailPoet/Analytics/Endpoints/OverviewEndpoint.php:33
+msgid "Automation not found"
+msgstr "Automatisation non trouvée."
 
 #: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:87
 msgid "Roles"
@@ -29,79 +90,91 @@ msgstr ""
 msgid "Review count"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:101
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:104
 msgid "Purchased tags"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:89
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:92
 msgid "Purchased categories"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:77
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:80
 msgid "Last paid order date"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:65
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:68
 msgid "First paid order date"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:56
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:59
 msgid "Order count"
 msgstr "Nombre de commandes"
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:45
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:48
 msgid "Average spent"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:36
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerOrderFieldsFactory.php:39
 msgid "Total spent"
 msgstr "Total dépensé"
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:129
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:132
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:134
 msgid "Shipping country"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:120
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:123
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:126
 msgid "Shipping state/county"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:111
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:114
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:118
 msgid "Shipping postcode"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:102
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:105
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:110
 msgid "Shipping city"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:93
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:96
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:102
 msgid "Shipping phone"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:84
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:87
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:94
 msgid "Shipping company"
 msgstr ""
 
 #: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:75
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:83
 msgid "Billing country"
 msgstr ""
 
 #: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:66
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:75
 msgid "Billing state/county"
 msgstr ""
 
 #: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:57
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:67
 msgid "Billing postcode"
 msgstr ""
 
 #: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:48
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:59
 msgid "Billing city"
 msgstr ""
 
 #: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:39
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:51
 msgid "Billing phone"
 msgstr ""
 
 #: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:30
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:43
 msgid "Billing company"
 msgstr ""
 
@@ -500,11 +573,11 @@ msgid "Order status changed"
 msgstr "État de la commande modifié"
 
 #. translators: %d is the order ID.
-#: lib/Automation/Integrations/WooCommerce/Subjects/OrderSubject.php:44
+#: lib/Automation/Integrations/WooCommerce/Subjects/OrderSubject.php:50
 msgid "Order with ID '%d' not found."
 msgstr "La commande avec l’ID « %d » est introuvable."
 
-#: lib/Automation/Integrations/WooCommerce/Subjects/OrderSubject.php:30
+#: lib/Automation/Integrations/WooCommerce/Subjects/OrderSubject.php:36
 msgid "WooCommerce order"
 msgstr "Commande WooCommerce"
 
@@ -1210,7 +1283,7 @@ msgstr "Connectez votre site avec MailPoet, et commencez à envoyer gratuitement
 msgid "Get ready to send your first campaign."
 msgstr "Préparez-vous à envoyer votre première campagne."
 
-#: lib/Config/Menu.php:215 lib/Config/Menu.php:216
+#: lib/Config/Menu.php:217 lib/Config/Menu.php:218
 msgid "Home"
 msgstr "Accueil"
 
@@ -1222,59 +1295,62 @@ msgstr "Pour masquer une liste à partir de la page Gérer l’abonnement, allez
 msgid "Show this list on the \"Manage Subscription\" page"
 msgstr "Afficher cette liste sur la page « Gérer l’abonnement »"
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:183
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:193
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:200
 msgid "Abandoned cart reminder"
 msgstr "Rappel de panier abandonné"
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:178
-msgid "Nudge your shoppers to complete the purchase after they added a product to the cart but haven't completed the order. Offer a coupon code as a last resort to convert them to customers."
-msgstr "Incitez vos acheteurs à terminer l’achat après qu’ils aient ajouté un produit au panier mais n’aient pas terminé la commande. Proposez un code promo en dernier recours pour les convertir en clients."
-
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:169
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:174
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:181
 msgid "Thank loyal customers"
 msgstr "Remerciez les clients fidèles"
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:164
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:175
 msgid "These are your most important customers. Make them feel special by sending a thank you note for supporting your brand."
 msgstr "Ce sont vos clients les plus importants. Faites en sorte qu’ils se sentent spéciaux en leur envoyant une note de remerciement pour avoir soutenu votre marque."
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:155
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:126
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:133
 msgid "Celebrate first-time buyers"
 msgstr "Célébrez les premiers acheteurs"
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:150
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:127
 msgid "Welcome your first-time customers by sending an email with a special offer for their next purchase. Make them feel appreciated within your brand."
 msgstr "Accueillez vos premiers clients et clientes en leur envoyant un e-mail contenant une offre spéciale pour leur prochain achat. Faites en sorte qu’ils ou elles se sentent apprécié•es au sein de votre marque."
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:141
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:107
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:114
 msgid "Welcome series for new WordPress users"
 msgstr "Séries de bienvenue pour les nouveaux comptes WordPress"
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:136
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:108
 msgid "Welcome new WordPress users to your site. Send an email immediately after a WordPress user registers. Send a follow-up email two days later with more in-depth information."
 msgstr "Accueillez les nouveaux comptes WordPress sur votre site. Envoyez un e-mail immédiatement après l’inscription d’un compte WordPress. Envoyez un e-mail de suivi deux jours plus tard avec des informations plus approfondies."
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:127
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:88
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:95
 msgid "Welcome series for new subscribers"
 msgstr "Séries de bienvenue pour les nouveaux abonnés"
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:122
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:89
 msgid "Welcome new subscribers and start building a relationship with them. Send an email immediately after someone subscribes to your list to introduce your brand and a follow-up two days later to keep the conversation going."
 msgstr "Accueillez les nouveaux abonnés et commencez à établir une relation avec eux. Envoyez un e-mail immédiatement après qu’une personne s’inscrit à votre liste pour présenter votre marque et un suivi deux jours plus tard pour poursuivre la conversation."
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:98
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:62
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:69
 msgid "Welcome new WordPress users"
 msgstr "Bienvenue aux nouveaux comptes WordPress"
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:93
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:63
 msgid "Send a welcome email when a new WordPress user registers to your website. Optionally, you can choose to send this email after a specified period."
 msgstr "Envoyez un e-mail de bienvenue lorsqu’un nouveau compte WordPress s’inscrit sur votre site. En option, vous pouvez choisir d’envoyer cet e-mail après une période déterminée."
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:69
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:36
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:43
 msgid "Welcome new subscribers"
 msgstr "Bienvenue aux nouveaux abonnés"
 
-#: lib/Automation/Engine/Storage/AutomationTemplateStorage.php:64
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:37
 msgid "Send a welcome email when someone subscribes to your list. Optionally, you can choose to send this email after a specified period."
 msgstr "Envoyez un e-mail de bienvenue lorsqu’une personne s’inscrit à votre liste. En option, vous pouvez choisir d’envoyer cet e-mail après une période déterminée."
 
@@ -1429,6 +1505,7 @@ msgstr "La liste n’a pas pu être mise à jour dans la base de données"
 msgid "The list couldn’t be created in the database"
 msgstr "La liste n’a pas pu être créée dans la base de données"
 
+#: lib/AdminPages/Pages/AutomationAnalytics.php:57
 #: lib/AdminPages/Pages/AutomationEditor.php:68
 msgid "Automation not found."
 msgstr "Automatisation non trouvée."
@@ -1437,15 +1514,15 @@ msgstr "Automatisation non trouvée."
 msgid "Don't forget to include:<br /><br />[activation_link]Confirm your subscription.[/activation_link]<br /><br />Optional:<br /><br /> [lists_to_confirm] - comma separated subscriber's list names<br /><br />[subscriber:firstname | default: there] - Subscriber's first name, defaults to 'there' if not available<br /><br />[subscriber:lastname | default: there] - Subscriber's last name, defaults to 'there' if not available<br /><br />[subscriber:email] - Subscriber's email address<br /><br />[subscriber:count] - Total number of subscribers<br /><br />[site:title] - Your WordPress site title (currently '[current_site_title]')<br /><br />[site:homepage_link] - Link to your site's homepage."
 msgstr "N’oubliez pas d’inclure :<br /><br />[activation_link]Confirmez votre abonnement.[<br /><br />Facultatif :<br /><br /> [lists_to_confirm] - Noms de listes d’abonnés séparés par des virgules<br /><br />[subscriber:firstname | default : ici] - Prénom de l’abonné, valeur par défaut « ici » si non disponible<br /><br />[subscriber:lastname | default : there] - Nom de famille de l’abonné, remplacé par défaut par « ici » s’il n’est pas disponible<br /><br />[subscriber:email] - Adresse e-mail de l’abonné<br /><br />[subscriber:count] - Nombre total d’abonnés<br /><br />[site:title] - Titre de votre site WordPress (actuellement « [current_site_title] »)<br /><br />[site:homepage_link] - Lien vers la page d’accueil de votre site."
 
-#: lib/Config/Menu.php:514 lib/Config/Menu.php:515
+#: lib/Config/Menu.php:526 lib/Config/Menu.php:527
 msgid "Automation Templates"
 msgstr "Modèles d’automatisation"
 
-#: lib/Config/Menu.php:503 lib/Config/Menu.php:504
+#: lib/Config/Menu.php:505 lib/Config/Menu.php:506
 msgid "Automation Editor"
 msgstr "Éditeur d’automatisation"
 
-#: lib/Config/Menu.php:465
+#: lib/Config/Menu.php:467
 msgid "Experimental Features"
 msgstr "Fonctionnalités expérimentales"
 
@@ -1894,6 +1971,7 @@ msgstr "Ajouter une nouvelle étiquette"
 
 #: views/subscribers/subscribers.html:157
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:210
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:236
 msgid "Tags"
 msgstr "Étiquettes"
 
@@ -4358,22 +4436,22 @@ msgctxt "default email opt-in message displayed on checkout page for ecommerce w
 msgid "Yes, I would like to be added to your mailing list"
 msgstr "Oui, j’aimerai que vous m’ajoutiez à votre liste de diffusion."
 
-#: lib/Config/Menu.php:398
+#: lib/Config/Menu.php:400
 msgctxt "segments per page (screen options)"
 msgid "Number of segments per page"
 msgstr "Nombre de segments par page"
 
-#: lib/Config/Menu.php:347
+#: lib/Config/Menu.php:349
 msgctxt "subscribers per page (screen options)"
 msgid "Number of subscribers per page"
 msgstr "Nombre d’abonnements par page"
 
-#: lib/Config/Menu.php:281
+#: lib/Config/Menu.php:283
 msgctxt "forms per page (screen options)"
 msgid "Number of forms per page"
 msgstr "Nombre de formulaires par page"
 
-#: lib/Config/Menu.php:241
+#: lib/Config/Menu.php:243
 msgctxt "newsletters per page (screen options)"
 msgid "Number of newsletters per page"
 msgstr "Nombre de newsletters par page"
@@ -6192,6 +6270,7 @@ msgid "Select icons"
 msgstr "Sélectionner des icônes"
 
 #: views/newsletter/templates/blocks/products/widget.hbs:4
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:253
 msgid "Products"
 msgstr "Produits"
 
@@ -6909,7 +6988,7 @@ msgstr "Créé le"
 msgid "Message"
 msgstr "Message"
 
-#: views/logs.html:21 lib/Config/Menu.php:475
+#: views/logs.html:21 lib/Config/Menu.php:477
 msgid "Logs"
 msgstr "Journaux"
 
@@ -8150,6 +8229,7 @@ msgstr "IP abonnée"
 #: views/forms.html:59 views/help.html:54 views/subscribers/subscribers.html:63
 #: views/subscribers/subscribers.html:82
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:104
+#: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:180
 #: lib/Subscribers/ImportExport/PersonalDataExporters/SubscriberExporter.php:75
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:176
 msgid "Status"
@@ -10262,15 +10342,15 @@ msgstr "Listes MailPoet"
 msgid "MailPoet Subscribers"
 msgstr "Abonné·es MailPoet"
 
-#: lib/Config/Menu.php:452 lib/Config/Menu.php:453
+#: lib/Config/Menu.php:454 lib/Config/Menu.php:455
 msgid "WooCommerce Setup"
 msgstr "Configurer WooCommerce"
 
-#: lib/Config/Menu.php:185 lib/Config/Menu.php:186
+#: lib/Config/Menu.php:187 lib/Config/Menu.php:188
 msgid "Welcome Wizard"
 msgstr "Assistant de configuration"
 
-#: lib/Config/Menu.php:423 lib/Config/Menu.php:424
+#: lib/Config/Menu.php:425 lib/Config/Menu.php:426
 msgid "Help"
 msgstr "Aide"
 
@@ -10279,50 +10359,50 @@ msgid "Settings"
 msgstr "Réglages"
 
 #: views/forms.html:75 views/segments.html:37
-#: views/subscribers/subscribers.html:83 lib/Config/Menu.php:385
+#: views/subscribers/subscribers.html:83 lib/Config/Menu.php:387
 msgid "Lists"
 msgstr "Listes"
 
 #: views/subscribers/importExport/export.html:6
 #: views/subscribers/importExport/export.html:79
-#: views/subscribers/subscribers.html:124 lib/Config/Menu.php:372
-#: lib/Config/Menu.php:373
+#: views/subscribers/subscribers.html:124 lib/Config/Menu.php:374
+#: lib/Config/Menu.php:375
 msgid "Export"
 msgstr "Exporter"
 
 #: views/subscribers/importExport/import.html:6
 #: views/subscribers/importExport/import.html:99
-#: views/subscribers/subscribers.html:123 lib/Config/Menu.php:359
-#: lib/Config/Menu.php:360
+#: views/subscribers/subscribers.html:123 lib/Config/Menu.php:361
+#: lib/Config/Menu.php:362
 msgid "Import"
 msgstr "Importer"
 
 #: views/homepage.html:68 views/subscribers/subscribers.html:25
-#: lib/Config/Menu.php:334 lib/Config/Menu.php:335
+#: lib/Config/Menu.php:336 lib/Config/Menu.php:337
 msgid "Subscribers"
 msgstr "Abonnements"
 
-#: lib/Config/Menu.php:313 lib/Config/Menu.php:314
+#: lib/Config/Menu.php:315 lib/Config/Menu.php:316
 msgid "Select Form Template"
 msgstr "Sélectionner un modèle de formulaire"
 
-#: lib/Config/Menu.php:293 lib/Config/Menu.php:294
+#: lib/Config/Menu.php:295 lib/Config/Menu.php:296
 msgid "Form Editor"
 msgstr "Éditeur de formulaire"
 
-#: views/forms.html:45 lib/Config/Menu.php:268 lib/Config/Menu.php:269
+#: views/forms.html:45 lib/Config/Menu.php:270 lib/Config/Menu.php:271
 msgid "Forms"
 msgstr "Formulaires"
 
-#: views/newsletter/editor.html:340 lib/Config/Menu.php:254
+#: views/newsletter/editor.html:340 lib/Config/Menu.php:256
 msgid "Newsletter Editor"
 msgstr "Éditeur de newsletter"
 
-#: lib/Config/Menu.php:253 lib/Newsletter/Shortcodes/ShortcodesHelper.php:42
+#: lib/Config/Menu.php:255 lib/Newsletter/Shortcodes/ShortcodesHelper.php:42
 msgid "Newsletter"
 msgstr "Newsletter"
 
-#: lib/Config/Menu.php:228 lib/Config/Menu.php:229
+#: lib/Config/Menu.php:230 lib/Config/Menu.php:231
 msgid "Emails"
 msgstr "E-mails"
 
@@ -10337,7 +10417,7 @@ msgstr "MailPoet Newsletter"
 #. Plugin Name of the plugin
 #. Author of the plugin
 #: views/woo_system_info.html:5 lib/Config/Capabilities.php:80
-#: lib/Config/Menu.php:198 lib/Config/Menu.php:199 lib/Config/Menu.php:626
+#: lib/Config/Menu.php:200 lib/Config/Menu.php:201 lib/Config/Menu.php:642
 #: lib/Config/PrivacyPolicy.php:12
 #: lib/WooCommerce/WooSystemInfoController.php:41
 msgid "MailPoet"

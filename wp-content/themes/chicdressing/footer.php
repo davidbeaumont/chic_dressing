@@ -16,6 +16,9 @@
 			<?php echo get_template_part( 'templates/sidebars/footer', 'widgets' ); ?>
 
 			<div class="footer-copyright">
+				<p>
+					<br><a href="http://127.0.0.1/chic_dressing/sitemaps.xml">Plan du site</a>
+				</p>
 				<div class="copyright-info">
 				<?php
 
