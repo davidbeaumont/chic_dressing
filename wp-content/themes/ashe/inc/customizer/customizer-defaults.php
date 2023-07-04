@@ -55,7 +55,7 @@ function ashe_options( $control ) {
 		'blog_page_show_categories' => true,
 		'blog_page_show_date' => true,
 		'blog_page_show_comments' => true,
-		'blog_page_show_dropcaps' => true,
+		'blog_page_show_dropcaps' => false,
 		'blog_page_show_author' => true,
 		'blog_page_show_facebook' => false,
 		'blog_page_show_twitter' => false,
