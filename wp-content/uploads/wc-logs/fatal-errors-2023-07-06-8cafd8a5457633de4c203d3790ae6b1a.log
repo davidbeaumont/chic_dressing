@@ -1,0 +1,2 @@
+2023-07-06T06:04:24+00:00 CRITICAL Allowed memory size of 134217728 bytes exhausted (tried to allocate 413696 bytes) dans C:\MAMP\htdocs\chic_dressing\wp-includes\Requests\src\Requests.php à la ligne 740
+
