@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-06-08 13:01:31+0000\n"
+"PO-Revision-Date: 2023-07-08 12:08:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,143 @@ msgstr ""
 "X-Generator: GlotPress/4.0.0-alpha.4\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release)\n"
+
+#: modules/styleguide/module.php:143
+msgid "Switch between the content area and style guide to preview your changes to global colors."
+msgstr "Basculer entre la zone de contenu et le guide de style pour prévisualiser les modifications des couleurs globales."
+
+#: modules/styleguide/module.php:62
+msgid "Display a live preview of changes to global colors and fonts in a sleek style guide from the site’s settings. You will be able to toggle between the style guide and the page to see your changes in action."
+msgstr "Affichez un aperçu en direct des modifications apportées aux couleurs et aux polices globales dans un guide de style élégant à partir des réglages du site. Vous pourrez basculer entre le guide de style et la page pour voir vos modifications en action."
+
+#: modules/styleguide/module.php:60
+msgid "Global Style Guide"
+msgstr "Guide de style global"
+
+#: modules/nested-tabs/widgets/nested-tabs.php:342
+msgid "Note: Scroll tabs if they don’t fit into their parent container."
+msgstr "Remarque : fait défiler les onglets s’ils ne rentrent pas dans leur conteneur parent."
+
+#: modules/nested-tabs/widgets/nested-tabs.php:340
+msgid "Horizontal Scroll"
+msgstr "Défilement horizontal"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:124
+msgid "Item #3"
+msgstr "Élément 3"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:121
+msgid "Item #2"
+msgstr "Élément 2"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:118
+msgid "Item #1"
+msgstr "Elément 1"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:90
+#: modules/nested-accordion/widgets/nested-accordion.php:91
+msgid "Item Title"
+msgstr "Titre de l’élément"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:50
+msgid "item #%s"
+msgstr "élément N°%s"
+
+#. translators: 1: Link opening tag, 2: Link closing tag.
+#: modules/nested-accordion/module.php:43
+msgid "Create a rich user experience by layering widgets together inside “Nested” Accordion, etc. %1$sLearn More%2$s"
+msgstr "Créez une expérience utilisateur/utilisatrice riche en superposant des widgets dans un accordéon « imbriqué », etc. %1$sEn savoir plus%2$s"
+
+#: modules/nested-accordion/module.php:40
+msgid "Nested Accordion"
+msgstr "Accordéon imbriqué"
+
+#: includes/widgets/toggle.php:135
+msgid "You are currently editing a Toggle widget in its old version. Drag a new Accordion widget onto your page to use a newer version, providing nested capabilities."
+msgstr "Vous modifiez actuellement un widget Bascule dans son ancienne version. Faites glisser un nouveau widget Accordéon sur votre page pour utiliser une version plus récente, offrant des fonctionnalités imbriquées."
+
+#: includes/widgets/image.php:374
+msgid "Object Position"
+msgstr "Position de l’objet"
+
+#: includes/widgets/image-carousel.php:893
+msgid "of"
+msgstr "de"
+
+#: includes/widgets/icon.php:318
+msgid "Fit to Size"
+msgstr "Ajuster à la taille"
+
+#: includes/widgets/accordion.php:131
+msgid "You are currently editing an Accordion Widget in its old version. Any new Accordion widget dragged into the canvas will be the new Accordion widget, with the improved Nested capabilities."
+msgstr "Vous êtes en train de modifier un widget accordéon dans son ancienne version. Tout nouveau widget accordéon glissé dans le canevas sera le nouveau widget accordéon, avec les capacités d'imbrication améliorées."
+
+#: includes/frontend.php:1401
+msgid "Go to slide"
+msgstr "Aller à la diapositive"
+
+#: includes/frontend.php:1400
+msgid "This is the last slide"
+msgstr "Ceci est la dernière diapositive"
+
+#: includes/frontend.php:1399
+msgid "This is the first slide"
+msgstr "Ceci est la première diapositive"
+
+#: includes/frontend.php:1398
+msgid "Next slide"
+msgstr "Diapositive suivante"
+
+#: includes/frontend.php:1397
+msgid "Previous slide"
+msgstr "Diapositive précédente"
+
+#: includes/frontend.php:1396
+msgid "Carousel | Horizontal scrolling: Arrow Left & Right"
+msgstr "Carousel | Scroll horizontal: Flèche gauche & droite"
+
+#: includes/editor-templates/navigator.php:61
+msgid "Show/hide Element"
+msgstr "Montrer/cacher élément"
+
+#: includes/editor-templates/navigator.php:48
+msgid "Show/hide inner elements"
+msgstr "Montrer/cacher éléments internes"
+
+#: includes/editor-templates/navigator.php:38
+msgid "Resize navigator"
+msgstr "Redimensionner le navigateur"
+
+#: includes/editor-templates/navigator.php:37
+msgid "Resize structure"
+msgstr "Redimensionner la structure"
+
+#: includes/editor-templates/hotkeys.php:96
+msgid "Panels"
+msgstr "Panneaux"
+
+#: includes/controls/gallery.php:83 includes/controls/gallery.php:85
+#: assets/js/editor.js:13678
+msgid "Clear gallery"
+msgstr "Vider la galerie"
+
+#: core/settings/editor-preferences/model.php:161
+msgid "Switch between the content area and style guide to preview your changes to global colors and fonts."
+msgstr "Passez de la zone de contenu au guide de style pour prévisualiser vos modifications de couleurs et de polices globales."
+
+#: core/settings/editor-preferences/model.php:159
+#: modules/styleguide/module.php:141
+#: assets/js/9901e5ed764a3348e6e0.bundle.js:448
+msgid "Style Guide Preview"
+msgstr "Prévisualisation du guide de style"
+
+#: core/document-types/page-base.php:228
+msgid "Allow Comments"
+msgstr "Autoriser commentaires"
+
+#: core/document-types/page-base.php:216
+msgid "Order"
+msgstr "Ordre"
 
 #: includes/template-library/sources/local.php:518
 msgid "Invalid template type."
@@ -23,15 +160,131 @@ msgstr "Vous n’avez pas les droits suffisants pour installer les extensions de
 msgid "Get Elementor Pro"
 msgstr "Obtenir Elementor Pro"
 
+#: modules/ai/connect/ai.php:22 assets/js/ai-admin.js:355 assets/js/ai.js:538
+msgid "AI"
+msgstr "IA"
+
 #. translators: 1: Link open tag, 2: Link close tag.
 #: includes/widgets/image-carousel.php:326
 #: includes/widgets/image-gallery.php:146 includes/widgets/image.php:223
 msgid "Manage your site’s lightbox settings in the %1$sLightbox panel%2$s."
 msgstr "Gérer les réglages de la visionneuse du site dans le %1$spanneau visionneuse%2$s."
 
+#: includes/elements/container.php:336 includes/elements/container.php:353
+msgid "Container Layout"
+msgstr "Mise en page du conteneur"
+
 #: includes/editor-templates/panel-elements.php:11
 msgid "Globals"
 msgstr "Globales"
+
+#: includes/editor-templates/navigator.php:28
+msgid "Close navigator"
+msgstr "Fermer le navigateur"
+
+#: includes/editor-templates/navigator.php:27
+msgid "Close structure"
+msgstr "Fermer la structure"
+
+#: includes/editor-templates/navigator.php:16 assets/js/editor.js:34257
+msgid "Expand all elements"
+msgstr "Déplier tous les éléments"
+
+#: includes/editor-templates/global.php:66 includes/elements/container.php:342
+msgid "Grid"
+msgstr "Grille"
+
+#: includes/editor-templates/global.php:58 includes/elements/container.php:341
+msgid "Flexbox"
+msgstr "Flexbox"
+
+#: includes/editor-templates/global.php:50
+msgid "Which layout would you like to use?"
+msgstr "Quelle mise en page utiliser ?"
+
+#: includes/editor-templates/global.php:9
+msgid "Select your structure"
+msgstr "Choisir votre structure"
+
+#: includes/controls/groups/grid-container.php:220
+msgctxt "Grid Container Control"
+msgid "Align Content"
+msgstr "Aligner le contenu"
+
+#: includes/controls/groups/grid-container.php:206
+#: includes/controls/groups/grid-container.php:246
+msgctxt "Grid Container Control"
+msgid "Space Evenly"
+msgstr "Espace uniforme"
+
+#: includes/controls/groups/grid-container.php:202
+#: includes/controls/groups/grid-container.php:242
+msgctxt "Grid Container Control"
+msgid "Space Around"
+msgstr "Espace autour"
+
+#: includes/controls/groups/grid-container.php:198
+#: includes/controls/groups/grid-container.php:238
+msgctxt "Grid Container Control"
+msgid "Space Between"
+msgstr "Espace entre"
+
+#: includes/controls/groups/grid-container.php:190
+#: includes/controls/groups/grid-container.php:230
+msgctxt "Grid Container Control"
+msgid "Middle"
+msgstr "Au milieu"
+
+#: includes/controls/groups/grid-container.php:180
+msgctxt "Grid Container Control"
+msgid "Justify Content"
+msgstr "Justifier le contenu"
+
+#: includes/controls/groups/grid-container.php:153
+msgctxt "Grid Container Control"
+msgid "Align Items"
+msgstr "Aligner les éléments"
+
+#: includes/controls/groups/grid-container.php:141
+#: includes/controls/groups/grid-container.php:169
+msgctxt "Grid Container Control"
+msgid "Stretch"
+msgstr "Étirer"
+
+#: includes/controls/groups/grid-container.php:137
+#: includes/controls/groups/grid-container.php:165
+#: includes/controls/groups/grid-container.php:194
+#: includes/controls/groups/grid-container.php:234
+msgctxt "Grid Container Control"
+msgid "End"
+msgstr "FIn"
+
+#: includes/controls/groups/grid-container.php:133
+#: includes/controls/groups/grid-container.php:161
+msgctxt "Grid Container Control"
+msgid "Center"
+msgstr "Centrer"
+
+#: includes/controls/groups/grid-container.php:129
+#: includes/controls/groups/grid-container.php:157
+#: includes/controls/groups/grid-container.php:186
+#: includes/controls/groups/grid-container.php:226
+msgctxt "Grid Container Control"
+msgid "Start"
+msgstr "Début"
+
+#: includes/controls/groups/grid-container.php:125
+msgctxt "Grid Container Control"
+msgid "Justify Items"
+msgstr "Justifier les éléments"
+
+#: includes/controls/groups/grid-container.php:110
+msgid "Auto Flow"
+msgstr "Flux automatique"
+
+#: includes/controls/groups/grid-container.php:96
+msgid "Gaps"
+msgstr "Écarts"
 
 #: includes/controls/groups/grid-container.php:71
 msgid "Rows"
@@ -50,6 +303,35 @@ msgstr "Ligne"
 msgid "Switch units"
 msgstr "Changer d’unités"
 
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: core/experiments/manager.php:438
+msgid "Create pixel perfect layouts by placing elements in a customizable grid. Activate to add the CSS Grid option to container elements. %1$sLearn more%2$s"
+msgstr "Créez des mises en page parfaites au pixel près en plaçant des éléments dans une grille personnalisable. Activez pour ajouter l’option Grid CSS aux éléments de conteneur. %1$sEn savoir plus%2$s"
+
+#: core/experiments/manager.php:435
+msgid "Grid Container"
+msgstr "Conteneur grille"
+
+#: core/experiments/manager.php:414
+msgid "If you deactivate Flexbox Container, you will permanently delete all content created with containers and lose access to container-based features like Tabs and Menu widgets"
+msgstr "Désactiver le conteneur Flexbox va supprimer définitivement tout le contenu créé avec les conteneurs et fera perdre l’accès aux fonctions basées sur les conteneurs, les widgets d’onglets et de menu."
+
+#: core/editor/templates/editor-body-v2.view.php:29
+msgid "Top Bar"
+msgstr "Barre supérieure"
+
+#: core/editor/templates/editor-body-v1.view.php:27
+#: core/editor/templates/editor-body-v2.view.php:27
+#: includes/editor-templates/editor-wrapper.php:30
+#: assets/js/packages/editor.js:187
+msgid "Edit \"%s\" with Elementor"
+msgstr "Modifier « %s » avec Elementor"
+
+#. translators: 1: Link open tag, 2: Link close tag.
+#: core/document-types/page-base.php:97
+msgid "Set a different selector for the title in the %1$sLayout panel%2$s."
+msgstr "Définir un sélecteur différent pour le titre dans le %1$spanneau de mise en page%2$s."
+
 #: includes/widgets/icon-list.php:578
 msgid "Adjust Vertical Position"
 msgstr "Ajuster la position verticale"
@@ -62,6 +344,14 @@ msgstr "Alignement horizontal"
 msgid "Dismiss this alert."
 msgstr "Ignorer cette alerte."
 
+#: core/editor/editor.php:614
+msgid "Get a sneak peek of the new Editor powered by React. The beautiful design and experimental layout of the Top bar are just some of the exciting tools on their way. %s"
+msgstr "Découvrez en avant-première le nouvel éditeur optimisé par React. Le beau design et la disposition expérimentale de la barre Top ne sont que quelques-uns des outils passionnants sur leur chemin. %s"
+
+#: core/editor/editor.php:612
+msgid "Editor Top Bar"
+msgstr "Barre supérieure de l’éditeur"
+
 #: core/breakpoints/manager.php:329
 msgid "Tablet Landscape"
 msgstr "Tablette en mode paysage"
@@ -70,7 +360,7 @@ msgstr "Tablette en mode paysage"
 msgid "Tablet Portrait"
 msgstr "Tablette en mode portrait"
 
-#: core/admin/admin-notices.php:580
+#: core/admin/admin-notices.php:410
 msgid "Dismiss this notice."
 msgstr "Ignorer cet notification."
 
@@ -315,7 +605,7 @@ msgstr "Retirer tous les réglages de contenu et de site venants avec « %1$s 
 #. Translators: %s is the current item index.
 #: modules/nested-accordion/widgets/nested-accordion.php:69
 #: modules/nested-elements/base/widget-nested-base.php:45
-#: assets/js/editor.js:24395
+#: assets/js/editor.js:24448
 msgid "Item #%d"
 msgstr "Élément n° %d"
 
@@ -438,15 +728,15 @@ msgstr "Performance"
 msgid "There was a problem setting your site name"
 msgstr "Il y a eu un problème lors du réglage du nom de votre site"
 
-#: core/admin/admin-notices.php:533
+#: core/admin/admin-notices.php:363
 msgid "Try it out"
 msgstr "Faites un essai !"
 
-#: core/admin/admin-notices.php:530
+#: core/admin/admin-notices.php:360
 msgid "With our experimental speed boosting features you can go faster than ever before. Look for the Performance label on our Experiments page and activate those experiments to improve your site loading speed."
 msgstr "Grâce à nos fonctionnalités expérimentales d’accélération de la vitesse, vous pouvez aller plus vite que jamais. Recherchez le libellé Performance sur notre page d’expérimentation et activez ces expériences pour améliorer la vitesse de chargement de votre site."
 
-#: core/admin/admin-notices.php:529
+#: core/admin/admin-notices.php:359
 msgid "Improve your site’s performance score."
 msgstr "Améliorez le score de performance de votre site."
 
@@ -474,9 +764,9 @@ msgstr "Mettre à niveau maintenant"
 #: core/admin/admin.php:631 core/role-manager/role-manager.php:161
 #: includes/editor-templates/panel.php:313
 #: modules/promotions/admin-menu-items/go-pro-promotion-item.php:24
-#: assets/js/ai-admin.js:720 assets/js/ai-admin.js:729
-#: assets/js/ai-admin.js:1220 assets/js/ai.js:903 assets/js/ai.js:912
-#: assets/js/ai.js:1403 assets/js/app-packages.js:5947 assets/js/editor.js:6498
+#: assets/js/ai-admin.js:727 assets/js/ai-admin.js:735
+#: assets/js/ai-admin.js:1230 assets/js/ai.js:910 assets/js/ai.js:918
+#: assets/js/ai.js:1413 assets/js/app-packages.js:5947 assets/js/editor.js:6498
 #: assets/js/notes.js:153
 #: assets/js/onboarding.2da315965610a6ac2448.bundle.js:763
 #: assets/js/styleguide.js:196
@@ -516,7 +806,7 @@ msgstr "Pour atteindre la pleine hauteur du conteneur, utilisez %s."
 
 #: includes/elements/container.php:68 includes/elements/container.php:374
 #: modules/library/documents/container.php:52 assets/js/editor.js:9971
-#: assets/js/editor.js:38230
+#: assets/js/editor.js:38283
 msgid "Container"
 msgstr "Conteneur"
 
@@ -532,7 +822,7 @@ msgstr "Exclusion"
 msgid "Difference"
 msgstr "Différence"
 
-#: includes/editor-templates/global.php:34 assets/js/editor.js:32225
+#: includes/editor-templates/global.php:34 assets/js/editor.js:32278
 msgid "Add New Container"
 msgstr "Ajouter un nouveau conteneur"
 
@@ -881,13 +1171,13 @@ msgstr "Couleur de contour"
 msgid "Text Stroke"
 msgstr "Contour de texte"
 
-#: includes/admin-templates/beta-tester.php:53 assets/js/ai-admin.js:2913
-#: assets/js/ai-admin.js:6514 assets/js/ai.js:3208 assets/js/ai.js:6809
+#: includes/admin-templates/beta-tester.php:53 assets/js/ai-admin.js:2923
+#: assets/js/ai-admin.js:6522 assets/js/ai.js:3218 assets/js/ai.js:6817
 msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
 
-#: includes/admin-templates/beta-tester.php:48 assets/js/ai-admin.js:2909
-#: assets/js/ai-admin.js:6510 assets/js/ai.js:3204 assets/js/ai.js:6805
+#: includes/admin-templates/beta-tester.php:48 assets/js/ai-admin.js:2919
+#: assets/js/ai-admin.js:6518 assets/js/ai.js:3214 assets/js/ai.js:6813
 msgid "Terms of Service"
 msgstr "Conditions d’utilisation"
 
@@ -1096,7 +1386,7 @@ msgid "It seems like your site doesn't have any active Kit. The active Kit inclu
 msgstr "Il semble que votre site n’a pas de kit actif. Un kit actif comprend tous les réglages de votre site. En recréant votre kit, vous pourrez commencer à modifier à nouveau les réglages de votre site."
 
 #: includes/settings/tools.php:383 includes/settings/tools.php:386
-#: assets/js/editor.js:28008
+#: assets/js/editor.js:28061
 msgid "Recreate Kit"
 msgstr "Recréer le kit"
 
@@ -1142,7 +1432,7 @@ msgid "Submissions"
 msgstr "Envois"
 
 #: includes/editor-templates/panel.php:286
-#: includes/editor-templates/panel.php:288 assets/js/editor.js:12916
+#: includes/editor-templates/panel.php:288 assets/js/editor.js:12936
 msgid "Color Sampler"
 msgstr "Echantillon de couleurs"
 
@@ -1366,43 +1656,15 @@ msgstr "Écran large"
 msgid "Database update process is running in the background. Taking a while?"
 msgstr "Le processus de mise à jour de la base de données est exécuté en arrière-plan. Ça prend du temps ?"
 
-#: core/admin/admin-notices.php:493
+#: core/admin/admin-notices.php:323
 msgid "With Elementor Pro, you can control user access and make sure no one messes up your design."
 msgstr "Avec Elementor Pro, vous pouvez contrôler l’accès des utilisateurs/utilisatrices et vous assurer que personne ne gâche votre conception."
 
-#: core/admin/admin-notices.php:492
+#: core/admin/admin-notices.php:322
 msgid "Managing a multi-user site?"
 msgstr "Vous gérez un site multicompte ?"
 
-#: core/admin/admin-notices.php:450
-msgid "Build outstanding popups using Elementor Pro and get more leads, sales and subscribers."
-msgstr "Créez des fenêtres surgissantes exceptionnelles en utilisant Elementor Pro et obtenez plus de prospects, de ventes et d’abonnés/abonnées."
-
-#: core/admin/admin-notices.php:449
-msgid "Using popups on your site?"
-msgstr "Vous utilisez des fenêtres surgissantes sur votre site ?"
-
-#: core/admin/admin-notices.php:408
-msgid "Use Elementor Pro and enjoy unlimited integrations, visual design, templates and more."
-msgstr "Utilisez Elementor Pro et profitez d’un nombre illimité d’intégrations, de conceptions visuelles, de modèles et plus encore."
-
-#: core/admin/admin-notices.php:407
-msgid "Want to design better MailChimp forms?"
-msgstr "Vous souhaitez concevoir de meilleurs formulaires MailChimp ?"
-
-#: core/admin/admin-notices.php:367
-msgid "Try out Elementor Pro and design your forms visually with one powerful tool."
-msgstr "Essayez Elementor Pro et concevez vos formulaires visuellement avec un seul outil puissant."
-
-#: core/admin/admin-notices.php:366
-msgid "Using Elementor & Contact Form 7?"
-msgstr "Vous utilisez Elementor et Contact Form 7 ?"
-
-#: core/admin/admin-notices.php:325
-msgid "Using WooCommerce?"
-msgstr "Vous utilisez WooCommerce ?"
-
-#: core/admin/admin-notices.php:236
+#: core/admin/admin-notices.php:232
 msgid "Love using Elementor?"
 msgstr "Vous aimez utiliser Elementor ?"
 
@@ -1443,7 +1705,7 @@ msgstr "Exporter un kit de modèles"
 msgid "Design sites faster with a template kit that contains some or all components of a complete site, like templates, content & site settings.%1$sYou can import a kit and apply it to your site, or export the elements from this site to be used anywhere else. %2$s"
 msgstr "Concevez des sites plus rapidement grâce à un kit qui contient certains/tous les composants d’un site complet, comme les modèles, le contenu et les réglages du site.%1$sVous pouvez importer un kit et l’appliquer à votre site ou exporter les éléments de ce site pour les utiliser ailleurs. %2$s"
 
-#: app/modules/import-export/module.php:129 core/admin/admin-notices.php:538
+#: app/modules/import-export/module.php:129 core/admin/admin-notices.php:368
 #: core/editor/editor.php:618 assets/js/app.js:8619
 #: assets/js/kit-library.3dff2fd14c0324c37675.bundle.js:3386
 msgid "Learn more"
@@ -1758,7 +2020,7 @@ msgstr "Ajoute un nouveau type de contenu Elementor qui autorise la création in
 #: modules/landing-pages/documents/landing-page.php:54
 #: modules/landing-pages/module.php:47 modules/landing-pages/module.php:138
 #: modules/landing-pages/module.php:269 modules/landing-pages/module.php:281
-#: assets/js/app.js:11307 assets/js/editor.js:50391
+#: assets/js/app.js:11307 assets/js/editor.js:50579
 msgid "Landing Pages"
 msgstr "Page d’atterrissage"
 
@@ -1830,14 +2092,14 @@ msgstr "Avertissement : cela réinitialisera vos polices et couleurs globales a
 msgid "Rerun Update Script"
 msgstr "Relancer le script de mise à jour"
 
-#: core/upgrade/elementor-3-re-migrate-globals.php:60 assets/js/admin.js:1696
+#: core/upgrade/elementor-3-re-migrate-globals.php:60 assets/js/admin.js:2212
 msgid "Migrate to v3.0"
 msgstr "Migrer vers la v3.0"
 
 #: core/kits/documents/tabs/global-colors.php:24
 #: core/kits/documents/tabs/global-colors.php:43
 #: assets/js/9901e5ed764a3348e6e0.bundle.js:175 assets/js/app.js:11315
-#: assets/js/editor.js:45982
+#: assets/js/editor.js:46170
 msgid "Global Colors"
 msgstr "Couleurs globales"
 
@@ -1881,7 +2143,7 @@ msgstr "Télécharger"
 msgid "Optimized DOM Output"
 msgstr "Sortie DOM optimisée"
 
-#: core/admin/admin-notices.php:220 includes/settings/settings-page.php:374
+#: core/admin/admin-notices.php:216 includes/settings/settings-page.php:374
 msgid "Become a super contributor by opting in to share non-sensitive plugin data and to receive periodic email updates from us."
 msgstr "Devenez un super contributeur en choisissant de partager des données non sensibles de l’extension et de recevoir des e-mails périodiques de nos mises à jour."
 
@@ -1903,19 +2165,19 @@ msgid "Heads up, Please backup before upgrade!"
 msgstr "Attention, veuillez sauvegarder avant de mettre à niveau !"
 
 #: core/settings/editor-preferences/model.php:38
-#: includes/editor-templates/hotkeys.php:156 assets/js/editor.js:37031
+#: includes/editor-templates/hotkeys.php:156 assets/js/editor.js:37084
 #: assets/js/packages/editor-app-bar.js:1087
 msgid "User Preferences"
 msgstr "Préférences de compte"
 
 #: core/kits/manager.php:429 includes/editor-templates/hotkeys.php:118
-#: assets/js/app.js:11313 assets/js/app.js:11794 assets/js/editor.js:45931
-#: assets/js/editor.js:45935 assets/js/editor.js:45945
+#: assets/js/app.js:11313 assets/js/app.js:11794 assets/js/editor.js:46119
+#: assets/js/editor.js:46123 assets/js/editor.js:46133
 #: assets/js/packages/editor-app-bar.js:1014
 msgid "Site Settings"
 msgstr "Réglages du site"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:334 assets/js/editor.js:46354
+#: modules/nested-tabs/widgets/nested-tabs.php:334 assets/js/editor.js:46542
 msgid "Additional Settings"
 msgstr "Réglages supplémentaires"
 
@@ -2009,7 +2271,7 @@ msgstr "Faites connaissance avec Elementor en regardant notre série de vidéos 
 
 #: includes/settings/settings.php:326 assets/js/admin.js:282
 #: assets/js/admin.js:289 assets/js/common.js:2090 assets/js/common.js:2097
-#: assets/js/editor.js:39074 assets/js/editor.js:39081
+#: assets/js/editor.js:39127 assets/js/editor.js:39134
 msgid "Enable Unfiltered File Uploads"
 msgstr "Permettre les téléversements de fichier non filtré"
 
@@ -2103,10 +2365,6 @@ msgstr "Partager"
 msgid "Fullscreen"
 msgstr "Plein écran"
 
-#: core/admin/admin-notices.php:326
-msgid "With Elementor Pro’s WooCommerce Builder, you’ll be able to design your store without coding!"
-msgstr "Avec le constructeur WooCommerce d’Elementor Pro, vous pourrez concevoir votre boutique sans coder !"
-
 #. translators: %s: Widget title.
 #: core/editor/promotion.php:19
 msgid "Use %s widget and dozens more pro features to extend your toolbox and build sites faster and better."
@@ -2118,11 +2376,11 @@ msgid "%s Widget"
 msgstr "Le widget %s"
 
 #: core/experiments/manager.php:140 includes/editor-templates/global.php:29
-#: assets/js/ai-admin.js:4253 assets/js/ai-admin.js:4408
-#: assets/js/ai-admin.js:4583 assets/js/ai-admin.js:4886
-#: assets/js/ai-admin.js:5194 assets/js/ai.js:4548 assets/js/ai.js:4703
-#: assets/js/ai.js:4878 assets/js/ai.js:5181 assets/js/ai.js:5489
-#: assets/js/app.js:8190 assets/js/editor.js:46243
+#: assets/js/ai-admin.js:4261 assets/js/ai-admin.js:4416
+#: assets/js/ai-admin.js:4591 assets/js/ai-admin.js:4894
+#: assets/js/ai-admin.js:5202 assets/js/ai.js:4556 assets/js/ai.js:4711
+#: assets/js/ai.js:4886 assets/js/ai.js:5189 assets/js/ai.js:5497
+#: assets/js/app.js:8190 assets/js/editor.js:46431
 msgid "Back"
 msgstr "Retour"
 
@@ -2791,7 +3049,7 @@ msgstr "Fenêtres surgissantes"
 #: app/modules/site-editor/module.php:31
 #: core/common/modules/finder/categories/general.php:72
 #: includes/template-library/sources/local.php:1705
-#: assets/js/app-packages.js:6016 assets/js/editor.js:45956
+#: assets/js/app-packages.js:6016 assets/js/editor.js:46144
 #: assets/js/packages/editor-app-bar.js:1066
 msgid "Theme Builder"
 msgstr "Constructeur de thème"
@@ -2942,7 +3200,7 @@ msgid "Type to find anything in Elementor"
 msgstr "Saisissez pour trouver dans Elementor"
 
 #: includes/editor-templates/hotkeys.php:102 assets/js/admin-top-bar.js:124
-#: assets/js/common.js:4704 assets/js/editor.js:37043
+#: assets/js/common.js:4704 assets/js/editor.js:37096
 #: assets/js/packages/editor-app-bar.js:863
 msgid "Finder"
 msgstr "Finder"
@@ -2964,7 +3222,7 @@ msgid "Homepage"
 msgstr "Page d’accueil"
 
 #: core/common/modules/finder/categories/create.php:27
-#: assets/js/editor.js:44493
+#: assets/js/editor.js:44681
 msgid "Create"
 msgstr "Créer"
 
@@ -2983,7 +3241,8 @@ msgstr "Bien connecté."
 #: core/common/modules/connect/apps/connect.php:11
 #: core/common/modules/connect/connect-menu-item.php:24
 #: core/common/modules/connect/connect-menu-item.php:28
-#: assets/js/ai-admin.js:2923 assets/js/ai.js:3218
+#: assets/js/ai-admin.js:719 assets/js/ai-admin.js:2933 assets/js/ai.js:902
+#: assets/js/ai.js:3228
 msgid "Connect"
 msgstr "Connecter"
 
@@ -3039,7 +3298,7 @@ msgstr "Créer votre première page"
 msgid "Getting Started"
 msgstr "Premiers pas"
 
-#: includes/widgets/inner-section.php:35 assets/js/editor.js:27139
+#: includes/widgets/inner-section.php:35 assets/js/editor.js:27192
 msgid "Inner Section"
 msgstr "Section interne"
 
@@ -3058,7 +3317,7 @@ msgstr "Vide"
 #: includes/editor-templates/hotkeys.php:129
 #: includes/editor-templates/navigator.php:21
 #: includes/editor-templates/panel.php:88
-#: includes/editor-templates/panel.php:94 assets/js/editor.js:30671
+#: includes/editor-templates/panel.php:94 assets/js/editor.js:30724
 msgid "Navigator"
 msgstr "Navigateur"
 
@@ -3087,15 +3346,15 @@ msgstr "Ton"
 msgid "Debug Bar"
 msgstr "Barre de débogage"
 
-#: core/admin/admin-notices.php:288
+#: core/admin/admin-notices.php:284
 msgid "Hide Notification"
 msgstr "Masquer la notification"
 
-#: core/admin/admin-notices.php:282
+#: core/admin/admin-notices.php:278
 msgid "Happy To Help"
 msgstr "Ravi d’aider"
 
-#: core/admin/admin-notices.php:278
+#: core/admin/admin-notices.php:274
 msgid ""
 "You created over 10 pages with Elementor. Great job! If you can spare a minute,\n"
 "\t\t\t\tplease help us by leaving a five star review on WordPress.org."
@@ -3103,13 +3362,13 @@ msgstr ""
 "Vous avez créé plus de 10 pages avec Elementor. Bon travail ! Si vous avez le temps,\n"
 "\t\t\t\tveuillez nous aider en laissant un avis de cinq étoiles sur WordPress.org."
 
-#: core/admin/admin-notices.php:277
+#: core/admin/admin-notices.php:273
 msgid "Congrats!"
 msgstr "Félicitations !"
 
 #: core/kits/documents/tabs/settings-lightbox.php:76 includes/frontend.php:1390
-#: includes/widgets/google-maps.php:149 assets/js/ai-admin.js:5086
-#: assets/js/ai-admin.js:5095 assets/js/ai.js:5381 assets/js/ai.js:5390
+#: includes/widgets/google-maps.php:149 assets/js/ai-admin.js:5094
+#: assets/js/ai-admin.js:5103 assets/js/ai.js:5389 assets/js/ai.js:5398
 msgid "Zoom"
 msgstr "Zoom"
 
@@ -3180,7 +3439,7 @@ msgstr "Pro"
 msgid "Blend Mode"
 msgstr "Mode de fusion"
 
-#: includes/editor-templates/hotkeys.php:42 assets/js/editor.js:29773
+#: includes/editor-templates/hotkeys.php:42 assets/js/editor.js:29826
 msgid "Copy"
 msgstr "Copier"
 
@@ -3241,7 +3500,7 @@ msgstr "J’ai Elementor Pro"
 msgid "Elementor Debugger"
 msgstr "Outil de débogage d’Elementor"
 
-#: core/admin/admin.php:227 assets/js/admin.js:1509 assets/js/gutenberg.js:109
+#: core/admin/admin.php:227 assets/js/admin.js:2025 assets/js/gutenberg.js:109
 msgid "Back to WordPress Editor"
 msgstr "Retour à l’éditeur WordPress"
 
@@ -3549,7 +3808,7 @@ msgstr "Hourra ! Votre %s est en ligne."
 msgid "Published"
 msgstr "Publié"
 
-#: core/common/modules/finder/template.php:19 assets/js/editor.js:10724
+#: core/common/modules/finder/template.php:19 assets/js/editor.js:10744
 #: assets/js/kit-library.3dff2fd14c0324c37675.bundle.js:1871
 msgid "No Results Found"
 msgstr "Aucun résultat trouvé"
@@ -3636,8 +3895,8 @@ msgid "Remove"
 msgstr "Retirer"
 
 #: includes/editor-templates/hotkeys.php:74
-#: includes/editor-templates/repeater.php:21 assets/js/editor.js:29758
-#: assets/js/editor.js:49062
+#: includes/editor-templates/repeater.php:21 assets/js/editor.js:29811
+#: assets/js/editor.js:49250
 msgid "Duplicate"
 msgstr "Dupliquer"
 
@@ -3646,12 +3905,12 @@ msgid "Drag & Drop"
 msgstr "Glisser & déposer"
 
 #: includes/editor-templates/panel.php:151
-#: includes/editor-templates/panel.php:153 assets/js/editor.js:35424
+#: includes/editor-templates/panel.php:153 assets/js/editor.js:35477
 msgid "Hide Panel"
 msgstr "Masquer le panneau"
 
-#: includes/editor-templates/panel.php:143 assets/js/editor.js:32216
-#: assets/js/editor.js:32676 assets/js/packages/editor-app-bar.js:665
+#: includes/editor-templates/panel.php:143 assets/js/editor.js:32269
+#: assets/js/editor.js:32729 assets/js/packages/editor-app-bar.js:665
 msgid "Save as Template"
 msgstr "Enregistrer comme modèle"
 
@@ -3667,7 +3926,7 @@ msgstr "Enregistrer le brouillon"
 msgid "Save Options"
 msgstr "Enregistrer les options"
 
-#: includes/editor-templates/panel.php:119 assets/js/editor.js:24779
+#: includes/editor-templates/panel.php:119 assets/js/editor.js:24832
 #: assets/js/packages/editor-app-bar.js:764
 msgid "Publish"
 msgstr "Publier"
@@ -3781,7 +4040,7 @@ msgstr "Nous sommes désolés, mais quelque chose s’est mal passé. Cliquer su
 msgid "The preview could not be loaded"
 msgstr "La prévisualisation n’a pas pu être chargée"
 
-#: core/admin/admin-notices.php:149 core/admin/admin-notices.php:184
+#: core/admin/admin-notices.php:145 core/admin/admin-notices.php:180
 msgid "Update Notification"
 msgstr "Notification de mise à jour"
 
@@ -3806,19 +4065,19 @@ msgid "Switch to Revisions tab for older versions"
 msgstr "Basculer sur l’onglet Révisions pour les anciennes versions"
 
 #: modules/history/views/history-panel-template.php:10
-#: assets/js/editor.js:48789
+#: assets/js/editor.js:48977
 msgid "Revisions"
 msgstr "Révisions"
 
 #: includes/editor-templates/hotkeys.php:19
 #: includes/editor-templates/templates.php:124
-#: modules/history/views/history-panel-template.php:9 assets/js/editor.js:48786
+#: modules/history/views/history-panel-template.php:9 assets/js/editor.js:48974
 msgid "Actions"
 msgstr "Actions"
 
 #: includes/editor-templates/hotkeys.php:147
 #: includes/editor-templates/panel.php:97
-#: includes/editor-templates/panel.php:99 assets/js/editor.js:49386
+#: includes/editor-templates/panel.php:99 assets/js/editor.js:49574
 #: assets/js/packages/editor-app-bar.js:907
 msgid "History"
 msgstr "Historique"
@@ -3910,7 +4169,7 @@ msgid "Sets the default space between widgets (Default: 20px)"
 msgstr "Définit l’espace par défaut entre les widgets (par défaut : 20px)"
 
 #: includes/rollback.php:165 includes/settings/tools.php:150
-#: includes/settings/tools.php:323 assets/js/admin.js:1680
+#: includes/settings/tools.php:323 assets/js/admin.js:2196
 msgid "Rollback to Previous Version"
 msgstr "Rétrograder à la version précédente"
 
@@ -3999,7 +4258,7 @@ msgstr "Pour la résolution de conflits de configuration serveur."
 #: modules/nested-tabs/widgets/nested-tabs.php:345
 #: modules/safe-mode/module.php:48 assets/js/admin.js:282
 #: assets/js/app-packages.js:2937 assets/js/app.js:4257
-#: assets/js/common.js:2090 assets/js/editor.js:39074
+#: assets/js/common.js:2090 assets/js/editor.js:39127
 msgid "Enable"
 msgstr "Activer"
 
@@ -4041,7 +4300,7 @@ msgstr "Sélectionner"
 msgid "Paste Style"
 msgstr "Coller le style"
 
-#: core/common/modules/finder/categories/edit.php:118 assets/js/editor.js:18172
+#: core/common/modules/finder/categories/edit.php:118 assets/js/editor.js:18225
 msgid "Template"
 msgstr "Modèle"
 
@@ -4099,7 +4358,7 @@ msgid "Coming Soon"
 msgstr "Arrive bientôt"
 
 #: core/kits/documents/kit.php:169 includes/maintenance-mode.php:215
-#: assets/js/editor.js:49061
+#: assets/js/editor.js:49249
 msgid "Disabled"
 msgstr "Désactivé"
 
@@ -4487,7 +4746,7 @@ msgstr "%s sont désactivés"
 msgid "Update changes to page"
 msgstr "Mettre à jour les modifications apportées à la page"
 
-#: core/admin/admin-notices.php:244
+#: core/admin/admin-notices.php:240
 msgid "No thanks"
 msgstr "Non merci"
 
@@ -4511,7 +4770,7 @@ msgstr "Étire la section en pleine largeur en utilisant JS."
 msgid "Stretch Section"
 msgstr "Étirer la section"
 
-#: core/admin/admin-notices.php:233 includes/elements/section.php:494
+#: core/admin/admin-notices.php:229 includes/elements/section.php:494
 #: includes/settings/settings-page.php:374
 msgid "Learn more."
 msgstr "En savoir plus."
@@ -4655,8 +4914,8 @@ msgid "Back to Library"
 msgstr "Retour à la bibliothèque"
 
 #: includes/editor-templates/templates.php:176
-#: includes/editor-templates/templates.php:200 assets/js/ai-admin.js:2994
-#: assets/js/ai.js:3289 assets/js/editor.js:8258
+#: includes/editor-templates/templates.php:200 assets/js/ai-admin.js:3004
+#: assets/js/ai.js:3299 assets/js/editor.js:8258
 msgid "Insert"
 msgstr "Insérer"
 
@@ -4672,7 +4931,7 @@ msgstr "Bibliothèque"
 #: assets/js/app-packages.js:4097 assets/js/app-packages.js:4618
 #: assets/js/app.js:3202 assets/js/app.js:5317 assets/js/app.js:5720
 #: assets/js/app.js:7854 assets/js/app.js:8686 assets/js/app.js:12173
-#: assets/js/editor.js:46246 assets/js/import-export-admin.js:328
+#: assets/js/editor.js:46434 assets/js/import-export-admin.js:328
 msgid "Close"
 msgstr "Fermer"
 
@@ -4696,9 +4955,7 @@ msgid "If you want to modify the source code of your theme, we recommend using a
 msgstr "Pour modifier le code source de votre thème, nous vous recommandons d’utiliser un <a href=\"%s\">thème enfant</a>."
 
 #: app/modules/import-export/module.php:148
-#: app/modules/import-export/module.php:160 core/admin/admin-notices.php:330
-#: core/admin/admin-notices.php:371 core/admin/admin-notices.php:413
-#: core/admin/admin-notices.php:455 core/admin/admin-notices.php:497
+#: app/modules/import-export/module.php:160 core/admin/admin-notices.php:327
 #: core/experiments/manager.php:322 core/experiments/manager.php:337
 #: core/experiments/manager.php:352 core/experiments/manager.php:367
 #: core/experiments/manager.php:379 core/experiments/manager.php:391
@@ -4709,9 +4966,9 @@ msgstr "Pour modifier le code source de votre thème, nous vous recommandons d�
 #: assets/js/app-packages.js:2808 assets/js/app-packages.js:5787
 #: assets/js/app-packages.js:5896 assets/js/app.js:4128 assets/js/app.js:8138
 #: assets/js/app.js:9277 assets/js/app.js:10715 assets/js/app.js:11025
-#: assets/js/app.js:11071 assets/js/app.js:12172 assets/js/editor.js:13961
-#: assets/js/editor.js:27635 assets/js/editor.js:27666
-#: assets/js/editor.js:39607
+#: assets/js/app.js:11071 assets/js/app.js:12172 assets/js/editor.js:13981
+#: assets/js/editor.js:27688 assets/js/editor.js:27719
+#: assets/js/editor.js:39660
 #: assets/js/kit-library.3dff2fd14c0324c37675.bundle.js:3731
 msgid "Learn More"
 msgstr "En savoir plus"
@@ -4719,7 +4976,7 @@ msgstr "En savoir plus"
 #: core/kits/documents/tabs/global-typography.php:28
 #: core/kits/documents/tabs/global-typography.php:47
 #: assets/js/9901e5ed764a3348e6e0.bundle.js:224 assets/js/app.js:11315
-#: assets/js/editor.js:45991
+#: assets/js/editor.js:46179
 msgid "Global Fonts"
 msgstr "Polices globales"
 
@@ -4905,19 +5162,19 @@ msgstr "J’ai trouvé un meilleure extension"
 msgid "I no longer need the plugin"
 msgstr "Je n’ai plus besoin de cette extension"
 
-#: core/admin/admin-notices.php:145 core/admin/admin-notices.php:153
+#: core/admin/admin-notices.php:141 core/admin/admin-notices.php:149
 #: core/base/db-upgrades-manager.php:97
 msgid "Update Now"
 msgstr "Mettre à jour maintenant"
 
 #. translators: %s: Elementor version.
-#: core/admin/admin-notices.php:140
+#: core/admin/admin-notices.php:136
 msgid "View Elementor version %s details"
 msgstr "Voir les détails de la version %s d’Elementor"
 
 #. translators: 1: Details URL, 2: Accessibility text, 3: Version number, 4:
 #. Update URL, 5: Accessibility text.
-#: core/admin/admin-notices.php:136
+#: core/admin/admin-notices.php:132
 msgid "There is a new version of Elementor Page Builder available. <a href=\"%1$s\" class=\"thickbox open-plugin-details-modal\" aria-label=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\" class=\"update-link\" aria-label=\"%5$s\">update now</a>."
 msgstr "Une nouvelle version d’Elementor Page Builder est disponible. <a href=\"%1$s\" class=\"thickbox open-plugin-details-modal\" aria-label=\"%2$s\">Voir les détails de la version %3$s</a> ou <a href=\"%4$s\" class=\"update-link\" aria-label=\"%5$s\">mettre à jour maintenant</a>."
 
@@ -4925,9 +5182,9 @@ msgstr "Une nouvelle version d’Elementor Page Builder est disponible. <a href=
 msgid "Custom URL"
 msgstr "URL personnalisée"
 
-#: includes/editor-templates/hotkeys.php:50 assets/js/editor.js:29785
-#: assets/js/editor.js:31745 assets/js/editor.js:41107
-#: assets/js/editor.js:42099
+#: includes/editor-templates/hotkeys.php:50 assets/js/editor.js:29838
+#: assets/js/editor.js:31798 assets/js/editor.js:41160
+#: assets/js/editor.js:42152
 msgid "Paste"
 msgstr "Coller"
 
@@ -4936,7 +5193,7 @@ msgstr "Coller"
 #: includes/elements/section.php:553 includes/widgets/accordion.php:312
 #: includes/widgets/accordion.php:477 includes/widgets/common.php:680
 #: includes/widgets/toggle.php:339 includes/widgets/toggle.php:496
-#: assets/js/ai-admin.js:3261 assets/js/ai.js:3556
+#: assets/js/ai-admin.js:3271 assets/js/ai.js:3566
 msgid "Background"
 msgstr "Arrière-plan"
 
@@ -5097,6 +5354,10 @@ msgctxt "Image Size Control"
 msgid "Full"
 msgstr "Entière"
 
+#: includes/controls/gallery.php:92
+msgid "Edit gallery"
+msgstr "Modifier la galerie"
+
 #: includes/widgets/icon-box.php:511 includes/widgets/icon-list.php:552
 #: includes/widgets/image-box.php:437
 msgid "Vertical Alignment"
@@ -5148,9 +5409,9 @@ msgstr "La liste des polices utilisées si la police choisie n’est pas disponi
 msgid "Form"
 msgstr "Formulaire"
 
-#: includes/editor-templates/panel-elements.php:10 assets/js/editor.js:18818
-#: assets/js/editor.js:20862 assets/js/editor.js:21293
-#: assets/js/editor.js:36192 assets/js/packages/editor-app-bar.js:799
+#: includes/editor-templates/panel-elements.php:10 assets/js/editor.js:18871
+#: assets/js/editor.js:20915 assets/js/editor.js:21346
+#: assets/js/editor.js:36245 assets/js/packages/editor-app-bar.js:799
 msgid "Elements"
 msgstr "Éléments"
 
@@ -5160,7 +5421,7 @@ msgstr "Éléments"
 #: includes/editor-templates/responsive-bar.php:61
 #: includes/managers/controls.php:322 includes/settings/settings.php:192
 #: includes/settings/settings.php:387 modules/usage/settings-reporter.php:13
-#: assets/js/editor.js:9244 assets/js/editor.js:37027 assets/js/editor.js:46370
+#: assets/js/editor.js:9244 assets/js/editor.js:37080 assets/js/editor.js:46558
 msgid "Settings"
 msgstr "Réglages"
 
@@ -5419,8 +5680,8 @@ msgid "Primary Color"
 msgstr "Couleur principale"
 
 #: includes/widgets/icon-box.php:127 includes/widgets/icon.php:142
-#: includes/widgets/social-icons.php:262 assets/js/ai-admin.js:3311
-#: assets/js/ai.js:3606
+#: includes/widgets/social-icons.php:262 assets/js/ai-admin.js:3321
+#: assets/js/ai.js:3616
 msgid "Square"
 msgstr "Carré"
 
@@ -5623,8 +5884,8 @@ msgstr "Écart"
 #: modules/shapes/widgets/text-path.php:491
 #: modules/shapes/widgets/text-path.php:511
 #: modules/shapes/widgets/text-path.php:556
-#: modules/shapes/widgets/text-path.php:576 assets/js/editor.js:46507
-#: assets/js/editor.js:46550
+#: modules/shapes/widgets/text-path.php:576 assets/js/editor.js:46695
+#: assets/js/editor.js:46738
 msgid "Color"
 msgstr "Couleur"
 
@@ -5801,11 +6062,11 @@ msgid "Button"
 msgstr "Bouton"
 
 #: core/common/modules/finder/categories/edit.php:30
-#: includes/controls/popover-toggle.php:68 assets/js/ai-admin.js:5022
-#: assets/js/ai-admin.js:5100 assets/js/ai-admin.js:5109
-#: assets/js/ai-admin.js:5206 assets/js/ai-admin.js:5923 assets/js/ai.js:5317
-#: assets/js/ai.js:5395 assets/js/ai.js:5404 assets/js/ai.js:5501
-#: assets/js/ai.js:6218
+#: includes/controls/popover-toggle.php:68 assets/js/ai-admin.js:5030
+#: assets/js/ai-admin.js:5108 assets/js/ai-admin.js:5117
+#: assets/js/ai-admin.js:5214 assets/js/ai-admin.js:5931 assets/js/ai.js:5325
+#: assets/js/ai.js:5403 assets/js/ai.js:5412 assets/js/ai.js:5509
+#: assets/js/ai.js:6226
 msgid "Edit"
 msgstr "Modifier"
 
@@ -6002,7 +6263,7 @@ msgstr "Éléments d’accordéon"
 msgid "Accordion"
 msgstr "Accordéon"
 
-#: core/admin/admin-notices.php:239
+#: core/admin/admin-notices.php:235
 msgid "Sure! I'd love to help"
 msgstr "Évidemment ! J’adorerais aider"
 
@@ -6234,7 +6495,7 @@ msgstr "Largeur"
 #: includes/elements/column.php:113 includes/elements/container.php:1297
 #: includes/elements/section.php:227 includes/managers/controls.php:321
 #: includes/managers/elements.php:281 includes/widgets/common.php:175
-#: includes/widgets/icon-list.php:95 assets/js/editor.js:36009
+#: includes/widgets/icon-list.php:95 assets/js/editor.js:36062
 msgid "Layout"
 msgstr "Mise en page"
 
@@ -6328,8 +6589,8 @@ msgstr "Couleur du texte"
 #: core/kits/documents/tabs/theme-style-typography.php:19
 #: core/kits/documents/tabs/theme-style-typography.php:38
 #: core/schemes/typography.php:64 includes/elements/column.php:647
-#: includes/elements/section.php:1104 assets/js/editor-modules.js:1546
-#: assets/js/editor.js:41778
+#: includes/elements/section.php:1104 assets/js/editor-modules.js:1439
+#: assets/js/editor.js:41831
 msgid "Typography"
 msgstr "Typographie"
 
@@ -6352,7 +6613,7 @@ msgstr "Section"
 #: includes/editor-templates/navigator.php:20
 #: includes/editor-templates/panel.php:87
 #: includes/editor-templates/panel.php:93 includes/elements/section.php:531
-#: includes/elements/section.php:539 assets/js/editor.js:30671
+#: includes/elements/section.php:539 assets/js/editor.js:30724
 #: assets/js/packages/editor-app-bar.js:1042
 msgid "Structure"
 msgstr "Structure"
@@ -6367,13 +6628,13 @@ msgstr "Responsive"
 #: core/dynamic-tags/tag.php:88 includes/elements/column.php:737
 #: includes/elements/section.php:1193 includes/managers/controls.php:319
 #: includes/settings/settings.php:296 assets/js/editor.js:9250
-#: assets/js/editor.js:36006
+#: assets/js/editor.js:36059
 msgid "Advanced"
 msgstr "Avancé"
 
 #: includes/managers/controls.php:318 includes/widgets/divider.php:363
-#: includes/widgets/icon-list.php:276 assets/js/ai-admin.js:3823
-#: assets/js/ai.js:4118 assets/js/editor.js:9247 assets/js/editor.js:36003
+#: includes/widgets/icon-list.php:276 assets/js/ai-admin.js:3831
+#: assets/js/ai.js:4126 assets/js/editor.js:9247 assets/js/editor.js:36056
 msgid "Style"
 msgstr "Style"
 
@@ -6384,7 +6645,7 @@ msgstr "Style"
 #: includes/widgets/testimonial.php:95 includes/widgets/testimonial.php:224
 #: includes/widgets/toggle.php:123 includes/widgets/toggle.php:488
 #: modules/nested-tabs/widgets/nested-tabs.php:964 assets/js/app.js:11305
-#: assets/js/app.js:11798 assets/js/editor.js:36000
+#: assets/js/app.js:11798 assets/js/editor.js:36053
 msgid "Content"
 msgstr "Contenu"
 
@@ -6413,13 +6674,13 @@ msgstr "Palette de couleur"
 #: core/schemes/base-ui.php:119 includes/controls/image-dimensions.php:102
 #: includes/editor-templates/panel.php:175
 #: modules/history/views/revisions-panel-template.php:14
-#: assets/js/editor.js:9878 assets/js/editor.js:37100
+#: assets/js/editor.js:9878 assets/js/editor.js:37153
 msgid "Apply"
 msgstr "Appliquer"
 
 #: core/schemes/base-ui.php:115
 #: modules/history/views/revisions-panel-template.php:11
-#: assets/js/editor.js:5007 assets/js/editor.js:43750
+#: assets/js/editor.js:5007 assets/js/editor.js:43938
 msgid "Discard"
 msgstr "Jeter"
 
@@ -6438,7 +6699,7 @@ msgstr "Aperçu"
 #: includes/editor-templates/templates.php:19
 #: includes/editor-templates/templates.php:217
 #: includes/editor-templates/templates.php:228 assets/js/editor.js:5006
-#: assets/js/editor.js:43749 assets/js/kit-elements-defaults-editor.js:615
+#: assets/js/editor.js:43937 assets/js/kit-elements-defaults-editor.js:615
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -6450,6 +6711,10 @@ msgstr "Aide"
 #: core/breakpoints/manager.php:314
 msgid "Mobile Portrait"
 msgstr "Portrait mobile"
+
+#: core/breakpoints/manager.php:319
+msgid "Mobile Landscape"
+msgstr "Mobile Paysage"
 
 #: core/settings/editor-preferences/model.php:134
 #: assets/js/kit-library.3dff2fd14c0324c37675.bundle.js:4287
@@ -6521,8 +6786,8 @@ msgstr "Ajouter un élément"
 #: core/kits/views/trash-kit-confirmation.php:30
 #: includes/editor-templates/hotkeys.php:67
 #: includes/editor-templates/templates.php:185 assets/js/editor.js:10105
-#: assets/js/editor.js:27357 assets/js/editor.js:29850
-#: assets/js/editor.js:46560 assets/js/import-export-admin.js:287
+#: assets/js/editor.js:27410 assets/js/editor.js:29903
+#: assets/js/editor.js:46748 assets/js/import-export-admin.js:287
 msgid "Delete"
 msgstr "Effacer"
 
@@ -6536,7 +6801,7 @@ msgstr "Sélectionnez une icône"
 #: includes/widgets/common.php:1014 includes/widgets/image-carousel.php:703
 #: includes/widgets/image-gallery.php:201 includes/widgets/social-icons.php:190
 #: includes/widgets/social-icons.php:348 modules/shapes/module.php:29
-#: assets/js/editor.js:44319
+#: assets/js/editor.js:44507
 msgid "Custom"
 msgstr "Personnalisé"
 
@@ -6645,12 +6910,12 @@ msgstr "Solide"
 #: includes/widgets/image-carousel.php:349
 #: includes/widgets/image-gallery.php:134 includes/widgets/image.php:162
 #: includes/widgets/image.php:193 includes/widgets/video.php:534
-#: modules/nested-tabs/widgets/nested-tabs.php:360 assets/js/ai-admin.js:3247
-#: assets/js/ai-admin.js:3253 assets/js/ai-admin.js:3263
-#: assets/js/ai-admin.js:3274 assets/js/ai-admin.js:3290
-#: assets/js/ai-admin.js:3301 assets/js/ai.js:3542 assets/js/ai.js:3548
-#: assets/js/ai.js:3558 assets/js/ai.js:3569 assets/js/ai.js:3585
-#: assets/js/ai.js:3596
+#: modules/nested-tabs/widgets/nested-tabs.php:360 assets/js/ai-admin.js:3257
+#: assets/js/ai-admin.js:3263 assets/js/ai-admin.js:3273
+#: assets/js/ai-admin.js:3284 assets/js/ai-admin.js:3300
+#: assets/js/ai-admin.js:3311 assets/js/ai.js:3552 assets/js/ai.js:3558
+#: assets/js/ai.js:3568 assets/js/ai.js:3579 assets/js/ai.js:3595
+#: assets/js/ai.js:3606
 msgid "None"
 msgstr "Aucun"
 
@@ -6942,8 +7207,8 @@ msgstr "Haut"
 #: includes/widgets/text-editor.php:131 includes/widgets/text-editor.php:266
 #: includes/widgets/traits/button-trait.php:74
 #: modules/page-templates/module.php:296
-#: modules/shapes/widgets/text-path.php:187 assets/js/editor.js:44311
-#: assets/js/editor.js:44322
+#: modules/shapes/widgets/text-path.php:187 assets/js/editor.js:44499
+#: assets/js/editor.js:44510
 msgid "Default"
 msgstr "Par défaut"
 
