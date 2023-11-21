@@ -84,7 +84,7 @@ function seopress_advanced_advanced_category_url_callback() {
 	if (get_option('category_base')) {
 		$category_base = '/' . get_option('category_base');
 	}
-
+    /* translators: %s category base, eg: /category/ */
 	printf(__('Remove <strong>%s</strong> in your permalinks', 'wp-seopress'), $category_base); ?>
 </label>
 
@@ -174,7 +174,7 @@ function seopress_advanced_advanced_wp_generator_callback() {
 	<?php _e('Remove WordPress meta generator in source code', 'wp-seopress'); ?>
 </label>
 
-<pre><?php esc_attr_e('<meta name="generator" content="WordPress 6.2" />', 'wp-seopress'); ?></pre>
+<pre><?php echo esc_attr('<meta name="generator" content="WordPress 6.2" />'); ?></pre>
 
 <?php if (isset($options['seopress_advanced_advanced_wp_generator'])) {
 		esc_attr($options['seopress_advanced_advanced_wp_generator']);
@@ -484,31 +484,6 @@ function seopress_advanced_appearance_adminbar_callback() {
 	}
 }
 
-function seopress_advanced_appearance_universal_metabox_callback() {
-	$options = get_option('seopress_advanced_option_name');
-
-	if(!$options){
-		$check = "1";
-	} else {
-		$check = isset($options['seopress_advanced_appearance_universal_metabox']) && $options['seopress_advanced_appearance_universal_metabox'] === '1' ? true : false;
-	}
-?>
-
-<label for="seopress_advanced_appearance_universal_metabox">
-	<input id="seopress_advanced_appearance_universal_metabox"
-		name="seopress_advanced_option_name[seopress_advanced_appearance_universal_metabox]"
-		type="checkbox"
-		<?php checked($check, "1"); ?>
-		value="1"/>
-
-	<?php _e('Enable the universal SEO metabox for the Block Editor (Gutenberg)', 'wp-seopress'); ?>
-</label>
-
-<?php if (isset($options['seopress_advanced_appearance_adminbar'])) {
-		esc_attr($options['seopress_advanced_appearance_adminbar']);
-	}
-}
-
 function seopress_advanced_appearance_universal_metabox_disable_callback() {
 	$docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() : '';
 	$options = get_option('seopress_advanced_option_name');
@@ -531,11 +506,42 @@ function seopress_advanced_appearance_universal_metabox_disable_callback() {
 </label>
 
 <p class="description">
+    <?php _e('Uncheck this option to edit your SEO directly from your page builder UI.','wp-seopress'); ?>
+</p>
+<p class="description">
 	<a class="seopress-help" href="<?php echo $docs['universal']['introduction']; ?>" target="_blank">
 		<?php _e('Learn more about how we interface with all page builders to optimize your productivity','wp-seopress'); ?>
 		<span class="seopress-help dashicons dashicons-external"></span>
 	</a>
 </p>
+
+<?php if (isset($options['seopress_advanced_appearance_adminbar'])) {
+		esc_attr($options['seopress_advanced_appearance_adminbar']);
+	}
+}
+
+function seopress_advanced_appearance_universal_metabox_callback() {
+	$options = get_option('seopress_advanced_option_name');
+
+	if(!$options){
+		$check = "1";
+	} else {
+		$check = isset($options['seopress_advanced_appearance_universal_metabox']) && $options['seopress_advanced_appearance_universal_metabox'] === '1' ? true : false;
+	}
+?>
+
+<label for="seopress_advanced_appearance_universal_metabox">
+	<input id="seopress_advanced_appearance_universal_metabox"
+		name="seopress_advanced_option_name[seopress_advanced_appearance_universal_metabox]"
+		type="checkbox"
+		<?php checked($check, "1"); ?>
+		value="1"/>
+
+	<?php _e('Enable the universal SEO metabox for the Block Editor (Gutenberg)', 'wp-seopress'); ?>
+
+    <p class="description"><?php _e('Uncheck this option to keep the old SEO metaboxes located below the post content with the Block Editor.','wp-seopress'); ?></p>
+    <p class="description"><?php _e('The previous option must be unchecked.','wp-seopress'); ?></p>
+</label>
 
 <?php if (isset($options['seopress_advanced_appearance_adminbar'])) {
 		esc_attr($options['seopress_advanced_appearance_adminbar']);
@@ -751,23 +757,43 @@ function seopress_advanced_appearance_nofollow_col_callback() {
 	}
 }
 
-function seopress_advanced_appearance_words_col_callback() {
+function seopress_advanced_appearance_inbound_col_callback() {
 	$options = get_option('seopress_advanced_option_name');
 
-	$check = isset($options['seopress_advanced_appearance_words_col']); ?>
+	$check = isset($options['seopress_advanced_appearance_inbound_col']); ?>
 
-<label for="seopress_advanced_appearance_words_col">
-	<input id="seopress_advanced_appearance_words_col"
-		name="seopress_advanced_option_name[seopress_advanced_appearance_words_col]" type="checkbox" <?php if ('1' == $check) { ?>
+<label for="seopress_advanced_appearance_inbound_col">
+	<input id="seopress_advanced_appearance_inbound_col"
+		name="seopress_advanced_option_name[seopress_advanced_appearance_inbound_col]" type="checkbox" <?php if ('1' == $check) { ?>
 	checked="yes"
 	<?php } ?>
 	value="1"/>
 
-	<?php _e('Display total number of words in content', 'wp-seopress'); ?>
+	<?php _e('Display number of inbound links', 'wp-seopress'); ?>
 </label>
 
-<?php if (isset($options['seopress_advanced_appearance_words_col'])) {
-		esc_attr($options['seopress_advanced_appearance_words_col']);
+<?php if (isset($options['seopress_advanced_appearance_inbound_col'])) {
+		esc_attr($options['seopress_advanced_appearance_inbound_col']);
+	}
+}
+
+function seopress_advanced_appearance_outbound_col_callback() {
+	$options = get_option('seopress_advanced_option_name');
+
+	$check = isset($options['seopress_advanced_appearance_outbound_col']); ?>
+
+<label for="seopress_advanced_appearance_outbound_col">
+	<input id="seopress_advanced_appearance_outbound_col"
+		name="seopress_advanced_option_name[seopress_advanced_appearance_outbound_col]" type="checkbox" <?php if ('1' == $check) { ?>
+	checked="yes"
+	<?php } ?>
+	value="1"/>
+
+	<?php _e('Display number of outbound links', 'wp-seopress'); ?>
+</label>
+
+<?php if (isset($options['seopress_advanced_appearance_outbound_col'])) {
+		esc_attr($options['seopress_advanced_appearance_outbound_col']);
 	}
 }
 

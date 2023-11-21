@@ -77,72 +77,6 @@ class GetContent
      *
      * @return array
      */
-    protected function analyzeWordCounters($analyzes, $data, $post)
-    {
-        $desc = null;
-        if (isset($data['words_counter']) || isset($data['words_counter_unique'])) {
-            $desc = '<p>' . __('Words counter is not a direct ranking factor. But, your content must be as qualitative as possible, with relevant and unique information. To fulfill these conditions, your article requires a minimum of paragraphs, so words.', 'wp-seopress') . '</p>
-	<ul>
-		<li>' . $data['words_counter'] . ' ' . __('words found.', 'wp-seopress') . '</li>
-		<li>' . $data['words_counter_unique'] . ' ' . __('unique words found.', 'wp-seopress') . '</li>';
-
-            if ($data['words_counter'] >= 299) {
-                $desc .= '<li><span class="dashicons dashicons-yes"></span>' . __('Your content is composed of more than 300 words, which is the minimum for a post.', 'wp-seopress') . '</li>';
-            } else {
-                $desc .= '<li><span class="dashicons dashicons-no-alt"></span>' . __('Your content is too short. Add a few more paragraphs!', 'wp-seopress') . '</li>';
-                $analyzes['words_counter']['impact'] = 'medium';
-            }
-            $desc .= '</ul>';
-
-            $analyzes['words_counter']['desc'] = $desc;
-        } else {
-            $analyzes['words_counter']['desc']   = '<p><span class="dashicons dashicons-no-alt"></span>' . __('No content? Add a few more paragraphs!', 'wp-seopress') . '</p>';
-            $analyzes['words_counter']['impact'] = 'high';
-        }
-
-        return $analyzes;
-    }
-
-    /**
-     * @param array   $analyzes
-     * @param array   $data
-     * @param WP_Post $post
-     *
-     * @return array
-     */
-    protected function analyzeKeywordsDensity($analyzes, $data, $post)
-    {
-        if (! empty($data['kws_density']['matches']) && isset($data['words_counter']) && $data['words_counter'] > 0) {
-            $target_kws_density = $data['kws_density']['matches'];
-
-            $desc = '<ul>';
-            foreach ($target_kws_density as $key => $value) {
-                foreach ($value as $_key => $_value) {
-                    $kw_count = count($_value);
-                }
-                $kw_name    = $key;
-                $kw_density = round($kw_count / $data['words_counter'] * 100, 2);
-                $desc .= '<li><span class="dashicons dashicons-minus"></span>' . sprintf(esc_html__('%s was found %d times in your content, a keyword density of %s%%', 'wp-seopress'), $kw_name, $kw_count, $kw_density) . '</li>';
-            }
-            $desc .= '</ul>';
-            $desc .= '<p class="description">' . __('Learn more about <a href="https://www.youtube.com/watch?v=Rk4qgQdp2UA" target="_blank">keywords stuffing</a>.', 'wp-seopress') . '</p>';
-            $analyzes['keywords_density']['impact'] = 'good';
-            $analyzes['keywords_density']['desc']   = $desc;
-        } else {
-            $analyzes['keywords_density']['desc']   = '<p>' . __('We were unable to calculate the density of your keywords. You probably haven‘t added any content or your target keywords were not find in your post content.', 'wp-seopress') . '</p>';
-            $analyzes['keywords_density']['impact'] = 'high';
-        }
-
-        return $analyzes;
-    }
-
-    /**
-     * @param array   $analyzes
-     * @param array   $data
-     * @param WP_Post $post
-     *
-     * @return array
-     */
     protected function analyzeKeywordsPermalink($analyzes, $data, $post)
     {
         if (! empty($data['kws_permalink']['matches'])) {
@@ -197,12 +131,12 @@ class GetContent
                     $kw_count = count($value);
                 }
                 $kw_name = $key;
-                $desc .= '<li><span class="dashicons dashicons-minus"></span>' . sprintf(esc_html__('%s was found %d times.', 'wp-seopress'), $kw_name, $kw_count) . '</li>';
+                $desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %s target keyword, %d number of times the keyword was found  */ sprintf(esc_html__('%s was found %d times.', 'wp-seopress'), $kw_name, $kw_count) . '</li>';
             }
 
             $desc .= '</ul>';
             if ($count > 1) {
-                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . sprintf(esc_html__('We found %d Heading 1 (H1) in your content.', 'wp-seopress'), $count) . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of headings 1 */ sprintf(esc_html__('We found %d Heading 1 (H1) in your content.', 'wp-seopress'), $count) . '</p>';
                 $desc .= '<p>' . __('You should not use more than one H1 heading in your post content. The rule is simple: only one H1 for each web page. It is better for both SEO and accessibility. Below, the list:', 'wp-seopress') . '</p>';
                 $analyzes['headings']['impact'] = 'high';
 
@@ -390,7 +324,7 @@ class GetContent
 
             if ($count > 1) {
                 $analyzes['social']['impact'] = 'high';
-                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . sprintf(esc_html__('We found %d og:title in your content.', 'wp-seopress'), $count) . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:TITLE tags */ sprintf(esc_html__('We found %d og:title in your content.', 'wp-seopress'), $count) . '</p>';
                 $desc .= '<p>' . __('You should not use more than one og:title in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:title tag from your source code. Below, the list:', 'wp-seopress') . '</p>';
             } elseif (empty($all_og_title[0])) { //If og:title empty
                 $analyzes['social']['impact'] = 'high';
@@ -421,7 +355,7 @@ class GetContent
 
             if ($count > 1) {
                 $analyzes['social']['impact'] = 'high';
-                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . sprintf(esc_html__('We found %d og:description in your content.', 'wp-seopress'), $count) . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:DESCRIPTION tags */ sprintf(esc_html__('We found %d og:description in your content.', 'wp-seopress'), $count) . '</p>';
                 $desc .= '<p>' . __('You should not use more than one og:description in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:description tag from your source code. Below, the list:', 'wp-seopress') . '</p>';
             } elseif (empty($all_og_desc[0])) { //If og:description empty
                 $analyzes['social']['impact'] = 'high';
@@ -451,7 +385,7 @@ class GetContent
             $all_og_img = isset($data['og_img']['values']) ? $data['og_img']['values'] : [];
 
             if ($count > 0 && ! empty($all_og_img[0])) {
-                $desc .= '<p><span class="dashicons dashicons-yes"></span>' . sprintf(esc_html__('We found %d og:image in your content.', 'wp-seopress'), $count) . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-yes"></span>' . /* translators: %d number of OG:IMAGE tags */ sprintf(esc_html__('We found %d og:image in your content.', 'wp-seopress'), $count) . '</p>';
             }
 
             //If og:image empty
@@ -482,7 +416,7 @@ class GetContent
 
             if ($count > 1) {
                 $analyzes['social']['impact'] = 'high';
-                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . sprintf(esc_html__('We found %d og:url in your content.', 'wp-seopress'), $count) . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:URL tags */ sprintf(esc_html__('We found %d og:url in your content.', 'wp-seopress'), $count) . '</p>';
                 $desc .= '<p>' . __('You should not use more than one og:url in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:url tag from your source code. Below, the list:', 'wp-seopress') . '</p>';
             } elseif (empty($all_og_url[0])) { //If og:url empty
                 $analyzes['social']['impact'] = 'high';
@@ -513,7 +447,7 @@ class GetContent
 
             if ($count > 1) {
                 $analyzes['social']['impact'] = 'high';
-                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . sprintf(esc_html__('We found %d og:site_name in your content.', 'wp-seopress'), $count) . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:SITE_NAME tags */ sprintf(esc_html__('We found %d og:site_name in your content.', 'wp-seopress'), $count) . '</p>';
                 $desc .= '<p>' . __('You should not use more than one og:site_name in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:site_name tag from your source code. Below, the list:', 'wp-seopress') . '</p>';
             } elseif (empty($all_og_site_name[0])) { //If og:site_name empty
                 $analyzes['social']['impact'] = 'high';
@@ -544,8 +478,8 @@ class GetContent
 
             if ($count > 1) {
                 $analyzes['social']['impact'] = 'high';
-                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . sprintf(esc_html__('We found %d twitter:title in your content.', 'wp-seopress'), $count) . '</p>';
-                $desc .= '<p>' . __('You should not use more than one twitter:title in your post content to avoid conflicts when sharing on social networks. Twitter will take the last twitter:title tag from your source code. Below, the list:', 'wp-seopress') . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of times a twitter:tile tag is found */ sprintf(esc_html__('We found %d twitter:title in your content.', 'wp-seopress'), $count) . '</p>';
+                $desc .= '<p>' . /* translators: %d number of TWITTER:TITLE tags */ __('You should not use more than one twitter:title in your post content to avoid conflicts when sharing on social networks. Twitter will take the last twitter:title tag from your source code. Below, the list:', 'wp-seopress') . '</p>';
             } elseif (empty($all_tw_title[0])) { //If twitter:title empty
                 $analyzes['social']['impact'] = 'high';
                 $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . __('Your Twitter Title tag is empty!', 'wp-seopress') . '</p>';
@@ -575,7 +509,7 @@ class GetContent
 
             if ($count > 1) {
                 $analyzes['social']['impact'] = 'high';
-                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . sprintf(esc_html__('We found %d twitter:description in your content.', 'wp-seopress'), $count) . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of TWITTER:DESCRIPTION tags */ sprintf(esc_html__('We found %d twitter:description in your content.', 'wp-seopress'), $count) . '</p>';
                 $desc .= '<p>' . __('You should not use more than one twitter:description in your post content to avoid conflicts when sharing on social networks. Twitter will take the last twitter:description tag from your source code. Below, the list:', 'wp-seopress') . '</p>';
             } elseif (empty($all_tw_desc[0])) { //If twitter:description empty
                 $analyzes['social']['impact'] = 'high';
@@ -605,7 +539,7 @@ class GetContent
             $all_tw_img = isset($data['tw_img']['values']) ? $data['tw_img']['values'] : [];
 
             if ($count > 0 && ! empty($all_tw_img[0])) {
-                $desc .= '<p><span class="dashicons dashicons-yes"></span>' . sprintf(esc_html__('We found %d twitter:image in your content.', 'wp-seopress'), $count) . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-yes"></span>' . /* translators: %d number of TWITTER:IMAGE tags */ sprintf(esc_html__('We found %d twitter:image in your content.', 'wp-seopress'), $count) . '</p>';
             }
 
             //If twitter:image:src empty
@@ -648,7 +582,7 @@ class GetContent
 
                 $count_meta_robots = count($data['meta_robots']);
 
-                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . sprintf(esc_html__('We found %s meta robots in your page. There is probably something wrong with your theme!', 'wp-seopress'), $count_meta_robots) . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %s number of meta robots tags */ sprintf(esc_html__('We found %s meta robots in your page. There is probably something wrong with your theme!', 'wp-seopress'), $count_meta_robots) . '</p>';
             }
 
             if (preg_match('/noindex/', json_encode($meta_robots))) {
@@ -702,7 +636,7 @@ class GetContent
                 }
                 $desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . __('<strong>nositelinkssearchbox</strong> is on! Google will not display a sitelinks searchbox in search results.', 'wp-seopress') . '</p>';
             } else {
-                $desc .= '<p><span class="dashicons dashicons-yes"></span>' . __('<strong>nositelinkssearchbox is</strong> off. Google will probably display a sitelinks searchbox in search results.', 'wp-seopress') . '</p>';
+                $desc .= '<p><span class="dashicons dashicons-yes"></span>' . __('<strong>nositelinkssearchbox</strong> is off. Google will probably display a sitelinks searchbox in search results.', 'wp-seopress') . '</p>';
             }
         } else {
 
@@ -725,7 +659,6 @@ class GetContent
     {
         if (! empty($data['img']['images']['without_alt'])) {
             $images = isset($data['img']['images']['without_alt']) ? $data['img']['images']['without_alt'] : null;
-            $context = isset($data['img']['images']['img_with_context']) ? $data['img']['images']['img_with_context'] : null;
 
             $desc = '<div class="wrap-analysis-img">';
 
@@ -770,7 +703,7 @@ class GetContent
         if (! empty($data['nofollow_links'])) {
             $count = count($data['nofollow_links']);
 
-            $desc = '<p>' . sprintf(esc_html__('We found %d links with nofollow attribute in your page. Do not overuse nofollow attribute in links. Below, the list:', 'wp-seopress'), $count) . '</p>';
+            $desc = '<p>' . /* translators: %d number of nofollow links */ sprintf(esc_html__('We found %d links with nofollow attribute in your page. Do not overuse nofollow attribute in links. Below, the list:', 'wp-seopress'), $count) . '</p>';
             $desc .= '<ul>';
             foreach ($data['nofollow_links'] as $links) {
                 foreach ($links as $href => $link) {
@@ -778,7 +711,10 @@ class GetContent
                 }
             }
             $desc .= '</ul>';
-            $analyzes['nofollow_links']['impact'] = 'low';
+            $analyzes['nofollow_links']['impact'] = 'good';
+            if ($count > 3) {
+                $analyzes['nofollow_links']['impact'] = 'low';
+            }
             $analyzes['nofollow_links']['desc']   = $desc;
         } else {
             $analyzes['nofollow_links']['desc'] = '<p><span class="dashicons dashicons-yes"></span>' . __('This page doesn\'t have any nofollow links.', 'wp-seopress') . '</p>';
@@ -800,7 +736,7 @@ class GetContent
         if (! empty($data['outbound_links'])) {
             $count = count($data['outbound_links']);
 
-            $desc .= '<p>' . sprintf(__('We found %s outbound links in your page. Below, the list:', 'wp-seopress'), $count) . '</p>';
+            $desc .= '<p>' . /* translators: %d number of outbound links */ sprintf(__('We found %s outbound links in your page. Below, the list:', 'wp-seopress'), $count) . '</p>';
             $desc .= '<ul>';
             foreach ($data['outbound_links'] as $links) {
                 foreach ($links as $href => $link) {
@@ -830,14 +766,14 @@ class GetContent
         if (! empty($data['internal_links']['count'])) {
             $count = $data['internal_links']['count'];
 
-            $desc .= '<p>' . sprintf(__('We found %s internal links to this page.', 'wp-seopress'), $count) . '</p>';
+            $desc .= '<p>' . /* translators: %s internal links */ sprintf(__('We found %s internal links to this page.', 'wp-seopress'), $count) . '</p>';
 
             if (! empty($data['internal_links']['links'])) {
                 $desc .= '<ul>';
                 foreach ($data['internal_links']['links'] as $id => $permalink) {
                     foreach ($permalink as $href => $link) {
                         $desc .= '<li><span class="dashicons dashicons-minus"></span><a href="' . $href . '" target="_blank">' . $link . '</a>
-                        <a class="nounderline" href="' . get_edit_post_link($id) . '" title="' . sprintf(__('edit %s', 'wp-seopress'), esc_html(get_the_title($id))) . '"><span class="dashicons dashicons-edit-large"></span></a></li>';
+                        <a class="nounderline" href="' . get_edit_post_link($id) . '" title="' . /* translators: %s link to edit the post */ sprintf(__('edit %s', 'wp-seopress'), esc_html(get_the_title($id))) . '"><span class="dashicons dashicons-edit-large"></span></a></li>';
                     }
                 }
                 $desc .= '</ul>';
@@ -864,7 +800,7 @@ class GetContent
         if (! empty($data['all_canonical'])) {
             $count = count($data['all_canonical']);
 
-            $desc .= '<p>' . sprintf(_n('We found %s canonical URL in your source code. Below, the list:', 'We found %s canonical URLs in your source code. Below, the list:', $count, 'wp-seopress'), number_format_i18n($count)) . '</p>';
+            $desc .= '<p>' . /* translators: %s number of canonical tags */ sprintf(_n('We found %s canonical URL in your source code. Below, the list:', 'We found %s canonical URLs in your source code. Below, the list:', $count, 'wp-seopress'), number_format_i18n($count)) . '</p>';
 
             $desc .= '<ul>';
             foreach ($data['all_canonical'] as $link) {
@@ -893,6 +829,7 @@ class GetContent
     public function getAnalyzes($post)
     {
         $data                   = get_post_meta($post->ID, '_seopress_analysis_data', true);
+
         $analyzes               = ContentAnalysis::getData();
 
         //Schemas
@@ -900,12 +837,6 @@ class GetContent
 
         //Old post
         $analyzes = $this->analyzeOldPost($analyzes, $data, $post);
-
-        //Word counters
-        $analyzes = $this->analyzeWordCounters($analyzes, $data, $post);
-
-        //Keywords density
-        $analyzes = $this->analyzeKeywordsDensity($analyzes, $data, $post);
 
         //Keywords in permalink
         $analyzes = $this->analyzeKeywordsPermalink($analyzes, $data, $post);

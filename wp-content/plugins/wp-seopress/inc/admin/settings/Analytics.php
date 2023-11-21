@@ -247,57 +247,9 @@ add_settings_section(
 );
 
 add_settings_field(
-    'seopress_google_analytics_optimize', // ID
-    __('Enable Google Optimize', 'wp-seopress'), // Title
-    'seopress_google_analytics_optimize_callback', // Callback
-    'seopress-settings-admin-google-analytics-features', // Page
-    'seopress_setting_section_google_analytics_features' // Section
-);
-
-add_settings_field(
     'seopress_google_analytics_ads', // ID
     __('Enable Google Ads', 'wp-seopress'), // Title
     'seopress_google_analytics_ads_callback', // Callback
-    'seopress-settings-admin-google-analytics-features', // Page
-    'seopress_setting_section_google_analytics_features' // Section
-);
-
-add_settings_field(
-    'seopress_google_analytics_remarketing', // ID
-    __('Enable remarketing, demographics, and interests reporting', 'wp-seopress'), // Title
-    'seopress_google_analytics_remarketing_callback', // Callback
-    'seopress-settings-admin-google-analytics-features', // Page
-    'seopress_setting_section_google_analytics_features' // Section
-);
-
-add_settings_field(
-    'seopress_google_analytics_ip_anonymization', // ID
-    __('Enable IP Anonymization', 'wp-seopress'), // Title
-    'seopress_google_analytics_ip_anonymization_callback', // Callback
-    'seopress-settings-admin-google-analytics-features', // Page
-    'seopress_setting_section_google_analytics_features' // Section
-);
-
-add_settings_field(
-    'seopress_google_analytics_link_attribution', // ID
-    __('Enhanced Link Attribution', 'wp-seopress'), // Title
-    'seopress_google_analytics_link_attribution_callback', // Callback
-    'seopress-settings-admin-google-analytics-features', // Page
-    'seopress_setting_section_google_analytics_features' // Section
-);
-
-add_settings_field(
-    'seopress_google_analytics_cross_domain_enable', // ID
-    __('Enable cross-domain tracking', 'wp-seopress'), // Title
-    'seopress_google_analytics_cross_enable_callback', // Callback
-    'seopress-settings-admin-google-analytics-features', // Page
-    'seopress_setting_section_google_analytics_features' // Section
-);
-
-add_settings_field(
-    'seopress_google_analytics_cross_domain', // ID
-    __('Cross domains', 'wp-seopress'), // Title
-    'seopress_google_analytics_cross_domain_callback', // Callback
     'seopress-settings-admin-google-analytics-features', // Page
     'seopress_setting_section_google_analytics_features' // Section
 );
@@ -314,7 +266,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_google_analytics_other_tracking', // ID
-    __('[HEAD] Add an additional tracking code (like Facebook Pixel, Hotjar...)', 'wp-seopress'), // Title
+    __('[HEAD] Add an additional tracking code', 'wp-seopress'), // Title
     'seopress_google_analytics_other_tracking_callback', // Callback
     'seopress-settings-admin-google-analytics-custom-tracking', // Page
     'seopress_setting_section_google_analytics_custom_tracking' // Section
@@ -322,7 +274,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_google_analytics_other_tracking_body', // ID
-    __('[BODY] Add an additional tracking code (like Google Tag Manager...)', 'wp-seopress'), // Title
+    __('[BODY] Add an additional tracking code', 'wp-seopress'), // Title
     'seopress_google_analytics_other_tracking_body_callback', // Callback
     'seopress-settings-admin-google-analytics-custom-tracking', // Page
     'seopress_setting_section_google_analytics_custom_tracking' // Section
@@ -330,7 +282,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_google_analytics_other_tracking_footer', // ID
-    __('[BODY (FOOTER)] Add an additional tracking code (like Google Tag Manager...)', 'wp-seopress'), // Title
+    __('[BODY (FOOTER)] Add an additional tracking code', 'wp-seopress'), // Title
     'seopress_google_analytics_other_tracking_footer_callback', // Callback
     'seopress-settings-admin-google-analytics-custom-tracking', // Page
     'seopress_setting_section_google_analytics_custom_tracking' // Section
@@ -456,7 +408,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_google_analytics_roles', // ID
-    __('Exclude user roles from tracking (Google Analytics and Matomo)', 'wp-seopress'), // Title
+    __('Exclude user roles from tracking (GA, Matomo, MS Clarity, custom scripts)', 'wp-seopress'), // Title
     'seopress_google_analytics_roles_callback', // Callback
     'seopress-settings-admin-google-analytics-advanced', // Page
     'seopress_setting_section_google_analytics_advanced' // Section

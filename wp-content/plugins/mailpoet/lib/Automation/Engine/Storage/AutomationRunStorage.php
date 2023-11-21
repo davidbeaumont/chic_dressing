@@ -137,11 +137,18 @@ class AutomationRunStorage {
   }
 
   public function getCountForAutomation(Automation $automation, string ...$status): int {
+    $table = esc_sql($this->table);
+
     if (!count($status)) {
-      return 0;
+      $query = (string)$this->wpdb->prepare("
+      SELECT COUNT(id) as count
+      FROM $table
+      WHERE automation_id = %d
+    ", $automation->getId());
+      $result = $this->wpdb->get_col($query);
+      return $result ? (int)current($result) : 0;
     }
 
-    $table = esc_sql($this->table);
     $statusSql = (string)$this->wpdb->prepare(implode(',', array_fill(0, count($status), '%s')), ...$status);
     $query = (string)$this->wpdb->prepare("
       SELECT COUNT(id) as count
@@ -177,6 +184,32 @@ class AutomationRunStorage {
     if ($result === false) {
       throw Exceptions::databaseError($this->wpdb->last_error);
     }
+  }
+
+  public function getAutomationStepStatisticForTimeFrame(int $automationId, string $status, \DateTimeImmutable $after, \DateTimeImmutable $before, int $versionId = null): array {
+    $table = esc_sql($this->table);
+
+    $where = "automation_id = %d
+    AND `status` = %s
+    AND created_at BETWEEN %s AND %s";
+    if ($versionId) {
+      $where .= " AND version_id = %d";
+    }
+    $sql = "
+      SELECT
+        COUNT(id) AS `count`,
+        next_step_id
+      FROM $table as log
+      WHERE $where
+      GROUP BY next_step_id
+    ";
+
+    $sql = $versionId ?
+      $this->wpdb->prepare($sql, $automationId, $status, $after->format('Y-m-d H:i:s'), $before->format('Y-m-d H:i:s'), $versionId) :
+      $this->wpdb->prepare($sql, $automationId, $status, $after->format('Y-m-d H:i:s'), $before->format('Y-m-d H:i:s'));
+    $sql = is_string($sql) ? $sql : '';
+    $result = $this->wpdb->get_results($sql, ARRAY_A);
+    return is_array($result) ? $result : [];
   }
 
   public function truncate(): void {

@@ -41,9 +41,7 @@ function seopress_sanitize_options_fields($input){
         'seopress_google_analytics_opt_out_msg_edit',
         'seopress_google_analytics_other_tracking',
         'seopress_google_analytics_other_tracking_body',
-        'seopress_google_analytics_optimize',
         'seopress_google_analytics_ads',
-        'seopress_google_analytics_cross_domain',
         'seopress_google_analytics_matomo_id',
         'seopress_google_analytics_matomo_site_id',
         'seopress_google_analytics_matomo_cross_domain_sites',
@@ -109,6 +107,8 @@ function seopress_sanitize_options_fields($input){
             $input[$value] = $input[$value]; //No sanitization for this field
         } elseif (( ! empty($input['seopress_instant_indexing_manual_batch']) && 'seopress_instant_indexing_manual_batch' == $value) || (!empty($input['seopress_social_accounts_extra']) && 'seopress_social_accounts_extra' == $value )) {
             $input[$value] = sanitize_textarea_field($input[$value]);
+        } elseif (( ! empty ($input['seopress_social_accounts_facebook']) && 'seopress_social_accounts_facebook' === $value) || (! empty ($input['seopress_social_accounts_pinterest']) && 'seopress_social_accounts_pinterest' === $value) || (! empty ($input['seopress_social_accounts_instagram']) && 'seopress_social_accounts_instagram' === $value) || (! empty ($input['seopress_social_accounts_youtube']) && 'seopress_social_accounts_youtube' === $value) || (! empty ($input['seopress_social_accounts_linkedin']) && 'seopress_social_accounts_linkedin' === $value)) {
+            $input[$value] = sanitize_url($input[$value]);
         } elseif ( ! empty($input[$value])) {
             $input[$value] = sanitize_text_field($input[$value]);
         }
@@ -133,6 +133,5 @@ function seopress_sanitize_options_fields($input){
     }
 
     return $input;
-
 }
 

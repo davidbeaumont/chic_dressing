@@ -32,6 +32,8 @@ class WorkersFactory {
     SubscribersEmailCount::TASK_TYPE,
     StatsNotificationsWorkerForAutomatedEmails::TASK_TYPE,
     StatsNotificationsWorker::TASK_TYPE,
+    BackfillEngagementData::TASK_TYPE,
+    Mixpanel::TASK_TYPE,
   ];
 
   /** @var ContainerWrapper */
@@ -156,5 +158,14 @@ class WorkersFactory {
   /** @return AbandonedCartWorker */
   public function createAbandonedCartWorker() {
     return $this->container->get(AbandonedCartWorker::class);
+  }
+
+  /** @return BackfillEngagementData */
+  public function createBackfillEngagementDataWorker() {
+    return $this->container->get(BackfillEngagementData::class);
+  }
+
+  public function createMixpanelWorker() {
+    return $this->container->get(Mixpanel::class);
   }
 }

@@ -4,8 +4,8 @@ Donate link: https://www.slickremix.com/
 Tags: Facebook, Instagram, Twitter, YouTube, Feed, Social Media, social, Instagram photo, Instagram gallery, seo, gallery
 Requires at least: 5.4
 Requires PHP: 7.0
-Tested up to: 6.2.2
-Stable tag: 4.1.6
+Tested up to: 6.3.1
+Stable tag: 4.1.8
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -118,6 +118,17 @@ Log into WordPress dashboard then click **Plugins** > **Add new** > Then under t
 16. Add the shortcode you generated from the settings page to any post, page, or text widget.
 
 == Changelog ==
+= Version 4.1.8 Saturday, September 2nd, 2023 =
+  * FIX: Facebook Feed: Link for posts with only text were not directing to Facebook properly.
+  * NOTE: Works with WordPress version 6.3.1.
+
+= Version 4.1.7 Monday, August 28th, 2023 =
+  * FIX: Security fix. User controlled data was able to be entered into the Leave a Review message container. (Thanks to the researcher Abdi Pranata at Patchstack.com for reporting the security vulnerability.)
+  * FIX: Sanitize text fields on Twitter urls.
+  * FIX: Facebook Feed: Share and View on Facebook link not displaying for posts with no image or video.
+  * FIX: Facebook Feed: Likes and Comments were not working correctly because a new permission was introduced in the API that was required. Get a new access token and these features will work again.
+  * REMOVE: Facebook Feed: Remove the option "Display Posts made by Page and Others" now because one, you cannot post to a page anymore you can only tag a page and two this now requires the Page Public Content Access permission which we do not have currently. We will inquire to see if we can get this permission for our plugin.
+
 = Version 4.1.6 Thursday, June 6th, 2023 =
   * NEW: Beaver Builder Module added. When editing or creating a new page, or post you can look for Social Modules and Feed Them Social will appear. You can also search for social in the modules list and Feed Them Social will appear.
   * NEW: Elementor Module added. When editing or creating a new page, or post you can look search the Widgets and Feed Them Social will appear.

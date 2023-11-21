@@ -237,6 +237,10 @@ class Hooks {
       'woocommerce_product_loop_end',
       [$this->displayFormInWPContent, 'wooProductListDisplay']
     );
+    $this->wp->addAction(
+      'wp_footer',
+      [$this->displayFormInWPContent, 'maybeRenderFormsInFooter']
+    );
   }
 
   public function setupMailer() {
@@ -344,7 +348,7 @@ class Hooks {
 
     $this->wp->addAction('before_woocommerce_init', [
       $this->hooksWooCommerce,
-      'declareHposCompatibility',
+      'declareWooCompatibility',
     ]);
 
     $this->wp->addAction('init', [
@@ -412,21 +416,19 @@ class Hooks {
   }
 
   public function setupWooCommercePurchases() {
-    // use both 'processing' and 'completed' states since payment hook and 'processing' status
-    // may be skipped with some payment methods (cheque) or when state transitioned manually
-    $acceptedOrderStates = WPFunctions::get()->applyFilters(
-      'mailpoet_purchase_order_states',
-      ['processing', 'completed']
+    $this->wp->addAction(
+      'woocommerce_order_status_changed',
+      [$this->hooksWooCommerce, 'trackPurchase'],
+      10,
+      1
     );
 
-    foreach ($acceptedOrderStates as $status) {
-      WPFunctions::get()->addAction(
-        'woocommerce_order_status_' . $status,
-        [$this->hooksWooCommerce, 'trackPurchase'],
-        10,
-        1
-      );
-    }
+    $this->wp->addAction(
+      'woocommerce_order_refunded',
+      [$this->hooksWooCommerce, 'trackRefund'],
+      10,
+      1
+    );
   }
 
   public function setupWooCommerceSubscriberEngagement() {

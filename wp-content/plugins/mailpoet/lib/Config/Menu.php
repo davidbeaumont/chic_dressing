@@ -9,6 +9,8 @@ use MailPoet\AdminPages\Pages\Automation;
 use MailPoet\AdminPages\Pages\AutomationAnalytics;
 use MailPoet\AdminPages\Pages\AutomationEditor;
 use MailPoet\AdminPages\Pages\AutomationTemplates;
+use MailPoet\AdminPages\Pages\DynamicSegments;
+use MailPoet\AdminPages\Pages\EmailEditor as EmailEditorPage;
 use MailPoet\AdminPages\Pages\ExperimentalFeatures;
 use MailPoet\AdminPages\Pages\FormEditor;
 use MailPoet\AdminPages\Pages\Forms;
@@ -18,8 +20,8 @@ use MailPoet\AdminPages\Pages\Landingpage;
 use MailPoet\AdminPages\Pages\Logs;
 use MailPoet\AdminPages\Pages\NewsletterEditor;
 use MailPoet\AdminPages\Pages\Newsletters;
-use MailPoet\AdminPages\Pages\Segments;
 use MailPoet\AdminPages\Pages\Settings;
+use MailPoet\AdminPages\Pages\StaticSegments;
 use MailPoet\AdminPages\Pages\Subscribers;
 use MailPoet\AdminPages\Pages\SubscribersExport;
 use MailPoet\AdminPages\Pages\SubscribersImport;
@@ -27,6 +29,7 @@ use MailPoet\AdminPages\Pages\Upgrade;
 use MailPoet\AdminPages\Pages\WelcomeWizard;
 use MailPoet\AdminPages\Pages\WooCommerceSetup;
 use MailPoet\DI\ContainerWrapper;
+use MailPoet\EmailEditor\Integrations\MailPoet\EmailEditor;
 use MailPoet\Form\Util\CustomFonts;
 use MailPoet\Util\License\License;
 use MailPoet\WP\Functions as WPFunctions;
@@ -37,12 +40,14 @@ class Menu {
   const EMAILS_PAGE_SLUG = 'mailpoet-newsletters';
   const FORMS_PAGE_SLUG = 'mailpoet-forms';
   const EMAIL_EDITOR_PAGE_SLUG = 'mailpoet-newsletter-editor';
+  const EMAIL_EDITOR_V2_PAGE_SLUG = 'mailpoet-email-editor';
   const FORM_EDITOR_PAGE_SLUG = 'mailpoet-form-editor';
   const HOMEPAGE_PAGE_SLUG = 'mailpoet-homepage';
   const FORM_TEMPLATES_PAGE_SLUG = 'mailpoet-form-editor-template-selection';
   const SUBSCRIBERS_PAGE_SLUG = 'mailpoet-subscribers';
   const IMPORT_PAGE_SLUG = 'mailpoet-import';
   const EXPORT_PAGE_SLUG = 'mailpoet-export';
+  const LISTS_PAGE_SLUG = 'mailpoet-lists';
   const SEGMENTS_PAGE_SLUG = 'mailpoet-segments';
   const SETTINGS_PAGE_SLUG = 'mailpoet-settings';
   const HELP_PAGE_SLUG = 'mailpoet-help';
@@ -112,6 +117,8 @@ class Menu {
   }
 
   public function setup() {
+    global $parent_file;
+    $parent_file = self::EMAILS_PAGE_SLUG;
     if (!$this->accessControl->validatePermission(AccessControl::PERMISSION_ACCESS_PLUGIN_ADMIN)) return;
 
     $this->router->checkRedirects();
@@ -265,6 +272,19 @@ class Menu {
       ]
     );
 
+    // newsletter editor
+    $this->wp->addSubmenuPage(
+      self::EMAILS_PAGE_SLUG,
+      $this->setPageTitle(__('Email', 'mailpoet')),
+      esc_html__('Email Editor', 'mailpoet'),
+      AccessControl::PERMISSION_MANAGE_EMAILS,
+      self::EMAIL_EDITOR_V2_PAGE_SLUG,
+      [
+        $this,
+        'emailEditor',
+      ]
+    );
+
     $this->registerAutomationMenu();
 
     // Forms page
@@ -325,14 +345,6 @@ class Menu {
       ]
     );
 
-    // add body class for form editor page
-    $this->wp->addAction('load-' . $formTemplateSelectionEditorPage, function() {
-      $this->wp->addFilter('admin_body_class', function ($classes) {
-        return ltrim($classes . ' block-editor-page');
-      });
-    });
-
-
     // Subscribers page
     $subscribersPage = $this->wp->addSubmenuPage(
       self::MAIN_PAGE_SLUG,
@@ -384,11 +396,36 @@ class Menu {
       ]
     );
 
-    // Segments page
-    $segmentsPage = $this->wp->addSubmenuPage(
+    // Lists page
+    $listsPage = $this->wp->addSubmenuPage(
       self::MAIN_PAGE_SLUG,
       $this->setPageTitle(__('Lists', 'mailpoet')),
       esc_html__('Lists', 'mailpoet'),
+      AccessControl::PERMISSION_MANAGE_SEGMENTS,
+      self::LISTS_PAGE_SLUG,
+      [
+        $this,
+        'lists',
+      ]
+    );
+
+    // add limit per page to screen options
+    $this->wp->addAction('load-' . $listsPage, function() {
+      $this->wp->addScreenOption('per_page', [
+        'label' => _x(
+          'Number of lists per page',
+          'lists per page (screen options)',
+          'mailpoet'
+        ),
+        'option' => 'mailpoet_lists_per_page',
+      ]);
+    });
+
+    // Segments page
+    $segmentsPage = $this->wp->addSubmenuPage(
+      self::MAIN_PAGE_SLUG,
+      $this->setPageTitle(__('Segments', 'mailpoet')),
+      esc_html__('Segments', 'mailpoet'),
       AccessControl::PERMISSION_MANAGE_SEGMENTS,
       self::SEGMENTS_PAGE_SLUG,
       [
@@ -488,7 +525,11 @@ class Menu {
   private function registerAutomationMenu() {
     $parentSlug = self::MAIN_PAGE_SLUG;
     // Automations menu is hidden when the subscription is part of a bundle and AutomateWoo is active but pages can be accessed directly
-    if ($this->wp->isPluginActive('automatewoo/automatewoo.php') && $this->servicesChecker->isBundledSubscription()) {
+    $showAutomations = !($this->wp->isPluginActive('automatewoo/automatewoo.php') &&
+      $this->servicesChecker->isBundledSubscription());
+    if (
+      !$this->wp->applyFilters('mailpoet_show_automations', $showAutomations)
+    ) {
       $parentSlug = '';
     }
 
@@ -607,8 +648,12 @@ class Menu {
     $this->container->get(Subscribers::class)->render();
   }
 
+  public function lists() {
+    $this->container->get(StaticSegments::class)->render();
+  }
+
   public function segments() {
-    $this->container->get(Segments::class)->render();
+    $this->container->get(DynamicSegments::class)->render();
   }
 
   public function forms() {
@@ -621,6 +666,10 @@ class Menu {
 
   public function newletterEditor() {
     $this->container->get(NewsletterEditor::class)->render();
+  }
+
+  public function emailEditor() {
+    $this->container->get(EmailEditorPage::class)->render();
   }
 
   public function import() {
@@ -648,12 +697,18 @@ class Menu {
   }
 
   public function highlightNestedMailPoetSubmenus($parentFile) {
-    global $plugin_page, $submenu;
+    global $plugin_page, $submenu, $submenu_file;
 
     $page = $this->getPageFromContext();
     if ($page) {
       $plugin_page = $page;
       return $parentFile;
+    }
+
+    if ($this->checkIsGutenbergEmailEditorPage()) {
+      $plugin_page = self::EMAILS_PAGE_SLUG;
+      $submenu_file = self::EMAILS_PAGE_SLUG;
+      return self::EMAILS_PAGE_SLUG;
     }
 
     if ($parentFile === self::MAIN_PAGE_SLUG || !self::isOnMailPoetAdminPage()) {
@@ -760,5 +815,9 @@ class Menu {
       return self::AUTOMATIONS_PAGE_SLUG;
     }
     return null;
+  }
+
+  private function checkIsGutenbergEmailEditorPage(): bool {
+    return $this->wp->getPostType() === EmailEditor::MAILPOET_EMAIL_POST_TYPE;
   }
 }

@@ -1,44 +1,23 @@
 <?php return array(
     'root' => array(
         'name' => 'facebookincubator/facebook-for-woocommerce',
-        'pretty_version' => 'dev-release/3.0.27',
-        'version' => 'dev-release/3.0.27',
-        'reference' => '4bc3395140c8922f5334e9b1736901a50b575445',
+        'pretty_version' => 'dev-release/3.1.2',
+        'version' => 'dev-release/3.1.2',
+        'reference' => '93faeab00ff5070cf19c09739c1d431bdee45a9c',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => false,
     ),
     'versions' => array(
-        'composer/installers' => array(
-            'pretty_version' => 'v1.12.0',
-            'version' => '1.12.0.0',
-            'reference' => 'd20a64ed3c94748397ff5973488761b22f6d3f19',
-            'type' => 'composer-plugin',
-            'install_path' => __DIR__ . '/./installers',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'facebookincubator/facebook-for-woocommerce' => array(
-            'pretty_version' => 'dev-release/3.0.27',
-            'version' => 'dev-release/3.0.27',
-            'reference' => '4bc3395140c8922f5334e9b1736901a50b575445',
+            'pretty_version' => 'dev-release/3.1.2',
+            'version' => 'dev-release/3.1.2',
+            'reference' => '93faeab00ff5070cf19c09739c1d431bdee45a9c',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
-        ),
-        'roundcube/plugin-installer' => array(
-            'dev_requirement' => false,
-            'replaced' => array(
-                0 => '*',
-            ),
-        ),
-        'shama/baton' => array(
-            'dev_requirement' => false,
-            'replaced' => array(
-                0 => '*',
-            ),
         ),
         'woocommerce/action-scheduler-job-framework' => array(
             'pretty_version' => '2.0.0',

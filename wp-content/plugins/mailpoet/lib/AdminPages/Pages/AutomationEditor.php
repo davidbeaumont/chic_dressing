@@ -5,6 +5,7 @@ namespace MailPoet\AdminPages\Pages;
 if (!defined('ABSPATH')) exit;
 
 
+use MailPoet\AdminPages\AssetsController;
 use MailPoet\AdminPages\PageRenderer;
 use MailPoet\Automation\Engine\Control\SubjectTransformerHandler;
 use MailPoet\Automation\Engine\Data\Automation;
@@ -13,7 +14,6 @@ use MailPoet\Automation\Engine\Integration\Trigger;
 use MailPoet\Automation\Engine\Mappers\AutomationMapper;
 use MailPoet\Automation\Engine\Registry;
 use MailPoet\Automation\Engine\Storage\AutomationStorage;
-use MailPoet\Form\AssetsController;
 use MailPoet\WP\Functions as WPFunctions;
 use MailPoet\WP\Notice as WPNotice;
 
@@ -80,7 +80,6 @@ class AutomationEditor {
       exit();
     }
 
-    $roles = new \WP_Roles();
     $this->pageRenderer->displayPage('automation/editor.html', [
       'registry' => $this->buildRegistry(),
       'context' => $this->buildContext(),
@@ -93,7 +92,6 @@ class AutomationEditor {
       'jsonapi' => [
         'root' => rtrim($this->wp->escUrlRaw(admin_url('admin-ajax.php')), '/'),
       ],
-      'user_roles' => $roles->get_names(),
     ]);
   }
 
