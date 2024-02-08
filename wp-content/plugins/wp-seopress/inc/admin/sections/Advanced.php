@@ -53,9 +53,6 @@ function print_section_info_advanced_security()
 <div class="seopress-sub-tabs">
     <a href="#seopress-security-metaboxes"><?php _e('SEO metaboxes', 'wp-seopress'); ?></a> |
     <a href="#seopress-security-settings"><?php _e('SEO settings pages', 'wp-seopress'); ?></a>
-    <?php if (function_exists('seopress_pro_get_service') && method_exists(seopress_pro_get_service('OptionPro'), 'getWhiteLabelHelpLinks') && '1' !== seopress_pro_get_service('OptionPro')->getWhiteLabelHelpLinks()) { ?>
-        | <a href="#seopress-security-caps"><?php _e('SEO capabilities', 'wp-seopress'); ?></a>
-    <?php } ?>
 </div>
 
 <p>
@@ -68,9 +65,11 @@ function print_section_info_advanced_security()
     <?php _e('SEO metaboxes', 'wp-seopress'); ?>
 </h3>
 
-<p>
-    <?php _e('Check a user role to prevent it to edit a specific metabox.', 'wp-seopress'); ?>
-</p>
+<div class="seopress-notice">
+    <p>
+        <?php _e('Check a user role to <strong>PREVENT</strong> it to edit a specific metabox.', 'wp-seopress'); ?>
+    </p>
+</div>
 
 <?php
 }
@@ -85,27 +84,11 @@ function print_section_info_advanced_security_roles()
     <?php _e('SEO settings pages', 'wp-seopress'); ?>
 </h3>
 
-<p>
-    <?php _e('Check a user role to allow it to edit a specific settings page.', 'wp-seopress'); ?>
-</p>
-
-<?php
-}
-
-function print_section_info_advanced_caps()
-{
-    $docs = seopress_get_docs_links();
-?>
-
-<hr>
-
-<h3 id="seopress-security-caps">
-    <?php _e('SEO capabilities', 'wp-seopress'); ?>
-</h3>
-
-<p class="help">
-    <?php printf(__('Read this guide to learn more about <a href="%s" target="_blank">SEOPress‘ capabilities</a>.', 'wp-seopress'), esc_url($docs['security']['caps'])); ?>
-</p>
+<div class="seopress-notice">
+    <p>
+        <?php _e('Check a user role to <strong>ALLOW</strong> it to edit a specific settings page.', 'wp-seopress'); ?>
+    </p>
+</div>
 
 <?php
 }

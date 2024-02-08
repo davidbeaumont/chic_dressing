@@ -25,6 +25,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Feeds_CPT {
 
     /**
+     * Settings Functions
+     *
+     * The settings Functions class.
+     *
+     * @var object
+     */
+    public $settings_functions;
+
+    /**
      * Feed CPT ID
      * used to set Gallery ID
      *
@@ -100,10 +109,12 @@ class Feeds_CPT {
      *
      * @param object $feed_cpt_options All options.
      */
-    public function __construct( $feed_functions, $feed_cpt_options, $setting_options_js, $metabox_functions, $access_token_options, $options_functions) {
+    public function __construct( $settings_functions, $feed_functions, $feed_cpt_options, $setting_options_js, $metabox_functions, $access_token_options, $options_functions) {
 
         // Add Actions and Filters.
         $this->add_actions_filters();
+
+        $this->settings_functions = $settings_functions;
 
         // Set Feed Functions object.
         $this->feed_functions = $feed_functions;
@@ -181,6 +192,8 @@ class Feeds_CPT {
 
         // Remove Edit Menu Links.
 	    add_filter( 'page_row_actions', array( $this, 'remove_edit_menu_links' ), 10, 2 );
+
+        add_filter('body_class', [$this, 'add_custom_body_class_frontend']);
     }
 
     /**
@@ -201,6 +214,59 @@ class Feeds_CPT {
     }
 
     /**
+     *  Add Custom Body Class Admin
+     *
+     * Add custom body classes to admin area.
+     *
+     * @since 4.2.0
+     */
+    public function add_custom_body_class_admin($classes) {
+
+        if ( $this->isFeedThemPremiumActive() ) {
+            // This is used for the areas we want to hide the text and link for, More than 6 Requires Premium
+            $classes .= ' fts-premium-active';
+        }
+        $powered_by = $this->settings_functions->fts_get_option( 'powered_by' );
+        if ( $powered_by === '1' ) {
+            // This is used for the popup so we can remove the powered by text and a space to start is required.
+            $classes .= ' fts-remove-powered-by';
+        }
+
+        return $classes;
+    }
+
+    /**
+     *  Add Custom Body Class Frontend
+     *
+     * Add custom body classes to frontend of website.
+     *
+     * @since 4.2.0
+     */
+    public function add_custom_body_class_frontend($classes) {
+
+        $powered_by = $this->settings_functions->fts_get_option( 'powered_by' );
+        if ( $powered_by === '1' ) {
+            // This is used for the popup so we can remove the powered by text and NO space to start is required.
+            $classes[] = 'fts-remove-powered-by';
+        }
+
+        return $classes;
+    }
+
+    /**
+     * Is Feed Them Premium Active
+     *
+     * Used to aid in the check to display custom body classes.
+     *
+     * @since 4.2.0
+     */
+    private function isFeedThemPremiumActive() {
+        include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+        return is_plugin_active('feed-them-premium/feed-them-premium.php');
+    }
+
+    /**
      * Current Feed CPT ID
      *
      * Sets the Feed CPT ID based on the current screens _Get or _Post
@@ -216,6 +282,9 @@ class Feeds_CPT {
         // Set Feed CPT ID using _Get or _Post
         // Previous version that threw warning: $this->feed_cpt_id = (int) $current_get['post'] ?? $current_post['post'];
         if ( 'fts' === $current_screen->post_type && 'post' === $current_screen->base && is_admin() && isset( $current_get['post'] ) ) {
+
+            // Add Custom Body Class.
+            add_filter('admin_body_class', [$this, 'add_custom_body_class_admin']);
             $this->feed_cpt_id = (int) $current_get['post'];
         }
     }
@@ -527,7 +596,7 @@ class Feeds_CPT {
                                         echo __( 'Not Set', 'feed-them-social' );
                                     }
                                     // Update the fts_shortcode_location with our newly compiled array has at least one id, or we clear the field.
-                                    $this->options_functions->update_single_option( 'fts_feed_options_array', 'fts_shortcode_location', $encoded, true, $post_id );
+                                    $this->options_functions->update_single_option( 'fts_feed_options_array', 'fts_shortcode_location', $encoded, true, $post_id, false );
                                 }
                             }
                         }
@@ -538,6 +607,8 @@ class Feeds_CPT {
                 else {
                     echo __( 'Not Set', 'feed-them-social' );
                 }
+                break;
+            default:
                 break;
         }
     }
@@ -569,6 +640,8 @@ class Feeds_CPT {
                     break;
                 case 'Edit Payment':
                     $translated_text = esc_html__( 'Edit Feed', 'feed_them_social' );
+                    break;
+                default:
                     break;
             }
         }
@@ -615,7 +688,7 @@ class Feeds_CPT {
         $metabox_tabs_list = array(
             // Base of each tab! The array keys are the base name and the array value is a list of tab keys.
             'base_tabs' => array(
-                'post' => array( 'feed_setup', 'layout', 'colors', 'facebook_feed', 'instagram_feed', 'twitter_feed', 'youtube_feed', 'combine_streams_feed' ),
+                'post' => array( 'feed_setup', 'layout', 'colors', 'facebook_feed', 'instagram_feed', 'tiktok_feed', 'youtube_feed', 'combine_streams_feed' ),
             ),
             // Tabs List! The cont_func item is relative the the Function name for that tabs content. The array Keys for each tab are also relative to classes and ID on wraps of display_metabox_content function.
             'tabs_list' => array(
@@ -657,11 +730,11 @@ class Feeds_CPT {
                     'cont_func'     => 'tab_facebook_feed',
                 ),
                 // Twitter Feed Settings Tab!
-                'twitter_feed'   => array(
+                'tiktok_feed'   => array(
                     'menu_li_class' => 'tab6',
                     'menu_a_text'   => esc_html__( 'Twitter', 'feed_them_social' ),
                     'cont_wrap_id'  => 'ftg-tab-content7',
-                    'cont_func'     => 'tab_twitter_feed',
+                    'cont_func'     => 'tab_tiktok_feed',
                 ),
                 // YouTube Feed Settings Tab!
                 'youtube_feed'  => array(
@@ -883,7 +956,7 @@ class Feeds_CPT {
      *
      * @since 1.0.0
      */
-    public function tab_twitter_feed() { ?>
+    public function tab_tiktok_feed() { ?>
         <div class="fts-cpt-main-options">
             <?php
             echo $this->metabox_functions->options_html_form( $this->feed_cpt_options_array['twitter'], null, $this->feed_cpt_id );
@@ -901,8 +974,10 @@ class Feeds_CPT {
 
             // Twitter Follow Button Options
             echo $this->metabox_functions->options_html_form( $twitter_add_all_options['twitter_follow_btn_options'], null, $this->feed_cpt_id );
+            // TikTok Language Options
+            echo $this->metabox_functions->options_html_form( $twitter_add_all_options['twitter_language_options'], null, $this->feed_cpt_id );
             // Twitter Video Player Options
-            echo $this->metabox_functions->options_html_form( $twitter_add_all_options['twitter_video_player_options'], null, $this->feed_cpt_id );
+            // echo $this->metabox_functions->options_html_form( $twitter_add_all_options['twitter_video_player_options'], null, $this->feed_cpt_id );
             // Twitter Profile Photo Options
             echo $this->metabox_functions->options_html_form( $twitter_add_all_options['twitter_profile_photo_options'], null, $this->feed_cpt_id );
             // Twitter Style Options
@@ -913,8 +988,7 @@ class Feeds_CPT {
                 // Twitter Grid Styles
                 echo $this->metabox_functions->options_html_form( $twitter_add_all_options['twitter_grid_style_options'], null, $this->feed_cpt_id );
                 // Twitter Load More Button Styles & Options
-                // This option needs to be removed because of recent Twitter API changes.
-                // echo $this->metabox_functions->options_html_form( $twitter_add_all_options['twitter_load_more_options'], null, $this->feed_cpt_id );
+                 echo $this->metabox_functions->options_html_form( $twitter_add_all_options['twitter_load_more_options'], null, $this->feed_cpt_id );
             }?>
 
             <div class="clear"></div>
@@ -995,7 +1069,7 @@ class Feeds_CPT {
             <?php
 
                 // Copy Shortcode
-                // [fts_facebook hide_date_likes_comments=yes type=page id=1562664650673366 access_token=EAAP9hArvboQBAM2dmJtxprnC6XnDeWfkEbgHPnhZBgvQ79OZA3Q9C3dsTTN9RsrvFpSB3MKBjIg4LhT5QWZAntzrL2tgZAjJh8STYCrsIjVqR0j9gM0yZAbW2mkWJUd78sCKxkKCWHKtgOt7kwZCzOwaxZAarvRFZCFSDizEAXpUhqZAOjRTbwRiP posts=6 title=no title_align=center description=no height=350px show_media=top show_thumbnail=no show_date=yes show_name=yes words=45 popup=yes grid=yes posts_displayed=page_only center_container=yes image_stack_animation=no colmn_width=310px images_align=center album_id=photo_stream image_width=250px image_height=250px space_between_photos=1px space_between_posts=10px show_follow_btn_where=below_title like_option_align=center facebook_like_box_width=500px hide_like_option=no hide_comments_popup=no loadmore=autoscroll loadmore_btn_maxwidth=300px loadmore_btn_margin=10px reviews_type_to_show=4 reviews_rating_format=3 overall_rating=yes remove_reviews_no_description=yes hide_see_more_reviews_link=yes play_btn_size=400px play_btn_visible=yes play_btn=yes scrollhorz_or_carousel=carousel slides_visible=55 slider_spacing=33px slider_margin=&quot;-6px auto 1px auto&quot; slider_speed=1000 slider_timeout=1000 slider_controls=arrows_above_feed slider_controls_text_color=#FFF slider_controls_bar_color=320px slider_controls_width=320px ]
+                // [fts_facebook hide_date_likes_comments=yes type=page id=1562664650673366 access_token=EAAP9hArvboQBAM2dmJtxprnC6XnDeWfkEbgHPnhZBgvQ79OZA3Q9C3dsTTN9RsrvFpSB3MKBjIg4LhT5QWZAntzrL2tgZAjJh8STYCrsIjVqR0j9gM0yZAbW2mkWJUd78sCKxkKCWHKtgOt7kwZCzOwaxZAarvRFZCFSDizEAXpUhqZAOjRTbwRiP posts=6 title=no title_align=center description=no height=350px show_media=top show_thumbnail=no show_date=yes show_name=yes words=45 popup=yes grid=yes posts_displayed=page_only center_container=yes image_stack_animation=no colmn_width=310px images_align=center album_id=photo_stream image_width=250px image_height=250px space_between_photos=1px space_between_posts=10px show_follow_btn_where=below_title like_option_align=center facebook_like_box_width=500px hide_like_option=no hide_comments_popup=no loadmore=autoscroll loadmore_btn_maxwidth=300px loadmore_btn_margin=10px reviews_type_to_show=4 reviews_rating_format=3 overall_rating=yes remove_reviews_no_description=yes hide_see_more_reviews_link=yes play_btn_size=400px play_btn_visible=yes play_btn=yes scrollhorz_or_carousel=carousel slides_visible=55 slider_spacing=33px slider_margin="-6px auto 1px auto" slider_speed=1000 slider_timeout=1000 slider_controls=arrows_above_feed slider_controls_text_color=#FFF slider_controls_bar_color=320px slider_controls_width=320px ]
                 // [fts_twitter twitter_name=gopro tweets_count=6 twitter_height=240px cover_photo=yes stats_bar=yes show_retweets=yes show_replies=yes grid=yes search=sadfsdf popup=yes loadmore=button loadmore_count=5 loadmore_btn_maxwidth=300px loadmore_btn_margin=10px colmn_width=310px space_between_posts=10px]
                 // [fts_instagram instagram_id=17841417310560005 hashtag=erwer type=business profile_wrap=yes search=top-media profile_photo=yes profile_stats=yes profile_name=yes profile_description=yes  access_token=IGQVJXeVNoMUNkeURQbFdobVljSm5MNkdHOW92LW1UU2I0SnZAEZAGk5Q0s2bUxIWkdoOXFyRkJyN2RlUjFjeURObGJrVjB6by1RV0xVUTQ5QWxiN203UnYzU3JYdm5CcWhRV3JUUjhn pics_count=6 width=240px height=450px popup=yes super_gallery=yes columns=5 force_columns=yes space_between_photos=1px icon_size=65px hide_date_likes_comments=yes loadmore=autoscroll loadmore_count=5 loadmore_btn_maxwidth=300px loadmore_btn_margin=10px]
                 // [fts_youtube vid_count=23 youtube_name2=asas youtube_channelID2=jhgjgh youtube_singleVideoID=mnbmnb youtube_name=oiuuoouiuio youtube_playlistID=sadfsadfsadf youtube_playlistID2=hjkkhj large_vid=no large_vid_title=yes large_vid_description=yes thumbs_play_in_iframe=popup vids_in_row=3 omit_first_thumbnail=yes space_between_videos=1px force_columns=yes maxres_thumbnail_images=no wrap_single=right video_wrap_display_single=2 video_wrap_display_single=3 thumbs_wrap_color=#333 wrap=left video_wrap_display=2 comments_count=56 channel_id=erqwtwertwert loadmore=autoscroll loadmore_count=2 loadmore_btn_maxwidth=300px loadmore_btn_margin=10px]
@@ -1008,7 +1082,7 @@ class Feeds_CPT {
 
                 <small style="display: none">
                     for testing:<br/>
-                    <br/>[fts_facebook hide_date_likes_comments=yes type=page id=1562664650673366 access_token=asasdf posts=6 title=no title_align=center description=no height=350px show_media=top show_thumbnail=no show_date=yes show_name=yes words=45 popup=yes grid=yes posts_displayed=page_only center_container=yes image_stack_animation=no colmn_width=310px images_align=center album_id=photo_stream image_width=250px image_height=250px space_between_photos=1px space_between_posts=10px show_follow_btn_where=below_title like_option_align=center facebook_like_box_width=500px hide_like_option=no hide_comments_popup=no loadmore=autoscroll loadmore_btn_maxwidth=300px loadmore_btn_margin=10px reviews_type_to_show=4 reviews_rating_format=3 overall_rating=yes remove_reviews_no_description=yes hide_see_more_reviews_link=yes play_btn_size=400px play_btn_visible=yes play_btn=yes scrollhorz_or_carousel=carousel slides_visible=55 slider_spacing=33px slider_margin=&quot;-6px auto 1px auto&quot; slider_speed=1000 slider_timeout=1000 slider_controls=arrows_above_feed slider_controls_text_color=#FFF slider_controls_bar_color=320px slider_controls_width=320px ]
+                    <br/>[fts_facebook hide_date_likes_comments=yes type=page id=1562664650673366 access_token=asasdf posts=6 title=no title_align=center description=no height=350px show_media=top show_thumbnail=no show_date=yes show_name=yes words=45 popup=yes grid=yes posts_displayed=page_only center_container=yes image_stack_animation=no colmn_width=310px images_align=center album_id=photo_stream image_width=250px image_height=250px space_between_photos=1px space_between_posts=10px show_follow_btn_where=below_title like_option_align=center facebook_like_box_width=500px hide_like_option=no hide_comments_popup=no loadmore=autoscroll loadmore_btn_maxwidth=300px loadmore_btn_margin=10px reviews_type_to_show=4 reviews_rating_format=3 overall_rating=yes remove_reviews_no_description=yes hide_see_more_reviews_link=yes play_btn_size=400px play_btn_visible=yes play_btn=yes scrollhorz_or_carousel=carousel slides_visible=55 slider_spacing=33px slider_margin="6px auto 1px auto" slider_speed=1000 slider_timeout=1000 slider_controls=arrows_above_feed slider_controls_text_color=#FFF slider_controls_bar_color=320px slider_controls_width=320px ]
                     <br/><br/>[fts_twitter twitter_name=gopro tweets_count=6 twitter_height=240px cover_photo=yes stats_bar=yes show_retweets=yes show_replies=yes grid=yes search=sadfsdf popup=yes loadmore=button loadmore_count=5 loadmore_btn_maxwidth=300px loadmore_btn_margin=10px colmn_width=310px space_between_posts=10px]
                     <br/><br/>[fts_instagram instagram_id=17841417310560005 hashtag=erwer type=business profile_wrap=yes search=top-media profile_photo=yes profile_stats=yes profile_name=yes profile_description=yes access_token=asdf pics_count=6 width=240px height=450px popup=yes super_gallery=yes columns=5 force_columns=yes space_between_photos=1px icon_size=65px hide_date_likes_comments=yes loadmore=autoscroll loadmore_count=5 loadmore_btn_maxwidth=300px loadmore_btn_margin=10px]
                     <br/><br/>[fts_youtube vid_count=23 youtube_name2=asas youtube_channelID2=jhgjgh youtube_singleVideoID=mnbmnb youtube_name=oiuuoouiuio youtube_playlistID=sadfsadfsadf youtube_playlistID2=hjkkhj large_vid=no large_vid_title=yes large_vid_description=yes thumbs_play_in_iframe=popup vids_in_row=3 omit_first_thumbnail=yes space_between_videos=1px force_columns=yes maxres_thumbnail_images=no wrap_single=right video_wrap_display_single=2 video_wrap_display_single=3 thumbs_wrap_color=#333 wrap=left video_wrap_display=2 comments_count=56 channel_id=erqwtwertwert loadmore=autoscroll loadmore_count=2 loadmore_btn_maxwidth=300px loadmore_btn_margin=10px]

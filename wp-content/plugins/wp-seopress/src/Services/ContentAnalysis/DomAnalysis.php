@@ -22,6 +22,53 @@ class DomAnalysis
         return $data;
     }
 
+    public function getPostContentAnalyze($id)
+    {
+        //Get post content (used for Words counter)
+        $content = get_post_field('post_content', $id);
+
+        //Cornerstone compatibility
+        if (is_plugin_active('cornerstone/cornerstone.php')) {
+            $content = get_post_field('post_content', $id);
+        }
+
+        //ThriveBuilder compatibility
+        if (is_plugin_active('thrive-visual-editor/thrive-visual-editor.php') && empty($content)) {
+            $content = get_post_meta($id, 'tve_updated_post', true);
+        }
+
+         //Zion Builder compatibility
+         if (is_plugin_active('zionbuilder/zionbuilder.php')) {
+            $content = $content . get_post_meta($id, '_zionbuilder_page_elements', true);
+        }
+
+        //BeTheme is activated
+        $theme = wp_get_theme();
+        if ('betheme' == $theme->template || 'Betheme' == $theme->parent_theme) {
+            $content = $content . get_post_meta($id, 'mfn-page-items-seo', true);
+        }
+
+        $post = get_post($id);
+
+        //Add WC product excerpt
+        if ('product' == $post->post_type) {
+            $content =  $content . get_the_excerpt($id);
+        }
+
+        // Bricks
+        if (defined('BRICKS_DB_EDITOR_MODE') && ('bricks' == $theme->template || 'Bricks' == $theme->parent_theme)) {
+            $page_sections = get_post_meta($id, BRICKS_DB_PAGE_CONTENT, true);
+            $editor_mode   = get_post_meta($id, BRICKS_DB_EDITOR_MODE, true);
+            if (is_array($page_sections) && 'wordpress' !== $editor_mode) {
+                $content = \Bricks\Frontend::render_data($page_sections);
+            }
+        }
+
+        $content = apply_filters('seopress_content_analysis_content', $content, $id);
+
+        return $content;
+    }
+
     public function getDataAnalyze($data, $options)
     {
         if (!isset($options['id'])) {
@@ -39,7 +86,6 @@ class DomAnalysis
 
         //Manage keywords with special characters
         foreach ($targetKeywords as $key => $kw) {
-            $kw               = str_replace('-', ' ', $kw); //remove dashes
             $targetKeywords[$key] = trim(htmlspecialchars_decode($kw, ENT_QUOTES));
         }
 
@@ -90,12 +136,22 @@ class DomAnalysis
             }
         }
 
+        $postContent = apply_filters('seopress_dom_analysis_get_post_content', $this->getPostContentAnalyze($options['id']));
+
+        if (defined('WP_DEBUG') && WP_DEBUG) {
+            $data['analyzed_content'] = $postContent;
+            $data['analyzed_content_id'] = $options['id'];
+        }
+
         //Keywords in permalink
         $slug = urldecode($post->post_name);
 
         if (is_plugin_active('permalink-manager-pro/permalink-manager.php')) {
             global $permalink_manager_uris;
-            $slug = urldecode($permalink_manager_uris[$options['id']]);
+            if (!empty($permalink_manager_uris) && !empty($options) && is_array($options) && array_key_exists('id', $options)) {
+                $slug = isset($permalink_manager_uris[$options['id']]) ? $permalink_manager_uris[$options['id']] : '';
+                $slug = urldecode($slug);
+            }
         }
 
         $slug = str_replace('-', ' ', $slug);

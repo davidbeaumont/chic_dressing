@@ -7,10 +7,10 @@ if (!defined('ABSPATH')) exit;
 
 use MailPoet\DI\ContainerWrapper;
 use MailPoet\Entities\NewsletterEntity;
+use MailPoet\Newsletter\NewsletterDeleteController;
 use MailPoet\Newsletter\NewslettersRepository;
 use MailPoet\Newsletter\Options\NewsletterOptionFieldsRepository;
 use MailPoet\Settings\SettingsController;
-use MailPoet\Tasks\Sending as SendingTask;
 use MailPoet\Util\Helpers;
 use MailPoet\Util\Security;
 
@@ -108,21 +108,6 @@ class Newsletter extends Model {
     );
   }
 
-  /**
-   * @deprecated This method can be removed after 2023-10-28. Make sure it is removed together with
-   * \MailPoet\Models\NewsletterOption and \MailPoet\Models\NewsletterOptionField.
-   */
-  public function options() {
-    self::deprecationError(__METHOD__);
-
-    return $this->hasManyThrough(
-      __NAMESPACE__ . '\NewsletterOptionField',
-      __NAMESPACE__ . '\NewsletterOption',
-      'newsletter_id',
-      'option_field_id'
-    )->select_expr(MP_NEWSLETTER_OPTION_TABLE . '.value');
-  }
-
   public function save() {
     if (is_string($this->deletedAt) && strlen(trim($this->deletedAt)) === 0) {
       $this->set_expr('deleted_at', 'NULL');
@@ -160,7 +145,7 @@ class Newsletter extends Model {
 
   public function delete() {
     trigger_error('Calling Newsletter::delete() is deprecated and will be removed. Use \MailPoet\Newsletter\NewslettersRepository instead.', E_USER_DEPRECATED);
-    ContainerWrapper::getInstance()->get(NewslettersRepository::class)->bulkDelete([$this->id]);
+    ContainerWrapper::getInstance()->get(NewsletterDeleteController::class)->bulkDelete([$this->id]);
     return null;
   }
 
@@ -236,8 +221,11 @@ class Newsletter extends Model {
     return $this;
   }
 
+  /**
+   * @deprecated This method is deprecated. \MailPoet\Entities\NewsletterEntity::getLatestQueue() instead. This method can be removed after 2024-05-30.
+   */
   public function getQueue($columns = '*') {
-    return SendingTask::getByNewsletterId($this->id);
+    self::deprecationError(__METHOD__);
   }
 
   public function getBodyString(): string {
@@ -250,28 +238,16 @@ class Newsletter extends Model {
     return $this->body;
   }
 
+  /**
+   * @deprecated This method is deprecated. It method can be removed after 2024-05-30.
+   */
   public function withSendingQueue() {
+    self::deprecationError(__METHOD__);
     $queue = $this->getQueue();
     if ($queue === false) {
       $this->queue = false;
     } else {
       $this->queue = $queue->asArray();
-    }
-    return $this;
-  }
-
-  /**
-   * @deprecated This method can be removed after 2023-10-28. Make sure it is removed together with
-   * \MailPoet\Models\NewsletterOption and \MailPoet\Models\NewsletterOptionField.
-   */
-  public function withOptions() {
-    self::deprecationError(__METHOD__);
-
-    $options = $this->options()->findArray();
-    if (empty($options)) {
-      $this->options = [];
-    } else {
-      $this->options = array_column($options, 'value', 'name');
     }
     return $this;
   }
@@ -380,12 +356,5 @@ class Newsletter extends Model {
       return false;
     }
     return self::filter('filterWithOptions', $newsletter->type)->findOne($id);
-  }
-
-  private static function deprecationError($methodName) {
-    trigger_error(
-      'Calling ' . esc_html($methodName) . ' is deprecated and will be removed. Use \MailPoet\Newsletter\NewslettersRepository and \MailPoet\Entities\NewsletterEntity instead.',
-      E_USER_DEPRECATED
-    );
   }
 }

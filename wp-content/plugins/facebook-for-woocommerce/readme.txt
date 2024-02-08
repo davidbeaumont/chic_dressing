@@ -2,8 +2,8 @@
 Contributors: facebook, automattic, woothemes
 Tags: facebook, shop, catalog, advertise, pixel, product
 Requires at least: 4.4
-Tested up to: 6.3
-Stable tag: 3.1.2
+Tested up to: 6.4
+Stable tag: 3.1.9
 Requires PHP: 5.6 or greater
 MySQL: 5.6 or greater
 License: GPLv2 or later
@@ -13,7 +13,8 @@ Get the Official Facebook for WooCommerce plugin for two powerful ways to help g
 
 == Description ==
 
-This is the official Facebook for WooCommerce plugin that connects your WooCommerce website to Facebook. With this plugin, you can install the Facebook pixel, upload your online store catalog, and create a shop on your Facebook page, enabling you to easily run dynamic ads.
+This is the official Facebook for WooCommerce plugin that connects your WooCommerce website to Facebook. With this plugin, you can install the Facebook pixel, and upload your online store catalog, enabling you to easily run dynamic ads.
+
 
 Marketing on Facebook helps your business build lasting relationships with people, find new customers, and increase sales for your online store. With this Facebook ad extension, reaching the people who matter most to your business is simple. This extension will track the results of your advertising across devices. It will also help you:
 
@@ -38,6 +39,30 @@ When opening a bug on GitHub, please give us as many details as possible.
 * Current version of Facebook-for-WooCommerce, WooCommerce, Wordpress, PHP
 
 == Changelog ==
+
+= 3.1.9 - 2024-01-09 =
+* Tweak - Changed minimum WC version to 6.4.
+* Tweak - WC 8.5 compatibility.
+
+= 3.1.8 - 2024-01-03 =
+* Fix - Fatal Error on order screens.
+
+= 3.1.7 - 2024-01-03 =
+* Add - Create/Update products sync to facebook with Batch API.
+
+= 3.1.6 - 2023-12-27 =
+* Fix - Facebook Pixel events missing on redirect to cart.
+
+= 3.1.5 - 2023-11-29 =
+* Fix - Remove mentions of shops.
+
+= 3.1.4 - 2023-11-25 =
+* Fix - Remove popup modal blocking product edit when product is using category excluded from sync.
+
+= 3.1.3 - 2023-11-07 =
+* Fix - Doc - Use new Woo.com domain.
+* Tweak - WC 8.3 compatibility.
+* Tweak - WP 6.4 compatibility.
 
 = 3.1.2 - 2023-10-19 =
 * Dev - Add phpcs on changed files only.

@@ -82,10 +82,6 @@ function seopress_xml_sitemap_index() {
 
     $home_url = home_url() . '/';
 
-    if (function_exists('pll_home_url')) {
-        $home_url = site_url() . '/';
-    }
-
     $home_url = apply_filters('seopress_sitemaps_home_url', $home_url);
 
     $seopress_sitemaps ='<?xml version="1.0" encoding="UTF-8"?>';
@@ -165,7 +161,7 @@ function seopress_xml_sitemap_index() {
                     if ('1' == $_tax_value) {
                         $args = [
                             'taxonomy'   => $tax_key,
-                            'hide_empty' => false,
+                            'hide_empty' => true,
                             'lang'       => '',
                             'fields'     => 'ids',
                             'meta_query' => [

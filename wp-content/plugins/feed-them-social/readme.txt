@@ -1,18 +1,18 @@
 === Feed Them Social - Page, Post, Video, and Photo Galleries ===
 Contributors: slickremix, slickchris
 Donate link: https://www.slickremix.com/
-Tags: Facebook, Instagram, Twitter, YouTube, Feed, Social Media, social, Instagram photo, Instagram gallery, seo, gallery
+Tags: Instagram, Facebook, TikTok, YouTube, Feed, Social Media, social, Instagram photo, Instagram gallery, seo, gallery
 Requires at least: 5.4
 Requires PHP: 7.0
-Tested up to: 6.3.1
-Stable tag: 4.1.8
+Tested up to: 6.4.3
+Stable tag: 4.2.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Custom social media feeds for Instagram, Facebook Pages, Album Photos, Videos & Covers, Twitter, & YouTube on pages, posts, or widgets.
+Custom social media feeds for Instagram, Facebook Pages, Album Photos, Videos & Covers, TikTok, & YouTube on pages, posts, widgets, Elementor & Beaver Builder.
 
 == Description ==
-Easily Create and Display Customizable Social Feeds for Instagram, Facebook, Twitter, or YouTube. Responsive on Desktops, Tablets, and Mobile Devices.
+Easily Create and Display Customizable Social Feeds for Instagram, Facebook, TikTok, or YouTube. Responsive on Desktops, Tablets, and Mobile Devices.
 
 ###Features
  * **Quick** Install and Set up.
@@ -27,7 +27,6 @@ Easily Create and Display Customizable Social Feeds for Instagram, Facebook, Twi
  * **Share** buttons for Instagram, Facebook, Twitter, and YouTube Feeds.
  * **Add** Like and/or Follow Buttons above or below any feeds.
  * **Works** with Gutenberg Blocks or Classic Editor.
-
 
 ###Benefits
  * **Easy-to-use** features.
@@ -55,22 +54,26 @@ Easily Create and Display Customizable Social Feeds for Instagram, Facebook, Twi
 
 ###Feed Demos
  All Demos can be found on [FeedThemSocial.com](https://feedthemsocial.com/)
- * [Facebook Page Feed Demo](https://feedthemsocial.com/)
- * [Facebook Album Photos Feed Demo](https://feedthemsocial.com/facebook-album-photos-demo/)
- * [Facebook Album Covers Feed Demo](https://feedthemsocial.com/facebook-album-covers/)
- * [Instagram Feed Demo](https://feedthemsocial.com/instagram-feed-demo/)
- * [Twitter Feed Demo](https://feedthemsocial.com/twitter-feed-demo/)
- * [YouTube Feed Demo](https://feedthemsocial.com/youtube-feed-demo/)
+ ✭ [Instagram Feed Demo](https://feedthemsocial.com/instagram-feed-demo/)
+ ✭ [TikTok Feed Demo](https://feedthemsocial.com/tiktok-feed-demo/)
+ ✭ [Facebook Page Feed Demo](https://feedthemsocial.com/)
+ ✭ [Facebook Album Photos Feed Demo](https://feedthemsocial.com/facebook-album-photos-demo/)
+ ✭ [Facebook Album Covers Feed Demo](https://feedthemsocial.com/facebook-album-covers/)
+ ✭ [YouTube Feed Demo](https://feedthemsocial.com/youtube-feed-demo/)
 
 = Premium Extension Demos =
- * [Facebook Page Feed Demo](https://feedthemsocial.com/)
- * [Facebook Video Feed Demo](https://feedthemsocial.com/facebook-videos-demo/)
- * [Facebook Photo and Video Carousels Demo](https://feedthemsocial.com/facebook-videos-demo/)
+ ✭ [Instagram Hashtag Demo](https://feedthemsocial.com/instagram-hashtag-feed-demo/)
+ ✭ [Facebook Page Grid Feed Demo](https://feedthemsocial.com/facebook-page-grid-demo/)
+ ✭ [Facebook Video Feed Demo](https://feedthemsocial.com/facebook-videos-demo/)
+ ✭ [YouTube Popup Video Feed Demo](https://feedthemsocial.com/youtube-gallery-format-2/)
+
+= TikTok Extension =
+ ✭ [See Demo](https://feedthemsocial.com/tiktok-feed-demo/)
 
 = Combined Streams Extension =
  ✭ [See Demo](https://feedthemsocial.com/feed-them-social-combined-streams/)
 
-= Carousel Extension =
+= Facebook Photos, Albums & Video Carousel Extension =
  ✭ [See Demo](https://feedthemsocial.com/facebook-carousels-or-sliders/)
 
 = Facebook Reviews Extension =
@@ -118,6 +121,57 @@ Log into WordPress dashboard then click **Plugins** > **Add new** > Then under t
 16. Add the shortcode you generated from the settings page to any post, page, or text widget.
 
 == Changelog ==
+= Version 4.2.4 Wednesday, January 31tst, 2024 =
+  * NEW: TikTok: Flip the comment icon to be more aligned with TikTok's design.
+  * FIX: TikTok: Remove trailing comma in access token that was causing fatal errors with php 7.0-7.2
+
+= Version 4.2.3 Saturday, January 27th, 2024 =
+  * NEW: TikTok Feed > Profile: Add truncated number option for followers, following, and likes. ie. 1.2K, 1.2M
+  * FIX: TikTok: Hide profile photo option not working.
+  * FIX: TikTok: Change API url to v2 and make a POST request to get the video data instead of GET.
+
+= Version 4.2.2 Wednesday, January 24th, 2024 =
+  * NEW: Facebook Feed: Now the thumbnail image will display even if you have age or country restrictions on your business page.
+  * NEW: Premium: Facebook Feed > Popup: Thumbnail images for comments will now display.
+  * FIX: Premium: Facebook Feed > Feed Type > Videos: Option was still showing premium required even if you had the premium version activated and the play button size option was incorrectly set.
+  * FIX: Premium: Facebook Feed: Hide, thumbnail, username or date options not working.
+  * OPTIMIZE: Facebook Feed: Reorder all Yoda notations for checks for better readability of the code and fix some code that was causing notices to appear in the error.log for Albums.
+
+= Version 4.2.1 Tuesday, January 15th, 2024 =
+  * NEW: TikTok Feed: Added TikTok Feed. You can now display your TikTok posts on your website. [Demo](https://feedthemsocial.com/tiktok-feed-demo/)
+  * NEW: Feed Edit page: Only empty cache when an actual post amount change, name change, or new access token is added. This will help with performance and reduce API calls.
+  * NEW: Font Awesome 6.5.1 added to the plugin. All new modern icons for the feeds are in place.
+  * FIX: Facebook Feed: Add email address to the list of text to convert to links in a post description.
+  * FIX: Facebook Feed: Share count not appearing for all post types.
+  * FIX: Facebook Feed: Title link was missing in some promotional posts.
+  * FIX: Facebook Feed: Add check for http on share links because sometimes there is a phone number like tel:+55555555 and not a url.
+  * NOTE: Works with WordPress version 6.4.2
+  * SECURITY: Added nonce check for the rating notice.
+
+= Version 4.2.0 Tuesday, December 5th, 2023 =
+  * NEW: Facebook: Case type messenger_generic_template added. This allows shared posts from Instagram to appear with photo.
+  * NEW: Facebook: Albums Feed: Now you can add a since date which allows you to pull in newer albums if you have a large collection.
+  * NEW: Facebook: span tags have been added around the likes, comment and shares items in a feed. This solves the issue of some themes that remove basic html spaces and allows for further customization.
+  * FIX: Facebook: Feed Settings > Facebook Fixed Height: Remove unneeded class and style if the height option was not set.
+  * FIX: Settings: Make sure the Powered by Text is also removed in the popup option when using the Premium version.
+  * FIX: Feed Edit: Hide the text that says, More than 6 Requires Premium, when the Premium plugin is active.
+  * FIX: Premium: Facebook Feed > Popup: In some cases the content for the popup was not loading on the first click.
+
+= Version 4.1.9 Tuesday, November 21st, 2023 =
+  * FIX: Instagram: Feed not displaying properly on some installs when jquery is loaded in the footer.
+  * FIX: Instance of use_custom_js_scripts was not being used and outputting a PHP notice.
+  * FIX: Instagram: Warning Message: number_format expecting float as first parameter.
+  * FIX: Facebook: Feed not displaying likes/comments count on posts with only text when Reviews extension is active.
+  * FIX: YouTube Setting: Single Video: Background color for video container option not showing.
+  * FIX: Premium: YouTube: User Specific Playlist: The Load more videos.
+  * FIX: Premium: YouTube: Show videos on right or left side.
+  * FIX: Premium: Facebook: Remove inline !important on post for width of grid feed.
+  * FIX: Feed Settings: Remove the loading feed and empty cache message when no access token is present.
+  * FIX: Share: Remove svg icon for Twitter.
+  * NEXT UPDATE: Add date option for Facebook Albums.
+  * NEXT UPDATE: Add Email notification when an access token expires.
+  * NOTE: Works with WordPress version 6.4.1
+
 = Version 4.1.8 Saturday, September 2nd, 2023 =
   * FIX: Facebook Feed: Link for posts with only text were not directing to Facebook properly.
   * NOTE: Works with WordPress version 6.3.1.

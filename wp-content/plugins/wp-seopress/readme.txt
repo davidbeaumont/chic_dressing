@@ -2,11 +2,11 @@
 Authors: rainbowgeek
 Contributors: seopress, rainbowgeek, gmulti, juliobox, maigret, mgris, vincentdubroeucq
 Donate link: https://www.seopress.org/
-Tags: SEO, schema, xml sitemap, redirection, meta title, open graph, content analysis, instant indexing, breadcrumbs, analytics, rich snippets, broken link
+Tags: SEO, schema, xml sitemap, redirection, meta title, open graph, content analysis, instant indexing, breadcrumbs, analytics, rich snippets, ai
 Requires at least: 5.0+
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 7.2
-Stable tag: 7.1.1
+Stable tag: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ SEOPress, a simple, fast and powerful all in one SEO plugin for WordPress. Rank 
 == Description ==
 
 <h3>Best SEO plugin for WordPress fully integrated with all page builders and themes!</h3>
-<h3>Now with AI to automagically generate meta title and description!</h3>
+<h3>Now with AI (GPT 4) to automagically generate meta title, description and alternative texts for images!</h3>
 
 SEOPress is a powerful WordPress SEO plugin to optimize your SEO, boost your traffic, improve social sharing, build custom HTML and XML Sitemaps, create optimized breadcrumbs, add schemas / Google Structured data types, manage 301 redirections and so much more.<br>
 
@@ -27,7 +27,7 @@ SEOPress is a powerful WordPress SEO plugin to optimize your SEO, boost your tra
 
 <a href="https://www.seopress.org/pricing/" target="_blank"><strong>Buy SEOPress PRO: only $49 / year / unlimited sites</strong></a>
 
-[youtube https://www.youtube.com/watch?v=U-SSr_4uTTQ]
+[youtube https://www.youtube.com/watch?v=4ysKFVr_nu0]
 
 <a href="https://www.seopress.org/features/" target="_blank">Features</a> | <a href="https://www.seopress.org/solutions/migrate-from/" target="_blank">Migrate</a> | <a href="https://www.seopress.org/wordpress-seo-plugins/pro/" target="_blank">PRO</a> | <a href="https://www.seopress.org/integrations/" target="_blank">Integrations</a> | <a href="https://www.seopress.org/support/" target="_blank">Support</a> | <a href="https://www.seopress.org/features/seopress-white-label/" target="_blank">White Label</a> | <a href="https://www.seopress.org/features/openai/" target="_blank">AI</a>
 
@@ -76,8 +76,10 @@ SEOPress is a powerful WordPress SEO plugin to optimize your SEO, boost your tra
 
 <h3>SEOPress PRO: to go further with your SEO</h3>
 
+[youtube https://youtu.be/zxGCY-bJYwE]
+
 <ul>
-	<li><a href="https://www.seopress.org/features/openai/" target="_blank"><strong>Use Artificial Intelligence to generate SEO metadata. Bulk actions supported.</li>
+	<li><a href="https://www.seopress.org/features/openai/" target="_blank"><strong>Use Artificial Intelligence (GPT 4 / Vision and GPT 3.5 Turbo) to generate SEO metadata and alternative texts for image files. Bulk actions supported.</li>
 	<li><a href="https://www.seopress.org/support/guides/import-metadata-from-a-csv-file-with-seopress-pro/" target="_blank"><strong>Import / export metadata</strong></a> (titles, open graph, robots...) from / to CSV file</li>
 	<li><a href="https://www.seopress.org/features/sitemaps/" target="_blank"><strong>Video XML Sitemap</strong></a> to improve rankings in video search results. YouTube videos are automatically added.</li>
 	<li>Internal linking suggestions</li>
@@ -191,7 +193,8 @@ We provide deep integration with Elementor page builder. Directly from Elementor
 <h3>Translations</h3>
 SEOPress is translated into multiple languages including:
 <ul>
-	<li>🇺🇸 English (UK) (English (UK)) - professional translation</li>
+	<li>🇺🇸 English (EN) (English (US)) - professional translation</li>
+	<li>🇬🇧 English (EN) (English (UK)) - professional translation</li>
 	<li>🇫🇷 Français (French (France)) - professional translation</li>
 	<li>🇪🇸 Español (Spanish (Spain)) - professional translation</li>
 	<li>🇩🇪 Deutsch (German) - professional translation</li>
@@ -376,34 +379,21 @@ You're theme is probably using a deprecated function to handle the title. <a hre
 12. Schema metabox
 
 == Changelog ==
-= 7.1.1 =
-* FIX Compatibility issue with Bricks Builder for automatic schemas
-* FIX Compatibility issue with Weglot and redirections
-* FIX Google and social previews for term taxonomy
-* FIX Social account URLs for non-Latin alphabets
-* FIX i18n
+= 7.4 <a href="https://www.seopress.org/newsroom/product-news/seopress-7-4/">Read the blog post update</a> =
+* NEW Add Shipping properties to Product schema (automatically added to your existing products schemas)
+* NEW Add 'Description', 'Email' and 'VAT ID' properties to Organization schema (SEO, Social Networks, Knowledge Graph to configure)
+* NEW Bulk action to generate alt text from media filename
+* NEW Export your 404 errors list to a CSV file (SEO, Tools, Redirections tab)
+* NEW 'seopress_export_404_query' hook to filter the 404 errors export query (https://www.seopress.org/support/hooks/filter-export-404-errors-query/)
+* INFO XML sitemaps no longer display terms without associated content
+* INFO Prevent browser to autocomplete some inputs
+* INFO We no longer ping Google for XML sitemaps as the service is deprecated since several months now
+* FIX PHP Warnings
+* FIX Backwards compatibility issue with WP < 5.9
+* FIX Fatal error on How-to schema in specific cases
+* FIX GA4 widget values
+* FIX Incorrect content analysis from universal SEO metabox in specific cases
+* FIX Deleting data from OG/Tw image fields for terms
 
-= 7.1 <a href="https://www.seopress.org/newsroom/product-news/seopress-7-1/">Read the blog post update</a> =
-* NEW OpenAI #8 iteration: generation of alternative texts for images (beta) 🎉
-* NEW OpenAI #8 iteration: add GPT-4 model (required at least 1 successful payment of $1 via the OpenAI platform) 🎉
-* NEW OpenAI #8 iteration: pass target keywords if available to the prompts 🎉
-* NEW Block Google Bard AI Bot from robots.txt file in 1 click (PRO)
-* NEW Display the number of inbound / outbound links from post types list (SEO, Advanced, Appearance)
-* NEW 'seopress_ai_openai_alt_text' to filter the prompt sent to OpenAI to generate alt text for images (https://www.seopress.org/support/hooks/filter-the-prompt-sent-to-openai-to-generate-alt-text-for-images/)
-* INFO Wizard installation enhanced
-* INFO %%page%% dynamic variable no longer outputs something on first paginated archive page
-* INFO Remove deprecated Google Analytics options: remarketing, cross domains, link attribution etc. from the settings
-* INFO Improve UX when adding OpenAI key and checking the key without saving changes
-* INFO 'seopress_auto_image_title' improved with a new parameter: $post_ID of the attachment
-* INFO Stop saving unnecessary information to the database when using the Broken Link Checker
-* INFO Remove Word Counters and Keyword Density analysis, this has no impact on SEO
-* INFO Refactoring content analysis code
-* FIX Invalid argument supplied for foreach() wp-seopress-pro/inc/admin/blocks/insights.php:181
-* FIX CSS in Broken Link Checker screen
-* FIX 'seopress_sitemaps_max_posts_per_sitemap' hook (thanks to @zauddelig)
-* FIX Fatal error with Broken Link Checker in specific cases
-* FIX PHP Deprecated: Implicit conversion from float
-* FIX PHP Warning: Undefined variable $bot_status_type
-* FIX Last update column in XML sub-sitemaps on very specific cases
 
 <a href="https://www.seopress.org/changelog/" target="_blank">View our complete changelog</a>

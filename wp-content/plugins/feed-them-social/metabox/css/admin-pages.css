@@ -1,3 +1,11 @@
+#theme-settings-wrap .company-info-style, #theme-settings-wrap .ft-gallery-float-wrap-2column {
+    background-color: rgba(246, 244, 244, .3) !important
+}
+
+.ftg-loading-overlay-loader, .ss-picker-position {
+    font-style: normal;
+    -webkit-font-smoothing: antialiased
+}
 .tab-content .ft-gallery-select-thumbn .ft-gallery-myCheckbox {
     position: absolute;
     bottom: 5px;
@@ -7,7 +15,7 @@
     line-height: 20px
 }
 
-.ft-gallery-myCheckbox input {
+#ft_watermark_image_sizes, .feed-them_page_ft-gallery-settings-page .ft-gallery-gal-load-more-options-wrap, .ft-gallery-hide-me, .ft-gallery-myCheckbox input, .ft-gallery-smart-image-checkbox-wrap, .ft-global-option-wrap-, .ft-global-option-wrap-ft-watermark-image input, .ft-global-option-wrap-ft-watermark-image label, .ft-watermark-hide-these-options, .ftg-global-model-product-wrap .ftg-settings-overlay, .ss-hidden {
     display: none !important
 }
 
@@ -46,13 +54,13 @@ a:focus {
     font-weight: 700;
     cursor: pointer !important;
     position: absolute;
-    transition: all .3s ease-in-out
+    transition: .3s ease-in-out
 }
 
 .buy-extensions-btn, .ft-gallery-settings-admin-input-label a {
     text-decoration: none;
     -webkit-transition: background 2s;
-    -moz-transition: all .3s ease-in-out
+    -moz-transition: .3s ease-in-out
 }
 
 .use-of-plugin h3 {
@@ -70,7 +78,8 @@ a:focus {
     -webkit-border-radius: 10px;
     border-radius: 1px;
     position: relative;
-    margin: 19px 17px 0 2px
+    margin: 19px 17px 0 2px;
+    max-width: 1050px
 }
 
 .ft-gallery-settings-admin-wrap h2 {
@@ -126,9 +135,9 @@ a:focus {
     cursor: pointer;
     font-size: 13px;
     color: red;
-    -webkit-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out
 }
 
 .ft-gallery-settings-admin-input-label a:hover {
@@ -151,11 +160,10 @@ a:focus {
     cursor: pointer;
     float: left;
     font-size: 12px;
-    -webkit-transition: background 2s;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out
 }
 
 .upload-logo-size {
@@ -175,11 +183,10 @@ a:focus {
 
 .ft-gallery-settings-admin-input-example a, .ft-gallery-video-admin-wrap a {
     cursor: pointer;
-    -webkit-transition: background 2s;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out
 }
 
 .ft-gallery-settings-admin-input:focus {
@@ -233,25 +240,24 @@ a:focus {
     width: 28px;
     outline: 0;
     border: none;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    background: url(../images/facebook-icon.png) no-repeat;
-    background-size: 28px 28px;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    background: url(../images/facebook-icon.png) 0 0/28px 28px no-repeat;
     cursor: pointer;
     display: none
 }
 
 .ft-gallery-settings-icon-wrap a:hover {
     opacity: .95;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out
 }
 
-.ft-gallery-settings-icon-wrap a:hover, .im-done {
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out
+.ft-gallery-help-admin-wrap a, .ft-gallery-settings-icon-wrap a:hover, .ft-gallery-settings-toggle, .im-done {
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out
 }
 
 .ft-gallery-settings-admin-slick-logo {
@@ -299,7 +305,7 @@ a:focus {
     margin: 15px 20px 30px
 }
 
-.checkbox-input {
+.checkbox-input, .toggle-custom-textarea-show {
     margin-top: 10px !important
 }
 
@@ -335,10 +341,6 @@ a:focus {
     width: 17px;
     height: 17px;
     vertical-align: -14px
-}
-
-.ft-gallery-settings-id-answer {
-    margin-top: 10px
 }
 
 .ft-gallery-settings-id-answer h4 {
@@ -389,28 +391,25 @@ a:focus {
     float: left;
     display: block;
     clear: both;
-    -webkit-transition: background 2s;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out
 }
 
 .buy-extensions-btn:hover, .ft-gallery-settings-admin-submit-btn:hover, .upload_image_button:hover, a.im-done:hover {
     background: #919191 !important;
-    -webkit-transition: background 2s;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
     color: #f1f1f1
 }
 
 .ft-gallery-settings-admin-submit-btn {
     float: left;
-    -webkit-transition: background 2s;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
     border-radius: 1px
 }
 
@@ -418,7 +417,7 @@ a:focus {
     padding: 0 20px 10px 0
 }
 
-.ft-gallery-help-admin-wrap .use-of-plugin {
+.ft-gallery-help-admin-wrap .use-of-plugin, .fts-help-admin-wrap .use-of-plugin {
     color: #888;
     font-weight: 400;
     font-size: 12px;
@@ -430,7 +429,7 @@ a:focus {
     border: 1px solid #dfdfdf
 }
 
-.ft-gallery-help-admin-wrap li {
+.ft-gallery-help-admin-wrap li, .fts-help-admin-wrap li {
     margin-top: -10px;
     line-height: 23px
 }
@@ -440,20 +439,14 @@ a:focus {
     background-size: 50px
 }
 
-.ft-gallery-help-admin-wrap a {
+.ft-gallery-help-admin-wrap a, .fts-help-admin-wrap a {
     text-decoration: none;
     cursor: pointer !important;
-    -webkit-transition: background 2s;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out
 }
 
-.ft-gallery-help-admin-wrap a, .ft-gallery-settings-toggle {
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out
-}
-
-.ft-gallery-help-admin-wrap ol li {
+.ft-gallery-help-admin-wrap ol li, .fts-help-admin-wrap ol li {
     margin: 5px 0 0;
     line-height: 17px
 }
@@ -462,7 +455,7 @@ a:focus {
     line-height: 21px
 }
 
-#ft-gallery-debug-report {
+#ft-gallery-debug-report, #fts-debug-report {
     font-family: monospace;
     display: none;
     width: 100%;
@@ -470,7 +463,7 @@ a:focus {
     height: 200px
 }
 
-a.ft-gallery-debug-report {
+a.ft-gallery-debug-report, a.fts-debug-report {
     padding: 1px 7px 2px;
     background: #e6e6e6
 }
@@ -505,7 +498,7 @@ select.ft-gallery-settings-admin-input {
     position: relative
 }
 
-.ft-gallery-float-wrap-2column {
+#wp-editpost-wrap, .ft-gallery-float-wrap-2column {
     margin-bottom: 10px
 }
 
@@ -545,11 +538,7 @@ select.ft-gallery-settings-admin-input {
     color: #e6e6e6
 }
 
-#theme-settings-wrap .ft-gallery-float-wrap-2column {
-    background-color: rgba(246, 244, 244, .3) !important
-}
-
-#theme-settings-wrap .ft-gallery-settings-admin-input-wrap {
+#theme-settings-wrap .ft-gallery-settings-admin-input-wrap, .feed-them-social-admin-input-wrap, .fnews-large-wrap-right, .ftg-global-model-product-wrap, .ftg-zip-option-wrapper {
     position: relative
 }
 
@@ -559,7 +548,6 @@ select.ft-gallery-settings-admin-input {
 }
 
 #theme-settings-wrap .company-info-style {
-    background-color: rgba(246, 244, 244, .3) !important;
     padding: 18px 19px;
     margin: 0;
     border: none;
@@ -610,8 +598,8 @@ select.ft-gallery-settings-admin-input {
     right: 12px;
     text-decoration: none;
     background: #fff;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out
 }
 
 .ft-gallery-settings-toggle:hover {
@@ -620,7 +608,7 @@ select.ft-gallery-settings-admin-input {
 }
 
 .ft-gallery-settings-toggle:before {
-    font-family: arial
+    font-family: arial, sans-serif;
 }
 
 .view-all-custom {
@@ -628,9 +616,9 @@ select.ft-gallery-settings-admin-input {
     height: 20px;
     width: 20px;
     background: #fff;
-    font-family: verdana;
+    font-family: verdana, sans-serif;
     display: none;
-    transition: all .3s ease-in-out
+    transition: .3s ease-in-out
 }
 
 span.view-all-articles {
@@ -677,23 +665,16 @@ span.view-all-articles {
     color: #fff !important
 }
 
-.view-all-custom a.icon-view-all:hover span.view-all-articles {
+.ft-gallery-turn-on-custom-colors:hover span.view-all-articles, .view-all-custom a.icon-view-all:hover span.view-all-articles {
     opacity: 1;
     transition-delay: 0s;
     -o-transition-duration: .2s;
-    transition-duration: .2s
-}
-
-.ft-gallery-turn-on-custom-colors:hover span.view-all-articles, .view-all-custom a.icon-view-all:hover span.view-all-articles {
+    transition-duration: .2s;
     -webkit-transition-delay: 0s;
     -moz-transition-delay: 0s;
     -o-transition-delay: 0s;
     -webkit-transition-duration: .2s;
     -moz-transition-duration: .2s
-}
-
-.fnews-large-wrap-right {
-    position: relative
 }
 
 .view-all-custom span.arrow-right {
@@ -716,35 +697,28 @@ span.view-all-articles {
     opacity: .6
 }
 
-.ft-gallery-turn-on-custom-colors:hover span.view-all-articles {
-    opacity: 1;
-    transition-delay: 0s;
-    -o-transition-duration: .2s;
-    transition-duration: .2s
-}
-
 .ft-gallery-color-white {
     color: #52a1eb;
     text-decoration: none
 }
 
-.ft-gallery-color-white:hover {
+.ft-gallery-color-white:hover, .ft-gallery-turn-on-custom-colors p {
     color: #fff
 }
 
 .ft-gallery-custom-color-btn {
     display: block;
     text-decoration: none;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
     border-radius: 2px;
     padding: 12px 20px;
-    background: rgba(247, 247, 247, 1);
+    background: #f7f7f7;
     margin: 10px 0;
     font-size: 15px;
     text-align: center;
-    transition: all .3s ease-in-out
+    transition: .3s ease-in-out
 }
 
 .ft-gallery-settings-toggle {
@@ -765,23 +739,20 @@ span.view-all-articles {
     height: 240px;
     text-align: center;
     margin-bottom: 0;
-    background: url(../../admin/css/ft-gallery-logo-background.jpg) 0 -155px no-repeat;
-    background-size: cover;
+    background: url(../../admin/css/ft-gallery-logo-background.jpg) 0 -155px/cover no-repeat;
     padding: 15px 20px 6px;
     box-shadow: 0 1px 4px 0 rgba(14, 14, 14, .42)
 }
 
 @media (max-width: 1155px) {
     .fts_page_ft-gallery-settings-page .ft-gallery-settings-admin-wrap h2 {
-        background: url(../../admin/css/ft-gallery-logo-background.jpg) -155px -175px no-repeat !important;
-        background-size: auto !important
+        background: url(../../admin/css/ft-gallery-logo-background.jpg) -155px -175px no-repeat !important
     }
 }
 
 @media (max-width: 466px) {
     .fts_page_ft-gallery-settings-page .ft-gallery-settings-admin-wrap h2 {
         background: url(../../admin/css/ft-gallery-logo-background.jpg) -165px -210px no-repeat !important;
-        background-size: auto !important;
         height: 160px !important
     }
 }
@@ -792,10 +763,6 @@ span.view-all-articles {
     top: 16px;
     max-width: 470px;
     width: 100%
-}
-
-.ft-gallery-settings-admin-wrap {
-    max-width: 1050px
 }
 
 .buy-extensions-btn {
@@ -836,10 +803,6 @@ span.view-all-articles {
     color: #4a4a4a
 }
 
-.ft-gallery-turn-on-custom-colors p {
-    color: #fff
-}
-
 label.toggle-custom-textarea-show, label.toggle-custom-textarea-show-terms {
     width: 165px;
     float: none;
@@ -852,17 +815,17 @@ label.toggle-custom-textarea-show, label.toggle-custom-textarea-show-terms {
     border: 1px solid #6f6f6f;
     border-radius: 2px;
     font-size: 12px;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out
 }
 
 label.toggle-custom-textarea-show:hover {
     background: #999
 }
 
-.toggle-custom-textarea-hide, .toggle-custom-textarea-hide-terms {
+#fts_topics-add #newfts_topics_parent, .ft-watermark-hidden-options.feed-them-social-admin-input-wrap, .ft-watermark-images-sizes-wrap .feed-them-social-admin-input-label, .hide-fb-options, .quick_docs_list_wrap .tabs input[type=radio], .sortable li.mjs-nestedSortable-collapsed > ul, .toggle-custom-textarea-hide, .toggle-custom-textarea-hide-terms, .wp-core-ui .button-primary.ft-gallery-download-selection-option {
     display: none
 }
 
@@ -901,8 +864,6 @@ textarea#ft-gallery-main-wrapper-css-input, textarea#ft-gallery-main-wrapper-cus
     border-top: 0 solid #ccc !important
 }
 
-
-
 .ft-gallery-custom-settings-checkbox-wrap {
     margin: 16px 0 0 9px;
     float: left;
@@ -924,16 +885,12 @@ textarea#ft-gallery-main-wrapper-css-input, textarea#ft-gallery-main-wrapper-cus
     padding-bottom: 20px
 }
 
-.hide-fb-options {
-    display: none
-}
-
 .ft-gallery-gal-options-wrap, .ft-gallery-github-options-wrap, .ft-gallery-quick-links-options-wrap {
     margin: 15px 0;
     display: none
 }
 
-.ft-gallery-github-options-wrap .github-submit {
+.ft-gallery-github-options-wrap .github-submit, div.fts-section.section-last {
     margin-bottom: 0 !important
 }
 
@@ -955,7 +912,6 @@ textarea#ft-gallery-main-wrapper-css-input, textarea#ft-gallery-main-wrapper-cus
 .ft-gallery-fb-options input {
     margin: 9px 10px 10px 20px;
     width: auto !important;
-    line-height: auto
 }
 
 .special {
@@ -966,10 +922,6 @@ textarea#ft-gallery-main-wrapper-css-input, textarea#ft-gallery-main-wrapper-cus
     .buy-extensions-btn {
         display: none
     }
-}
-
-.feed-them_page_ft-gallery-settings-page .ft-gallery-gal-load-more-options-wrap {
-    display: none !important
 }
 
 .feed-them_page_ft-gallery-settings-page .instructional-text {
@@ -999,7 +951,7 @@ textarea#ft-gallery-main-wrapper-css-input, textarea#ft-gallery-main-wrapper-cus
     margin-top: 0 !important
 }
 
-.feed-them_page_ft-gallery-settings-page .quick-links-hashtag-etc-wrap {
+.feed-them_page_ft-gallery-settings-page .quick-links-hashtag-etc-wrap, .ftg-js-count-wrap {
     margin: 0 !important
 }
 
@@ -1017,7 +969,7 @@ textarea#ft-gallery-main-wrapper-css-input, textarea#ft-gallery-main-wrapper-cus
     border-color: transparent
 }
 
-#tree {
+body #tree {
     width: 550px;
     margin: 0
 }
@@ -1040,7 +992,7 @@ ul.sortable, ul.sortable ul {
     -moz-border-radius: 3px;
     border-radius: 3px;
     cursor: move;
-    border-color: #d4d4d4 #d4d4d4 #bcbcbc;
+    border-color: #bcbcbc;
     margin: 0;
     padding: 3px
 }
@@ -1049,12 +1001,8 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
     border-color: #999
 }
 
-.disclose, .expandEditor {
+.deleteMenu, .disclose, .expandEditor {
     cursor: pointer
-}
-
-.sortable li.mjs-nestedSortable-collapsed > ul {
-    display: none
 }
 
 .sortable li.mjs-nestedSortable-branch > div > .disclose {
@@ -1073,7 +1021,8 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
 
 .ft-gallery-menuDiv {
     padding: 9px 12px;
-    margin-bottom: 0
+    margin-bottom: 0;
+    position: relative
 }
 
 ul ul .ft-gallery-menuDiv {
@@ -1086,7 +1035,7 @@ ul ul .ft-gallery-menuDiv {
     color: #23282d
 }
 
-.ft-gallery-topic-item ul span.itemTitle {
+.ft-gallery-loader, .ft-gallery-topic-item ul span.itemTitle {
     color: #444
 }
 
@@ -1119,10 +1068,6 @@ ul ul .itemTitle {
     font-size: 15px
 }
 
-.deleteMenu {
-    cursor: pointer
-}
-
 .notice {
     color: #c33
 }
@@ -1139,10 +1084,6 @@ li.ft-gallery-topic-item {
 li.ft-gallery-topic-item li.ft-gallery-topic-item {
     padding: 0;
     margin-left: 20px
-}
-
-.ft-gallery-ul {
-    padding-left: 0
 }
 
 .no-topic-ul-list li {
@@ -1183,6 +1124,7 @@ li.ft-gallery-topic-item li.ft-gallery-topic-item {
 }
 
 .ft-gallery-ul {
+    padding-left: 0;
     margin-top: 20px
 }
 
@@ -1199,7 +1141,7 @@ li.ft-gallery-topic-item li.ft-gallery-topic-item {
     margin-left: 15px !important
 }
 
-.tab-content input[type=checkbox] {
+.fts-note-footer, .tab-content input[type=checkbox] {
     margin-left: 0 !important
 }
 
@@ -1246,10 +1188,6 @@ h3 {
     clear: both
 }
 
-.quick_docs_list_wrap .tabs input[type=radio] {
-    display: none
-}
-
 .quick_docs_list_wrap .tabs label {
     display: block;
     float: left;
@@ -1274,7 +1212,7 @@ h3 {
 }
 
 #bitbucket-icon:before, #github-icon:before, #gitlab-icon:before, #wordpress-icon:before {
-    font-family: FontAwesomeSlick;
+    font-family: FontAwesomeSlick, monospace;
     font-size: 45px;
     line-height: 1.2;
     clear: both
@@ -1300,11 +1238,7 @@ h3 {
     position: relative
 }
 
-.ft-gallery-hide-me {
-    display: none !important
-}
-
-.display, .pane-active {
+.display, .ftg-block, .pane-active {
     display: block !important
 }
 
@@ -1330,13 +1264,12 @@ label.tab-active {
 pre {
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word
 }
 
 .ui-icon-triangle-1-n:before, .ui-icon-triangle-1-s:before {
-    font-family: FontAwesomeSlick;
+    font-family: FontAwesomeSlick, monospace;
     font-size: 16px;
     line-height: 19px;
     display: inline-block;
@@ -1355,10 +1288,6 @@ pre {
 
 .ft-gallery-admin-input-wrap {
     margin: 0 0 5px
-}
-
-div.fts-section.section-last {
-    margin-bottom: 0 !important
 }
 
 @media screen and (max-width: 782px) {
@@ -1396,18 +1325,13 @@ div.fts-section.section-last {
 }
 
 .tabs div.fts-section {
-    /* margin: 0 0 30px; */
     position: relative;
     display: inline-block;
-    width: 100%;
+    width: 100%
 }
-.fts-tab-content1-combine.fts-twitter-combine,
-.fts-tab-content1-combine.fts-youtube-combine {
-    margin-top:14px
-}
-.tabs div.fts-section input {
-    /* padding: 7px 10px; */
-    /* display: inline-block; */
+
+.fts-tab-content1-combine.fts-twitter-combine, .fts-tab-content1-combine.fts-youtube-combine {
+    margin-top: 14px
 }
 
 .ft-gallery-admin-input-label {
@@ -1479,35 +1403,6 @@ div.fts-section.section-last {
     color: #555
 }
 
-.fts-help-admin-wrap a {
-    text-decoration: none;
-    cursor: pointer !important;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
-}
-
-.fts-help-admin-wrap ol li {
-    margin: 5px 0 0;
-    line-height: 17px
-}
-
-#fts-debug-report {
-    font-family: monospace;
-    display: none;
-    width: 100%;
-    margin-bottom: 20px;
-    height: 200px
-}
-
-a.fts-debug-report {
-    padding: 1px 7px 2px;
-    background: #e6e6e6
-}
-
-.ft-gallery-admin-help-faqs-wrap {
-    line-height: 21px
-}
-
 .ft-gallery-admin-help-faqs-wrap ol {
     margin: 12px 17px 31px 27px
 }
@@ -1540,23 +1435,6 @@ a.fts-debug-report {
     min-width: 673px
 }
 
-.fts-help-admin-wrap .use-of-plugin {
-    color: #888;
-    font-weight: 400;
-    font-size: 12px;
-    text-align: justify;
-    background: #fff;
-    line-height: 18px;
-    margin: 10px 0 25px;
-    padding: 15px 20px 15px 17px;
-    border: 1px solid #dfdfdf
-}
-
-.fts-help-admin-wrap li {
-    margin-top: -10px;
-    line-height: 23px
-}
-
 .fts_page_ft-gallery-system-info-submenu-page .buy-extensions-btn {
     margin-top: 23px;
     padding: 9px 25px 11px;
@@ -1568,15 +1446,15 @@ a.fts-debug-report {
     position: absolute;
     right: 21px;
     top: 0;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out
 }
 
 .buy-extensions-btn, .fts-settings-admin-input-label a {
     text-decoration: none;
     -webkit-transition: background 2s;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
     display: none
 }
 
@@ -1622,7 +1500,7 @@ a.fts-debug-report {
     width: 38px !important;
     height: 38px !important;
     -moz-osx-font-smoothing: grayscale !important;
-    font-family: FontAwesome !important;
+    font-family: FontAwesome, monospace !important;
     font-weight: 400 !important;
     font-style: normal !important;
     text-decoration: inherit !important;
@@ -1665,11 +1543,9 @@ a.fts-debug-report {
     width: 38px;
     height: 38px;
     -moz-osx-font-smoothing: grayscale;
-    font-family: FontAwesomeSlick !important;
+    font-family: FontAwesomeSlick, monospace !important;
     font-weight: 400;
-    font-style: normal;
     text-decoration: inherit;
-    -webkit-font-smoothing: antialiased;
     color: #fff;
     font-size: 26px;
     text-align: center;
@@ -1685,10 +1561,6 @@ a.fts-debug-report {
     padding: 0;
     margin: 0;
     cursor: pointer
-}
-
-.ss-hidden {
-    display: none !important
 }
 
 .ft-gallery-cache-wrap {
@@ -1742,7 +1614,7 @@ a.fts-debug-report {
     border-radius: 1px;
     position: relative;
     margin: 10px 0 0 5px;
-    background: rgba(255, 255, 255, 1);
+    background: #fff;
     -webkit-text-size-adjust: none;
     font-size: 13px;
     line-height: 21px
@@ -1754,11 +1626,11 @@ a.fts-debug-report {
     font-weight: 700
 }
 
-.fts-plugin-reviews a {
+.fts-plugin-reviews a, .premium-text a, body .ft-gallery-popup a.fts-powered-by-text {
     text-decoration: none
 }
 
-.fts-text-align-center {
+.fts-select-social-network-menu, .fts-text-align-center {
     text-align: center
 }
 
@@ -1796,10 +1668,6 @@ h1.plugin-author-note {
     margin-left: 5px
 }
 
-#fts_topics-add #newfts_topics_parent {
-    display: none
-}
-
 a.ft-gallery-delete-category, a.ft-gallery-delete-item, a.ft-gallery-edit-item {
     float: right;
     margin-left: 2px;
@@ -1816,7 +1684,7 @@ ul ul a.ft-gallery-edit-category, ul ul a.ft-gallery-edit-item {
     color: #0073aa
 }
 
-a.ft-gallery-delete-category, a.ft-gallery-delete-item {
+#tabs .ft-gallery-success, .fts_page_fts-license-page h2:before, .post-type-fts.fts_page_fts-settings-page h1:before, a.ft-gallery-delete-category, a.ft-gallery-delete-item {
     margin-right: 5px
 }
 
@@ -1837,7 +1705,7 @@ a.ft-gallery-delete-category span, a.ft-gallery-delete-item span {
     font-size: 23px
 }
 
-.ft-gallery-ez-life-maker-wrap form p {
+#fts_facebook_instagram_custom_api_token, .ft-gallery-ez-life-maker-wrap form p {
     margin-bottom: 15px
 }
 
@@ -1845,16 +1713,12 @@ a.ft-gallery-delete-category span, a.ft-gallery-delete-item span {
     margin-bottom: 19px
 }
 
-.ft-gallery-ez-life-maker-wrap form .ft-gallery-create-new-link-option {
+.ft-gallery-ez-life-maker-wrap form .ft-gallery-create-new-link-option, .ss-margin-bottom {
     margin-bottom: 25px
 }
 
 .ft-gallery-enter-content-media-etc {
     margin: 20px 0 10px !important
-}
-
-#wp-editpost-wrap {
-    margin-bottom: 10px
 }
 
 .no-topic-quick-items-header {
@@ -1898,7 +1762,7 @@ a.ft-gallery-delete-category span, a.ft-gallery-delete-item span {
 }
 
 .ft-gallery-loader:before, .ft-gallery-success:before {
-    font-family: FontAwesomeSlick;
+    font-family: FontAwesomeSlick, monospace;
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -1910,8 +1774,8 @@ a.ft-gallery-delete-category span, a.ft-gallery-delete-item span {
 }
 
 .fa-spin {
-    -webkit-animation: fa-spin 2s infinite linear;
-    animation: fa-spin 2s infinite linear;
+    -webkit-animation: 2s linear infinite fa-spin;
+    animation: 2s linear infinite fa-spin;
     display: inline-block
 }
 
@@ -1956,10 +1820,6 @@ a.ft-gallery-delete-category span, a.ft-gallery-delete-item span {
     -webkit-box-shadow: 0 1px 0 #ccc;
     box-shadow: 0 1px 0 #ccc;
     vertical-align: top
-}
-
-.ft-gallery-loader {
-    color: #444
 }
 
 .ft-gallery-success {
@@ -2077,19 +1937,11 @@ ul.no-topic-ul-list {
     font-size: 13px !important
 }
 
-.ss-margin-bottom {
-    margin-bottom: 25px
-}
-
 .fts_page_ft-gallery-sidebar-builder-page ul.quick-item-list .ft-gallery-success, .no-topic-ul-list .ft-gallery-success {
     position: absolute;
     left: 0;
     top: 2px;
     display: none
-}
-
-.ft-gallery-menuDiv {
-    position: relative
 }
 
 .premium-note, .premium-text {
@@ -2120,10 +1972,6 @@ ul.no-topic-ul-list {
     font-size: 14px
 }
 
-.premium-text a {
-    text-decoration: none
-}
-
 #wp-editpost-wrap button, #wp-editpost-wrap input {
     font-weight: 400
 }
@@ -2141,20 +1989,16 @@ body.fts_page_ft-gallery-sidebar-builder-page .ui-icon {
     width: 100%
 }
 
-.ft-gallery-options-buttons-wrap button {
-    margin-right: 5px !important
+#ftg-watermark-logo-wrap, .ft-global-option-wrap-ft-watermark-image {
+    padding-left: 232px !important
 }
 
-.wp-core-ui .button-primary.ft-gallery-download-selection-option {
-    display: none
+#tab-content6 .fts_create_woo_prod_button:before, .ft-gallery-options-buttons-wrap button, .ft-gallery-popup .fts_create_woo_prod_button:before, .ftg-each-count {
+    margin-right: 5px !important
 }
 
 .ft-watermark-image-thumb {
     max-width: 250px
-}
-
-.ft-global-option-wrap-ft-watermark-image input, .ft-global-option-wrap-ft-watermark-image label {
-    display: none !important
 }
 
 #ft-watermark-image {
@@ -2173,22 +2017,10 @@ body.fts_page_ft-gallery-sidebar-builder-page .ui-icon {
     background: #0182bf
 }
 
-.ft-global-option-wrap-ft-watermark-image {
-    padding-left: 232px !important
-}
-
 .ft-global-option-wrap-ft-watermark-image-input {
     padding-left: 201px !important;
     margin-bottom: 10px;
     margin-top: -10px !important
-}
-
-#ft_watermark_image_sizes, .ft-global-option-wrap- {
-    display: none !important
-}
-
-.ft-watermark-hidden-options.feed-them-social-admin-input-wrap, .ft-watermark-images-sizes-wrap .feed-them-social-admin-input-label {
-    display: none
 }
 
 .feed-them-social-admin-input-wrap.ft-watermark-images-sizes-wrap {
@@ -2231,14 +2063,6 @@ body.fts_page_ft-gallery-sidebar-builder-page .ui-icon {
     }
 }
 
-body .ft-gallery-popup a.fts-powered-by-text {
-    text-decoration: none
-}
-
-.ftg-block {
-    display: block !important
-}
-
 .fb-page-grid-option-border-bottom {
     border-bottom: 1px solid #eee;
     padding-bottom: 15px
@@ -2252,10 +2076,6 @@ body .ft-gallery-popup a.fts-powered-by-text {
     padding: 10px 40px 12px 10px !important;
     position: relative;
     margin-bottom: 20px
-}
-
-#tabs .ft-gallery-success {
-    margin-right: 5px
 }
 
 .ft-gallery-settings-admin-form {
@@ -2293,7 +2113,6 @@ body .ft-gallery-popup a.fts-powered-by-text {
 }
 
 .ft-rename-options-wrap label {
-    max-width: auto !important;
     display: inline-block !important;
     width: auto !important;
     font-size: 12px !important;
@@ -2361,10 +2180,6 @@ body .ft-gallery-popup a.fts-powered-by-text {
     max-width: 600px
 }
 
-.toggle-custom-textarea-show {
-    margin-top: 10px !important
-}
-
 .fts-color-settings-admin-form label {
     font-weight: 700;
     min-width: 100px !important
@@ -2381,7 +2196,6 @@ body .ft-gallery-popup a.fts-powered-by-text {
 }
 
 .ft-gallery-date-settings-options-wrap h5 {
-    font-size: 13px;
     font-size: 14px !important;
     margin-bottom: 10px
 }
@@ -2401,10 +2215,6 @@ body .ft-gallery-popup a.fts-powered-by-text {
     width: 100%
 }
 
-.ft-watermark-hide-these-options {
-    display: none !important
-}
-
 .fts_page_ft-gallery-settings-page input[type=text] {
     padding: 7px;
     max-width: 250px;
@@ -2420,17 +2230,13 @@ body .ft-gallery-popup a.fts-powered-by-text {
     max-width: 190px
 }
 
-#tab-content6 .fts_create_woo_prod_button:before, .ft-gallery-popup .fts_create_woo_prod_button:before {
-    margin-right: 5px !important
-}
-
 .ft-gallery-notice div {
     display: inline-block;
     margin-right: 7px
 }
 
 .post-type-fts .wp-heading-inline:before, .post-type-fts_albums .wp-heading-inline:before {
-    font-family: SlickRemix !important;
+    font-family: SlickRemix, monospace !important;
     content: "\e600";
     font-size: .9em !important;
     margin-right: 5px;
@@ -2514,16 +2320,8 @@ body .ft-gallery-popup a.fts-powered-by-text {
     content: 'X'
 }
 
-.ftg-each-count {
-    margin-right: 5px !important
-}
-
 .ftg-total-count {
     margin-left: 5px
-}
-
-.ftg-js-count-wrap {
-    margin: 0 !important
 }
 
 .ftg-already-created-text {
@@ -2557,7 +2355,7 @@ body .ft-gallery-popup a.fts-powered-by-text {
 }
 
 @keyframes color {
-    0%, 100 {
+    0%, 100% {
         background-color: #008fd4
     }
     50% {
@@ -2588,11 +2386,11 @@ body .ft-gallery-popup a.fts-powered-by-text {
 }
 
 .ftg-load-pulse {
-    -webkit-animation: ftg-load-Pulse 2s infinite ease-in-out;
-    -o-animation: ftg-load-Pulse 2s infinite ease-in-out;
+    -webkit-animation: 2s ease-in-out infinite ftg-load-Pulse;
+    -o-animation: 2s ease-in-out infinite ftg-load-Pulse;
     -ms-animation: ftg-load-Pulse 2s infinite ease-in-out;
-    -moz-animation: ftg-load-Pulse 2s infinite ease-in-out;
-    animation: ftg-load-Pulse 2s infinite ease-in-out
+    -moz-animation: 2s ease-in-out infinite ftg-load-Pulse;
+    animation: 2s ease-in-out infinite ftg-load-Pulse
 }
 
 .ftg-loading-overlay {
@@ -2623,25 +2421,19 @@ body .ft-gallery-popup a.fts-powered-by-text {
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    animation: ftgLoaderSpin 1s linear infinite;
+    animation: 1s linear infinite ftgLoaderSpin;
     font-size: 1.2em !important;
     color: #fff;
     speak: none;
-    font-style: normal;
     font-weight: 400;
     font-variant: normal
     text-transform: none;
     line-height: 1;
-    -moz-osx-font-smoothing: grayscale
     -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     margin: auto;
     top: 56px;
-    position: relative
-}
-
-.feed-them-social-admin-input-wrap, .ftg-global-model-product-wrap, .ftg-zip-option-wrapper {
     position: relative
 }
 
@@ -2662,10 +2454,6 @@ body .ft-gallery-popup a.fts-powered-by-text {
     position: relative
 }
 
-.ft-gallery-smart-image-checkbox-wrap, .ftg-global-model-product-wrap .ftg-settings-overlay {
-    display: none !important
-}
-
 .ftg-landscape-option-wrapper, .ftg-portrait-option-wrapper, .ftg-square-option-wrapper {
     min-height: 42px
 }
@@ -2674,18 +2462,14 @@ body .ft-gallery-popup a.fts-powered-by-text {
     margin-top: 20px
 }
 
-.fts-note-footer {
-    margin-left: 0 !important
-}
-
 .ft-add-gallery-to-album:before {
-    font-family: FontAwesomeSlick !important;
+    font-family: FontAwesomeSlick, monospace !important;
     content: "\f0fe" !important;
     margin-right: 8px
 }
 
 .ft-remove-gallery-to-album:before {
-    font-family: FontAwesomeSlick !important;
+    font-family: FontAwesomeSlick, monospace !important;
     content: "\f146" !important;
     margin-right: 8px
 }
@@ -2702,8 +2486,7 @@ body .ft-gallery-popup a.fts-powered-by-text {
 
 #ftg-watermark-logo-wrap {
     min-width: 250px;
-    padding-left: 232px !important;
-    margin-top: 10px;
+    margin-top: 10px
 }
 
 @media (max-width: 1184px) {
@@ -2711,38 +2494,37 @@ body .ft-gallery-popup a.fts-powered-by-text {
         padding-left: 20px !important
     }
 }
-.post-type-fts .wp-heading-inline:before {
-    margin-right:0px;
+
+.post-type-fts .wp-heading-inline:before, .post-type-fts h1.wp-heading-inline:before {
+    margin-right: 0
 }
 
+.fts_page_fts-license-page h2:before,
 .fts_page_fts-system-info-submenu-page h2:before,
-.fts_page_fts-license-page h2:before {
-    font-family: SlickRemix !important;
+.fts_page_fts-settings-page h1.wp-heading-inline:before {
+    font-family: SlickRemix, monospace  !important;
     content: "\e600";
-    margin-right:0px;
-    font-size: .9em!important;
-    color: #23282e;
-}
-.post-type-fts h1.wp-heading-inline:before {
-    margin-right:0px;
+    margin-right: 5px;
+    font-size: .9em !important;
+    color: #23282e
 }
 
 .fts_page_fts-system-info-submenu-page h2 {
     font-size: 23px;
     font-weight: 400;
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.3
 }
-.fts_page_fts-license-page h2:before, .post-type-fts.fts_page_fts-settings-page h1:before {
-    margin-right:5px;
-}
+
 .fts-activation-msg {
     margin: 14px 0 25px;
-    font-size: 13px;
+    font-size: 13px
 }
-.fts-social-icon-wrap-active div, .fts-instagram-sub-menu-active div {
-    color:#333 !important;
+
+.fts-instagram-sub-menu-active div, .fts-social-icon-wrap-active div {
+    color: #333 !important
 }
+
 .fts-select-social-network-menu .fts-social-icon-wrap {
     display: inline-block;
     font-size: 38px;
@@ -2750,160 +2532,184 @@ body .ft-gallery-popup a.fts-powered-by-text {
     max-width: 18%;
     width: 100%;
     cursor: pointer;
-    font-family: FontAwesomeSlick !important;
-    padding: 13px 0px;
-    border-width: 0px;
+    font-family: FontAwesomeSlick, monospace !important;
+    padding: 13px 0;
+    border-width: 0;
     border-style: solid;
     border-color: rgb(221 221 221 / 46%);
     border-image: initial;
     background: #fff;
-    border-radius: 0;box-shadow: 1px 1px 1px #33333314;}
-
-.fts-social-icon-wrap:hover div, .fts-social-icon-wrap:hover, .fts-social-icon-wrap:hover span:before, .fts-social-icon-wrap:hover svg {
-
-    color:#fff !important;
-    fill:#fff !important;
-
+    border-radius: 0;
+    box-shadow: 1px 1px 1px #33333314
 }
+
+.fts-social-icon-wrap:hover, .fts-social-icon-wrap:hover div, .fts-social-icon-wrap:hover span:before, .fts-social-icon-wrap:hover svg {
+    color: #fff !important;
+    fill: #fff !important
+}
+
 .instagram-feed-type:hover, .post-type-fts .tabs-menu-wrap .fts-instagram-waiting-color .active {
-    background:#434343 !important;
+    background: #434343 !important
 }
+
 .facebook-feed-type:hover, .post-type-fts .tabs-menu-wrap .fts-facebook-waiting-color .active {
-    background:#1977f2 !important;
+    background: #1977f2 !important
 }
-.twitter-feed-type:hover, .post-type-fts .tabs-menu-wrap .fts-twitter-waiting-color .active {
-    background:#1da1f1 !important;
+
+.post-type-fts .tabs-menu-wrap .fts-twitter-waiting-color .active, .twitter-feed-type:hover {
+    background: #fe2c55 !important
 }
-.youtube-feed-type:hover, .post-type-fts .tabs-menu-wrap .fts-youtube-waiting-color .active {
-    background:#ff0000 !important;
+
+.post-type-fts .tabs-menu-wrap .fts-youtube-waiting-color .active, .youtube-feed-type:hover {
+    background: red !important
 }
+
 .combine-streams-feed-type:hover, .post-type-fts .tabs-menu-wrap .fts-combine-waiting-color .active {
-    background:#ffb12c !important;
+    background: #ffb12c !important
 }
+
 #ftg-tab-content1 {
     padding-top: 25px;
-    padding-left: 0;
+    padding-left: 0
 }
+
 #ftg-tab-content1 .instructional-text {
-    max-width:100%;
+    max-width: 100%
 }
+
 #fts-tab-content h3 {
-    text-align:center;
-    float:none;
-    margin-bottom:15px;
+    text-align: center;
+    float: none;
+    margin-bottom: 15px
 }
+
 #fts-feed-type h3 {
     text-transform: none !important;
-    cursor: pointer;font-weight: 400;}
+    cursor: pointer;
+    font-weight: 400
+}
 
 #fts-feed-type h3 span {
-    color:#1aae1f;
-    pointer-events: none;}
-span.fts-toke-not-set {
-    color: #a9a8a8 !important;
+    color: #1aae1f;
+    pointer-events: none
 }
+
+span.fts-toke-not-set {
+    color: #a9a8a8 !important
+}
+
 .fts-social-icon-wrap {
     display: inline-block;
     font-size: 38px;
-    font-family: FontAwesomeSlick !important;
+    font-family: FontAwesomeSlick, monospace !important;
     padding: 20px;
-    margin: 17px 1px;
+    margin: 17px 1px
 }
-.fts-social-icon-wrap span:before, .fts-social-icon-wrap span svg {
-    color:#c2c2c2 !important;
-    fill:#c2c2c2 !important;
+
+.fts-social-icon-wrap span svg, .fts-social-icon-wrap span:before {
+    color: #c2c2c2 !important;
+    fill: #c2c2c2 !important
 }
+
 .fts-instagram::before {
     content: "\f16d";
     font-size: 34px;
-    color: #404040;
+    color: #404040
 }
-.fts-social-icon-wrap-active .fts-instagram::before, .fts-instagram-sub-menu-active .fts-instagram::before {
-    color: #404040 !important;
+
+.fts-instagram-sub-menu-active .fts-instagram::before, .fts-social-icon-wrap-active .fts-instagram::before {
+    color: #404040 !important
 }
+
 .fts-facebook:before {
     content: "\f39e";
-    font-size: 32px;
+    font-size: 32px
 }
+
 .fts-social-icon-wrap-active .fts-facebook::before {
-    color: rgb(25 119 242) !important;
+    color: rgb(25 119 242) !important
 }
+
 .fts-twitter::before {
-    content: "\f099";
-    font-size: 31px;
+    content: "\e07b";
+    font-size: 31px
 }
+
 .fts-social-icon-wrap-active .fts-twitter::before {
-    color: rgb(29, 161, 242) !important;
+    color: #212223 !important
 }
+
 .fts-youtube::before {
     content: '\f167';
-    font-size: 33px;
+    font-size: 33px
 }
+
 .fts-social-icon-wrap-active .fts-youtube::before {
-    color: rgb(255, 0, 0) !important;
+    color: red !important
 }
+
 .fts-combined svg {
     max-width: 32px;
     position: relative;
-    top: 3px;
+    top: 3px
 }
+
 .fts-social-icon-wrap-active:hover .fts-combined svg {
-    fill: rgb(255 255 255) !important;
+    fill: rgb(255 255 255) !important
 }
+
 .fts-social-icon-wrap-active .fts-combined svg {
-    fill: rgb(255 178 45) !important;
+    fill: rgb(255 178 45) !important
 }
+
 .fts-select-social-network-menu .fts-social-icon-wrap div {
     font-size: 13px;
     display: block;
     padding-top: 5px;
     line-height: 17px;
     font-family: arial;
-    color: #a3a2a2;
+    color: #a3a2a2
 }
-.fts-select-social-network-menu {
-    text-align:center;
-}
+
 .ft-wp-gallery-type {
-    /* background:none !important; */
     border: none !important;
-    padding-top: 0px !important;
+    padding-top: 0 !important
 }
+
 .fts-fb-error-message-wrap {
     word-wrap: break-word;
-    padding:5px 15px;
+    padding: 5px 15px;
     margin: 10px 10px 0 0;
     background: #0b8af0;
-    color:#fff;
+    color: #fff
 }
-.fts-instagram-basic-business-wrap small{
-    display:block;
-    margin-bottom:-32px;
-    font-weight: normal;}
+
+.fts-instagram-basic-business-wrap small {
+    display: block;
+    margin-bottom: -32px;
+    font-weight: 400
+}
+
 .fts-instagram-down-arrow {
-    position:relative;
+    position: relative;
     display: inline-block;
-    z-index:1;
-    bottom:-41px;
-    text-align:center;
+    z-index: 1;
+    bottom: -41px;
+    text-align: center;
     border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
+    border-right: 30px solid transparent
 }
-.fts-social-icon-wrap-active.fts-instagram-business-token-button .fts-instagram-down-arrow,
-.fts-social-icon-wrap-active.fts-instagram-business-token-button:hover .fts-instagram-down-arrow,
-.fts-social-icon-wrap-active.fts-combine-instagram-business-token-button .fts-instagram-down-arrow,
-.fts-social-icon-wrap-active.fts-combine-instagram-business-token-button:hover .fts-instagram-down-arrow{
-    opacity:1;
-    border-bottom: 30px solid #ffffff !important;
+
+.fts-social-icon-wrap-active.fts-combine-instagram-business-token-button .fts-instagram-down-arrow, .fts-social-icon-wrap-active.fts-combine-instagram-business-token-button:hover .fts-instagram-down-arrow, .fts-social-icon-wrap-active.fts-instagram-business-token-button .fts-instagram-down-arrow, .fts-social-icon-wrap-active.fts-instagram-business-token-button:hover .fts-instagram-down-arrow {
+    opacity: 1;
+    border-bottom: 30px solid #fff !important
 }
-.fts-social-icon-wrap-active.fts-instagram-basic-token-button .fts-instagram-down-arrow,
-.fts-social-icon-wrap-active.fts-combine-instagram-basic-token-button .fts-instagram-down-arrow{
-    border-bottom: 30px solid #ffffff !important;
+
+.fts-social-icon-wrap-active.fts-combine-instagram-basic-token-button .fts-instagram-down-arrow, .fts-social-icon-wrap-active.fts-instagram-basic-token-button .fts-instagram-down-arrow {
+    border-bottom: 30px solid #fff !important
 }
-#fts_facebook_instagram_custom_api_token {
-    margin-bottom:15px;
-}
+
 .combine-facebook-access-token-placeholder .fts-fb-token-wrap {
     margin-left: 0;
-    margin-right: 10px;
+    margin-right: 10px
 }

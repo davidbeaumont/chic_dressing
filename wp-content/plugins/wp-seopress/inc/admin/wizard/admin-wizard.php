@@ -366,8 +366,8 @@ class SEOPRESS_Admin_Setup_Wizard {
     <script type="text/javascript">
         var ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php', 'relative' ) ); ?>';
     </script>
-	<?php do_action('admin_print_styles'); ?>
 	<?php do_action('admin_enqueue_scripts'); ?>
+	<?php do_action('admin_print_styles'); ?>
 	<?php wp_print_scripts('seopress-migrate-ajax'); ?>
 	<?php wp_print_scripts('seopress-media-uploader'); ?>
 	<?php do_action('admin_head'); ?>
@@ -816,6 +816,12 @@ class SEOPRESS_Admin_Setup_Wizard {
                         value="<?php echo $knowledge_img; ?>" />
 
                         <input id="knowledge_img_upload" class="btn btnSecondary" type="button" value="<?php _e('Upload an Image', 'wp-seopress'); ?>" />
+                    </p>
+
+                    <p class="description">
+                        <?php _e('JPG, PNG, WebP and GIF allowed. The minimum allowed image dimension is 200 x 200 pixels.', 'wp-seopress'); ?><br>
+                        <?php _e('The size of the image file must not exceed 8 MB. Use images that are at least 1200 x 630 pixels for the best display on high resolution devices.', 'wp-seopress'); ?><br>
+                        <?php _e('At the minimum, you should use images that are 600 x 315 pixels to display link page posts with larger images.', 'wp-seopress'); ?>
                     </p>
 
                     <p class="seopress-setup-actions step">

@@ -46,8 +46,33 @@ class PagePreview implements ExecuteHooks
         $apiHeader->hooks();
 
         $id   = (int) $request->get_param('id');
-        $str  = seopress_get_service('RequestPreview')->getDomById($id);
+        $domResult  = seopress_get_service('RequestPreview')->getDomById($id);
+
+        if (!$domResult['success']) {
+            $defaultResponse = [
+                'title' =>  '...',
+                'meta_desc' =>  '...',
+            ];
+
+            switch($domResult['code']){
+                case 404:
+                    $defaultResponse['title'] = __('To get your Google snippet preview, publish your post!', 'wp-seopress');
+                    break;
+                case 401:
+                    $defaultResponse['title'] = __('Your site is protected by an authentication.', 'wp-seopress');
+                    break;
+            }
+            return new \WP_REST_Response($defaultResponse);
+        }
+
+        $str = $domResult['body'];
+
         $data = seopress_get_service('DomFilterContent')->getData($str, $id);
+
+        if (defined('WP_DEBUG') && WP_DEBUG) {
+            $data['analyzed_content'] = seopress_get_service('DomAnalysis')->getPostContentAnalyze($id);
+            $data['analyzed_content_id'] = $id;
+        }
 
         $data['analysis_target_kw'] = [
             'value' => array_filter(explode(',', strtolower(get_post_meta($id, '_seopress_analysis_target_kw', true))))

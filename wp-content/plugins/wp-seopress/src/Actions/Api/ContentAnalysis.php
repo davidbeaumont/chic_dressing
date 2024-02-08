@@ -97,18 +97,30 @@ class ContentAnalysis implements ExecuteHooks
 
         $id   = (int) $request->get_param('id');
 
-        $exist = get_option('seopress_content_analysis_api_in_progress');
-        if($exist){
-            $data = get_post_meta($id, '_seopress_content_analysis_api');
-            $linkPreview   = seopress_get_service('RequestPreview')->getLinkRequest($id);
-            $data['link_preview'] = $linkPreview;
-            return new \WP_REST_Response($data);
+        $linkPreview   = seopress_get_service('RequestPreview')->getLinkRequest($id);
+
+        $domResult  = seopress_get_service('RequestPreview')->getDomById($id);
+
+        if(!$domResult['success']){
+            $defaultResponse = [
+                'title' =>  '...',
+                'meta_desc' =>  '...',
+            ];
+
+            switch($domResult['code']){
+                case 404:
+                    $defaultResponse['title'] = __('To get your Google snippet preview, publish your post!', 'wp-seopress');
+                    break;
+                case 401:
+                    $defaultResponse['title'] = __('Your site is protected by an authentication.', 'wp-seopress');
+                    break;
+            }
+
+            return new \WP_REST_Response($defaultResponse);
         }
 
-        update_option('seopress_content_analysis_api_in_progress', true, false);
+        $str = $domResult['body'];
 
-        $linkPreview   = seopress_get_service('RequestPreview')->getLinkRequest($id);
-        $str  = seopress_get_service('RequestPreview')->getDomById($id);
         $data = seopress_get_service('DomFilterContent')->getData($str, $id);
         $data = seopress_get_service('DomAnalysis')->getDataAnalyze($data, [
             "id" => $id,
@@ -132,8 +144,6 @@ class ContentAnalysis implements ExecuteHooks
         delete_post_meta($id, '_seopress_analysis_data');
 
         $data['link_preview'] = $linkPreview;
-
-        delete_option('seopress_content_analysis_api_in_progress');
 
         return new \WP_REST_Response($data);
     }

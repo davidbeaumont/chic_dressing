@@ -38,21 +38,18 @@ class Settings_Options_JS {
             jQuery('.fts-color-picker .fts-required-extension-wrap').parent().find('.wp-picker-container').hide();
 
 
-
-            if ( jQuery('.feed-them-social-req-extension:contains("Premium Required")').length > 0 ) {
-                jQuery('.fts-social-selector option:contains("Videos")').attr('disabled', 'disabled').html('Videos - Premium Plugin Required');
+            // Contains is not specific enough because we introduces Tiktok Premium Required. So we need to use the filter option instead.
+            if (jQuery('.feed-them-social-req-extension').filter(function() {
+                return jQuery(this).text().trim() === "Premium Required";
+            }).length > 0) {
+                jQuery('.fts-social-selector option').filter(function() {
+                    return jQuery(this).text().trim() === "Videos";
+                }).attr('disabled', 'disabled').html('Videos - Premium Plugin Required');
             }
+            // Contains works in this case because there is only one instance of Reviews Required.
             if ( jQuery('.feed-them-social-req-extension:contains("Reviews Required")').length > 0 ) {
                 jQuery('.fts-social-selector option:contains("Page Reviews")').attr('disabled', 'disabled').html('Page Reviews - Reviews Plugin Required');;
             }
-
-
-
-
-
-
-
-
 
             jQuery( '.tabbed' ).click( function (e) {
                 if(  'pointer-events: none !important' === jQuery( 'a', this ).attr( 'style' ) ){
@@ -158,9 +155,9 @@ class Settings_Options_JS {
                 }
 
                 if (facebooktype == 'albums' ) {
-                    jQuery('.facebook-omit-album-covers').show();           }
+                    jQuery('.facebook-omit-album-covers, .facebook-album-covers-since-date').show();           }
                 else {
-                    jQuery('.facebook-omit-album-covers').hide();
+                    jQuery('.facebook-omit-album-covers, .facebook-album-covers-since-date').hide();
                 }
 
                 if (facebooktype == 'page' || facebooktype == 'event' || facebooktype == 'group') {
@@ -404,21 +401,18 @@ class Settings_Options_JS {
                 jQuery(".twitter-hashtag-etc-wrap,.hashtag-option-small-text").hide();
 
                 jQuery('#twitter-messages-selector').bind('change', function (e) {
-                    if (jQuery('#twitter-messages-selector').val() == 'hashtag') {
-                        jQuery( '.twitter-hashtag-etc-wrap' ).css('display', 'inline-block');
-                        jQuery(".hashtag-option-small-text").show();
-                        jQuery(".hashtag-option-not-required, .must-copy-twitter-name").hide();
+                    if (jQuery('#twitter-messages-selector').val() == 'classic') {
+                        jQuery(".fts-responsive-tiktok-options-wrap").hide();
                     }
                     else {
-                        jQuery(".hashtag-option-not-required, .must-copy-twitter-name").show();
-                        jQuery(".twitter-hashtag-etc-wrap,.hashtag-option-small-text").hide();
+                        jQuery(".fts-responsive-tiktok-options-wrap").show();
                     }
                 }).change();
 
                 //Twitter Load More Options
                 jQuery('.fts-twitter-load-more-options-wrap, .fts-twitter-load-more-options2-wrap').hide();
-                jQuery('#twitter_load_more_option').bind('change', function (e) {
-                    if (jQuery('#twitter_load_more_option').val() == 'yes') {
+                jQuery('#tiktok_load_more_option').bind('change', function (e) {
+                    if (jQuery('#tiktok_load_more_option').val() == 'yes') {
                         jQuery('.fts-twitter-load-more-options-wrap').show();
                         jQuery('.fts-twitter-load-more-options2-wrap').show();
                     }
@@ -430,8 +424,8 @@ class Settings_Options_JS {
 
                 //Twitter Grid Option
                 jQuery('.fts-twitter-grid-options-wrap').hide();
-                jQuery('#twitter-grid-option').bind('change', function (e) {
-                    if (jQuery('#twitter-grid-option').val() == 'yes') {
+                jQuery('#tiktok-grid-option').bind('change', function (e) {
+                    if (jQuery('#tiktok-grid-option').val() == 'yes') {
                         jQuery('.fts-twitter-grid-options-wrap').show();
                         jQuery(".feed-them-social-admin-input-label:contains('<?php echo esc_js( 'Center Facebook Container?', 'feed-them-social' ); ?>')").parent('div').show();
                     }
@@ -439,6 +433,21 @@ class Settings_Options_JS {
                         jQuery('.fts-twitter-grid-options-wrap').hide();
                     }
                 }).change();
+
+                //TikTok Stats Options
+                jQuery('#twitter-stats-bar').bind('change', function (e) {
+                    if (jQuery('#twitter-stats-bar').val() == 'yes') {
+                        jQuery('.tiktok-stats-hide').show();
+                        // This is the follow button option not in the stats options.
+                        jQuery('.tiktok-show-follow-button-hide').hide();
+                    }
+                    else {
+                        jQuery('.tiktok-stats-hide').hide();
+                        // This is the follow button option not in the stats options.
+                        jQuery('.tiktok-show-follow-button-hide').show();
+                    }
+                }).change();
+
             });
 		</script>
 

@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) exit;
  'name' => '__root__',
  'pretty_version' => 'dev-trunk',
  'version' => 'dev-trunk',
- 'reference' => 'ac3c01f4bcf2978f7345e58fa245cf94621aac36',
+ 'reference' => 'aef4c733fd8974feb131de8d0710713a346d8f30',
  'type' => 'library',
  'install_path' => __DIR__ . '/../../',
  'aliases' => array(),
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) exit;
  '__root__' => array(
  'pretty_version' => 'dev-trunk',
  'version' => 'dev-trunk',
- 'reference' => 'ac3c01f4bcf2978f7345e58fa245cf94621aac36',
+ 'reference' => 'aef4c733fd8974feb131de8d0710713a346d8f30',
  'type' => 'library',
  'install_path' => __DIR__ . '/../../',
  'aliases' => array(),

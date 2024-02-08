@@ -96,9 +96,7 @@ class System_Info {
 		<div class="ft-gallery-main-template-wrapper-all">
 
 		<div class="ft-gallery-settings-admin-wrap" id="theme-settings-wrap">
-			<h2>
-				<?php esc_html_e( 'System Info', 'feed-them-social' ); ?>
-			</h2>
+			<h2><?php esc_html_e( 'System Info', 'feed-them-social' ); ?></h2>
 			<p>
 				<?php esc_html_e( 'Please click the box below and copy the report. You will need to paste this information along with your question when creating a', 'feed-them-social' ); ?>
 				<a href="https://www.slickremix.com/my-account/#tab-support" target="_blank">
@@ -132,7 +130,8 @@ Multisite: <?php echo is_multisite() ? 'Yes' . "\n" : 'No' . "\n"; ?>
 Permalink Structure: <?php echo esc_html( get_option( 'permalink_structure' ) ) . "\n"; ?>
 Active Theme: <?php echo esc_html( $theme ) . "\n"; ?>
 PHP Memory Limit: <?php echo esc_html( ini_get( 'memory_limit' ) ) . "\n"; ?>
-WP_DEBUG: <?php echo esc_html( defined( 'WP_DEBUG' ) ? WP_DEBUG ? 'Enabled' . "\n" : 'Disabled' . "\n" : 'Not set' . "\n" ); ?>
+WP_DEBUG: <?php echo esc_html( defined( 'WP_DEBUG' ) && WP_DEBUG ? 'Enabled' . "\n" : 'Disabled' . "\n" ); ?>
+Cron Jobs: <?php echo esc_html( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ? 'Disabled' . "\n" : 'Enabled' . "\n" ); ?>
 
 -- Webserver Configuration:
 PHP Version: <?php
@@ -173,7 +172,7 @@ foreach ( $plugins as $plugin_path => $plugin ) {
 }
 if ( is_multisite() ) :
     ?>
-    -- Network Active Plugins:
+-- Network Active Plugins:
     <?php
     $plugins        = wp_get_active_network_plugins();
     $active_plugins = get_site_option( 'active_sitewide_plugins', array() );
@@ -194,14 +193,26 @@ if ( is_multisite() ) :
 endif;
 
 if ( is_plugin_active( 'feed-them-social/feed-them-social.php' ) ) {
-    $feed_them_social_license_key = get_option( 'feed_them_social_license_key' );
+    $feed_them_social_license_key = get_option( 'feed_them_social_license_keys' );
+	// print_r( $feed_them_social_license_key );
     ?>
 
--- License
-License Active: <?php
-echo isset( $feed_them_social_license_key ) && '' !== $feed_them_social_license_key ? 'Yes' . "\n" : 'No' . "\n";
-}
-?>
+-- FTS Plugins Active & License Validation
+Premium: <?php echo is_plugin_active( 'feed-them-premium/feed-them-premium.php' ) ? 'Active' . "\n" : 'No' . "\n"; ?>
+License Valid: <?php echo isset($feed_them_social_license_key['feed_them_social_premium']['license_status']) && $feed_them_social_license_key['feed_them_social_premium']['license_status'] === 'valid' ? 'Yes' . "\n" : 'No' . "\n"; ?>
+
+TikTok Premium: <?php echo is_plugin_active( 'feed-them-social-tiktok-premium/feed-them-social-tiktok-premium.php' ) ? 'Active' . "\n" : 'No' . "\n"; ?>
+License Valid: <?php echo isset($feed_them_social_license_key['feed_them_social_tiktok_premium']['license_status']) && $feed_them_social_license_key['feed_them_social_tiktok_premium']['license_status'] === 'valid' ? 'Yes' . "\n" : 'No' . "\n"; ?>
+
+Combined Streams: <?php echo is_plugin_active( 'feed-them-social-combined-streams/feed-them-social-combined-streams.php' ) ? 'Active' . "\n" : 'No' . "\n"; ?>
+License Valid: <?php echo isset($feed_them_social_license_key['feed_them_social_combined_streams']['license_status']) && $feed_them_social_license_key['feed_them_social_combined_streams']['license_status'] === 'valid' ? 'Yes' . "\n" : 'No' . "\n"; ?>
+
+Facebook Reviews: <?php echo is_plugin_active( 'feed-them-social-facebook-reviews/feed-them-social-facebook-reviews.php' ) ? 'Active' . "\n" : 'No' . "\n"; ?>
+License Valid: <?php echo isset($feed_them_social_license_key['feed_them_social_facebook_reviews']['license_status']) && $feed_them_social_license_key['feed_them_social_facebook_reviews']['license_status'] === 'valid' ? 'Yes' . "\n" : 'No' . "\n"; ?>
+
+Carousel Premium: <?php echo is_plugin_active( 'feed-them-carousel-premium/feed-them-carousel-premium.php' ) ? 'Active' . "\n" : 'No' . "\n"; ?>
+License Valid: <?php echo isset($feed_them_social_license_key['feed_them_carousel_premium']['license_status']) && $feed_them_social_license_key['feed_them_carousel_premium']['license_status'] === 'valid' ? 'Yes' . "\n" : 'No' . "\n"; ?>
+<?php } ?>
 
 ### End System Info ###<?php return ob_get_clean(); } // end fts_system_info_support_ticket
 

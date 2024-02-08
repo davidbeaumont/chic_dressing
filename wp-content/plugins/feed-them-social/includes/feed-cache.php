@@ -5,7 +5,7 @@
  * This page is used to create the Twitter feed!
  *
  * @package     feedthemsocial
- * @copyright   Copyright (c) 2012-2022, SlickRemix
+ * @copyright   Copyright (c) 2012-2024, SlickRemix
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0.0
  */
@@ -352,7 +352,7 @@ class Feed_Cache {
             $fts_dev_mode_cache = $this->settings_functions->fts_get_option( 'fts_cache_time' );
             if ( '1' !== $fts_dev_mode_cache ) {
                 wp_enqueue_script( 'jquery' );
-                wp_enqueue_script( 'fts_clear_cache_script', plugins_url( 'feed-them-social/admin/js/admin.js' ), array('jquery'), FTS_CURRENT_VERSION, false );
+                wp_enqueue_script( 'fts_clear_cache_script', plugins_url( 'feed-them-social/admin/js/admin.min.js' ), array('jquery'), FTS_CURRENT_VERSION, false );
                 wp_localize_script(
                     'fts_clear_cache_script',
                     'ftsAjax',
@@ -380,7 +380,7 @@ class Feed_Cache {
         $fts_admin_activation_clear_cache = get_option( 'Feed_Them_Social_Activated_Plugin' );
         $fts_dev_mode_cache = $this->settings_functions->fts_get_option( 'fts_cache_time' );
         if ( '1' === $fts_dev_mode_cache || 'feed_them_social' === $fts_admin_activation_clear_cache ) {
-            wp_enqueue_script( 'fts_clear_cache_script', plugins_url( 'feed-them-social/admin/js/developer-admin.js' ), array('jquery'), FTS_CURRENT_VERSION, false );
+            wp_enqueue_script( 'fts_clear_cache_script', plugins_url( 'feed-them-social/admin/js/developer-admin.min.js' ), array('jquery'), FTS_CURRENT_VERSION, false );
             wp_localize_script(
                 'fts_clear_cache_script',
                 'ftsAjax',

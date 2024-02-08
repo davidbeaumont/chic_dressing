@@ -5,7 +5,7 @@
  * This page is used to create the Twitter feed!
  *
  * @package     feedthemsocial
- * @copyright   Copyright (c) 2012-2022, SlickRemix
+ * @copyright   Copyright (c) 2012-2024, SlickRemix
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0.0
  */
@@ -919,9 +919,9 @@ class Twitter_Feed {
 				if ( isset( $popup_check ) && $popup_check === 'yes' ) {
 					$fts_fix_magnific = $this->settings_functions->fts_get_option( 'remove_magnific_css' ) ?? '';
 			        if ( isset( $fts_fix_magnific ) && $fts_fix_magnific !== '1' ) {
-						wp_enqueue_style( 'fts-popup', plugins_url( 'feed-them-social/includes/feeds/css/magnific-popup.css' ), array(), FTS_CURRENT_VERSION, true );
+						wp_enqueue_style( 'fts-popup', plugins_url( 'feed-them-social/includes/feeds/css/magnific-popup.min.css' ), array(), FTS_CURRENT_VERSION, true );
 					}
-					wp_enqueue_script( 'fts-popup-js', plugins_url( 'feed-them-social/includes/feeds/js/magnific-popup.js' ), array(), FTS_CURRENT_VERSION, true );
+					wp_enqueue_script( 'fts-popup-js', plugins_url( 'feed-them-social/includes/feeds/js/magnific-popup.min.js' ), array(), FTS_CURRENT_VERSION, true );
 				}
 			}
 
@@ -951,13 +951,17 @@ class Twitter_Feed {
 			$data_cache = ! empty( $search ) ? 'twitter_data_cache_' . $search . '_num' . $tweets_count : 'twitter_data_cache_' . $twitter_name . '_num' . $tweets_count;
 
 			    //Access Tokens Options.
-                $fts_twitter_custom_access_token        = !empty( $saved_feed_options['fts_twitter_custom_access_token'] ) ? $saved_feed_options['fts_twitter_custom_access_token'] : '';
-                $fts_twitter_custom_access_token_secret = !empty( $saved_feed_options['fts_twitter_custom_access_token_secret'] ) ? $saved_feed_options['fts_twitter_custom_access_token_secret'] : '';
+                $fts_tiktok_access_token        = !empty( $saved_feed_options['fts_tiktok_access_token'] ) ? $saved_feed_options['fts_tiktok_access_token'] : '';
+                $fts_tiktok_refresh_token = !empty( $saved_feed_options['fts_tiktok_refresh_token'] ) ? $saved_feed_options['fts_tiktok_refresh_token'] : '';
 
-                if ( empty( $fts_twitter_custom_access_token ) && empty( $fts_twitter_custom_access_token_secret ) ) {
+                if ( empty( $fts_tiktok_access_token ) && empty( $fts_tiktok_refresh_token ) ) {
 				    // NO Access tokens found.
-				    echo esc_html( 'Feed Them Social: Twitter Feed not loaded, please add your Access Token from the Gear Icon Tab.', 'feed-them-social' );
-                    return false;
+				    ?>
+					<div class="fts-shortcode-content-no-feed fts-empty-access-token">
+						<?php echo esc_html( 'Feed Them Social: Twitter Feed not loaded, please add your Access Token from the Gear Icon Tab.', 'feed-them-social' ); ?>
+					</div>
+					<?php
+					return false;
 			    }
 
                 $fts_twitter_custom_consumer_key    = 'DKWMIoc4s6hH3ED0nNFNwcTe3';
@@ -971,16 +975,16 @@ class Twitter_Feed {
 			} else {
 
 				// Use custom api info.
-				if ( ! empty( $fts_twitter_custom_access_token ) && ! empty( $fts_twitter_custom_access_token_secret ) ) {
+				if ( ! empty( $fts_tiktok_access_token ) && ! empty( $fts_tiktok_refresh_token ) ) {
 					$connection = new TwitterOAuthFTS(
 						// Consumer Key.
 						$fts_twitter_custom_consumer_key,
 						// Consumer Secret.
 						$fts_twitter_custom_consumer_secret,
 						// Access Token.
-						$fts_twitter_custom_access_token,
+						$fts_tiktok_access_token,
 						// Access Token Secret.
-						$fts_twitter_custom_access_token_secret
+						$fts_tiktok_refresh_token
 					);
 				}
 
@@ -1661,7 +1665,7 @@ class Twitter_Feed {
 									//	jQuery('#loadMore_< ?php echo $fts_dynamic_name ?>').removeClass('flip360-fts-load-more');
 									jQuery("#loadMore_<?php echo esc_js( $fts_dynamic_name ); ?>").removeClass('fts-fb-spinner');
 									// Reload the share each funcion otherwise you can't open share option.
-									jQuery.fn.ftsShare();
+									ftsShare();
 								<?php
 								if ( isset( $grid ) && 'yes' === $grid ) {
 									?>
